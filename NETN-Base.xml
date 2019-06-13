@@ -17,7 +17,7 @@
 Updated References, Dependency
 
 </useHistory>
-        <useHistory>v1.1.0 - LO: Added datatype TransactionId (from ETR and TMR). Moved NETN_SupplyStruct and ArrayOfSupplyStruct to LOG module</useHistory>
+        <useHistory>v1.1.0 - LO: Added datatype TransactionId (from ETR and TMR). Moved ArrayOfSupplyStruct to LOG module</useHistory>
         <poc>
             <pocType>Primary author</pocType>
             <pocName>Lennart Olsson</pocName>
@@ -1568,6 +1568,21 @@ The combination of FederateHandle and a counter gives a unique TransactionId in 
                     <name>FederateHandle</name>
                     <dataType>HLAhandle</dataType>
                     <semantics>The handle that the federate get when joining the federation. Required</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>NETN_SupplyStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Same encoding as RPR2 SupplyStruct.</semantics>
+                <field>
+                    <name>SupplyType</name>
+                    <dataType>EntityTypeStruct</dataType>
+                    <semantics>The type of supply (as described in the Bit Encoded Values for Use with Protocols for Distributed Interactive Simulation Applications)</semantics>
+                </field>
+                <field>
+                    <name>Quantity</name>
+                    <dataType>QuantityFloat32</dataType>
+                    <semantics>The number of units of the supply type.  The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
                 </field>
             </fixedRecordData>
         </fixedRecordDataTypes>
