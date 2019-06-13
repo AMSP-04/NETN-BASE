@@ -17,7 +17,7 @@
 Updated References, Dependency
 
 </useHistory>
-        <useHistory>v1.1.0 - LO: Added datatype TransactionId (from ETR and TMR). Moved ArrayOfSupplyStruct to LOG module</useHistory>
+        <useHistory>v1.1.0 - LO: Added datatype TransactionId (from ETR and TMR).</useHistory>
         <poc>
             <pocType>Primary author</pocType>
             <pocName>Lennart Olsson</pocName>
@@ -1535,6 +1535,13 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <cardinality>[3..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>3 or more locations, specifying a region (area)</semantics>
+            </arrayData>
+            <arrayData>
+                <name>NETN_ArrayOfSupplyStruct</name>
+                <dataType>NETN_SupplyStruct</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Array with NETN SupplyStructs</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
