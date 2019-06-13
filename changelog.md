@@ -4,5 +4,5 @@ Changes for v.1.1.0
 
 Added datatype TransactionId (from ETR and TMR).
 
-Moved NETN_SupplyStruct and ArrayOfSupplyStruct to LOG module
+Moved ArrayOfSupplyStruct to LOG module
 
