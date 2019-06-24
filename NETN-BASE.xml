@@ -11,7 +11,6 @@
         <description>Base module for NETN FOM v2 modules. Mainly datatypes for use in other NETN FOM modules</description>
         <useLimitation></useLimitation>
         <useHistory>Datatypes is collected from FOM modules in NETN FOM v1.
-NETN_AggDeagg_v1.07_2010
 NETN_Service_Consumer_Provider_v1.0.3_2010
 NETN_Logistics_v1.1.2_2010</useHistory>
         <useHistory>v1.0.0 - First version in NETN FOM v2</useHistory>
