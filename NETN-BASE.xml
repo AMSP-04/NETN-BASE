@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <objectModel xsi:schemaLocation="http://standards.ieee.org/IEEE1516-2010 http://standards.ieee.org/downloads/1516/1516.2-2010/IEEE1516-DIF-2010.xsd" xmlns="http://standards.ieee.org/IEEE1516-2010" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelIdentification>
-        <name>NETN-Base</name>
+        <name>NETN-BASE</name>
         <type>FOM</type>
-        <version>1.1.0</version>
-        <modificationDate>2019-06-13</modificationDate>
-        <securityClassification>unclassified</securityClassification>
+        <version>1.1 (RC 1)</version>
+        <modificationDate>2019-07-18</modificationDate>
+        <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
         <description>Base module for NETN FOM v2 modules. Mainly datatypes for use in other NETN FOM modules</description>
         <useLimitation></useLimitation>
-        <useHistory>Datatypes is collected from FOM modules in NETN FOM v1. NETN_AggDeagg_v1.07_2010, NETN_Service_Consumer_Provider_v1.0.3_2010, NETN_Logistics_v1.1.2_2010</useHistory>
-        <useHistory>v1.0.0 - First version in NETN FOM v2</useHistory>
-        <useHistory>v1.0.1 - Added array data type: ArrayOfWorldLocation3 (moved from NETN_Aggregate FOM module)</useHistory>
-        <useHistory>v1.0.2 - Renamed data type, new name: ArrayOfWorldLocationStruct3. 
-Updated References, Dependency
-
-</useHistory>
-        <useHistory>v1.1.0 - LO: Added datatype TransactionId (from ETR and TMR).</useHistory>
+        <useHistory>v1.0.2 - Release included in NETN-FOM v2.0 and AMSP-04 Ed A</useHistory>
         <poc>
             <pocType>Primary author</pocType>
             <pocName>Lennart Olsson</pocName>
@@ -29,7 +22,11 @@ Updated References, Dependency
             <type>Dependency</type>
             <identification>RPR-Base_v2.0</identification>
         </reference>
-        <other></other>
+        <other>
+Copyright © 2019 by NATO/OTAN. All rights reserved.
+This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License.
+
+Above license gives you the right to use and redistribute the NETN FOM Module (XML file and Documentation) in its entirety without modification. You are also allowed to develop your own new FOM Modules (in separate XML files and separate documentation) that build-on/extends the NETN module by reference. You are NOT allowed to modify the NETN FOM Module or its documentation without prior permission by the NATO Modelling and Simulation Group.</other>
     </modelIdentification>
     <dataTypes>
         <simpleDataTypes>
