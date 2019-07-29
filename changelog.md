@@ -1,10 +1,12 @@
-## Changelog
+## Changelog NETN-BASE
 
 ### Changes for v.1.x (RC 1)
-* Added datatype TransactionId (from ETR and TMR).
-* Change ´modelIdentification´ ´securityClassification´ from ´unclassified´ to ´Not Classified´
-* Change ´modelIdentification´ ´other´ to include license information
-* Clean-up ´modelIdentification´ ´useHistory´ to only include formally relesed versions. 
+Version 1.X was UPDATED by MSG-163 and included in NETN-FOM v3.0 and AMSP-04 Ed B.
+
+* Added datatype `TransactionId` (from ETR and TMR).
+* Change `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
+* Change `modelIdentification` `other` to include license information
+* Clean-up `modelIdentification` `useHistory` to only include formally relesed versions. 
 
 ### Changes for v.1.0.2
 Version 1.0.2 was developed by MSG-106 & MSG-134 and included in NETN-FOM v2.0 and AMSP-04 Ed A.
