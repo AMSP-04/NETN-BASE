@@ -1,6 +1,10 @@
 # NETN-BASE
 NATO Education and Training Network Base FOM Module
 
+## Introduction
+### Purpose
+### Scope
+
 ## License
 
 Copyright (C) 2019 NATO/OTAN.
