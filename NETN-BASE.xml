@@ -4,14 +4,13 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>1.1 (RC 1)</version>
-        <modificationDate>2019-07-31</modificationDate>
+        <modificationDate>2019-08-19</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
         <description>Base module for NETN FOM v2 modules. Mainly datatypes for use in other NETN FOM modules</description>
         <useLimitation></useLimitation>
         <useHistory>v1.0.2 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0 and AMSP-04 Ed A</useHistory>
-  
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -36,7 +35,7 @@
             <pocOrg>NATO Modelling and Simulation Group</pocOrg>
             <pocEmail>msg@cso.nato.int</pocEmail>
         </poc>
-              <poc>
+        <poc>
             <pocType>Contributor</pocType>
             <pocName>Lennart Olsson</pocName>
             <pocOrg>Pitch Technologies, Sweden</pocOrg>
@@ -1520,6 +1519,19 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <value>4</value>
                 </enumerator>
             </enumeratedData>
+            <enumeratedData>
+                <name>CancellationReasonEnum32</name>
+                <representation>HLAinteger32BE</representation>
+                <semantics>Describes the reason for the cancellation</semantics>
+                <enumerator>
+                    <name>Other</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>TimeOut</name>
+                    <value>1</value>
+                </enumerator>
+            </enumeratedData>
         </enumeratedDataTypes>
         <arrayDataTypes>
             <arrayData>
@@ -1568,6 +1580,13 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Array with NETN SupplyStructs</semantics>
+            </arrayData>
+            <arrayData>
+                <name>FederateName</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>HLA Federate Name</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
