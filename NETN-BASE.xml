@@ -59,7 +59,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
     <dataTypes>
         <simpleDataTypes>
             <simpleData>
-                <name>TimeSecInt64</name>
+                <name>EpochTimeSecInt64</name>
                 <representation>HLAinteger64BE</representation>
                 <units>Second</units>
                 <resolution>1</resolution>
@@ -80,7 +80,71 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <units>NA</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>The number of units</semantics>
+                <semantics>A generic floating-point quantity.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>QuantityFloat64</name>
+                <representation>HLAfloat64BE</representation>
+                <units>NA</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>A generic floating-point quantity.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>QuantityInt32</name>
+                <representation>HLAinteger32BE</representation>
+                <units>NA</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>A generic discrete quantity.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>DirectionDegreesFloat32</name>
+                <representation>HLAfloat32BE</representation>
+                <units>Degree of arc</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>Compass direction measured clockwise relative to an origin. If not stated elsewhere, the origin is true north. Value may be outside the interval [0, 360[, and should then be interpreted as the corresponding value within the interval.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>LatLongDegreesFloat64</name>
+                <representation>HLAfloat64BE</representation>
+                <units>Degree of arc</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>Represents a measure of either latitude or longitude.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>SpeedMeterPerSecondFloat32</name>
+                <representation>HLAfloat32BE</representation>
+                <units>Meters per second</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>Speed in meters per second (m/s).</semantics>
+            </simpleData>
+            <simpleData>
+                <name>ConcentrationKgPerMeterCubedFloat32</name>
+                <representation>HLAfloat32BE</representation>
+                <units>Kg/m3</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics></semantics>
+            </simpleData>
+            <simpleData>
+                <name>PercentFloat64</name>
+                <representation>HLAfloat64BE</representation>
+                <units>Percent (%)</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>A percentage (0-100).</semantics>
+            </simpleData>
+            <simpleData>
+                <name>TimeSecInt32</name>
+                <representation>HLAinteger32BE</representation>
+                <units>Second (s)</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>A time interval in seconds.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
