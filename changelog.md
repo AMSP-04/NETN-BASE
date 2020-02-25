@@ -1,6 +1,9 @@
 ## Changelog NETN-BASE
 
-#### NETN-MRM#4 Make MRM not depend on TMR
+### Added datatype
+ArrayOfWorldLocationStruct2 added, used by NETN-ETR and NETN-SE.
+
+### NETN-MRM#4 Make MRM not depend on TMR
 * Added datatype `FederateName` (from TMR).
 * Added datatype `CancellationReasonEnum32` (from TMR).
 

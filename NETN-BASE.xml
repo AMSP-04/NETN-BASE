@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>1.1 (RC 1)</version>
-        <modificationDate>2019-08-19</modificationDate>
+        <modificationDate>2020-02-25</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -1651,6 +1651,13 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>HLA Federate Name</semantics>
+            </arrayData>
+            <arrayData>
+                <name>ArrayOfWorldLocationStruct2</name>
+                <dataType>WorldLocationStruct</dataType>
+                <cardinality>[2..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A polygonal chain with size &gt;= 2.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
