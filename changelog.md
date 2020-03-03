@@ -1,19 +1,31 @@
 ## Changelog NETN-BASE
 
-### Added datatype
-ArrayOfWorldLocationStruct2 added, used by NETN-ETR and NETN-SE.
-
-### NETN-MRM#4 Make MRM not depend on TMR
+### NETN-BASE#1 Harmonize data types
+* Added Simple data type `ConcentrationKgPerMeterCubedFloat32`
+* Added Simple data type `SpeedMeterPerSecondFloat32`
+* Added Simple data type `PercentFloat64`
+* Updated semantics of data type `QuantityFloat32`
+* Added Simple data type `QuantityFloat64`
+* Added Simple data type `QuantityInt32`
+* Renamed data type `TimeSecInt64` to `EpochTimeSecInt64`
+* Added data type `TimeSecInt32`
+* Added data type `DirectionDegreesFloat32`
+* Added data type `LatLongDegreesFloat64`
 * Added datatype `FederateName` (from TMR).
 * Added datatype `CancellationReasonEnum32` (from TMR).
-
-### Changes for v.1.x (RC 1)
-Version 1.X was UPDATED by MSG-163 and included in NETN-FOM v3.0 and AMSP-04 Ed B.
-
 * Added datatype `TransactionId` (from ETR and TMR).
-* Change `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
-* Change `modelIdentification` `other` to include license information
-* Clean-up `modelIdentification` `useHistory` to only include formally relesed versions. 
+* Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
+* Changed `modelIdentification` `other` to include license information
+* Changed `modelIdentification` `useHistory` to only include formally relesed versions. 
+
+### NETN-BASE#2 Add Generic datatypes for geographical features e.g. Path datatype
+* Renamed `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
+* Renamed `ArrayOfWorldLocationStruct2` to `GeocentricPath`
+* Added Array Datatpe `GeodeticPath`
+* Added Array Datatpe `GeodeticPolygon`
+* Added FixedRecord Datatype `GeodeticCircle`
+* Added FixedRecord Datatype `GeodeticLocation`
+* FixedRecord Datatype `GeodeticQuadrangle`
 
 
 ### Changes for v.1.0.2

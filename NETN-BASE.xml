@@ -128,7 +128,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <units>Kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics></semantics>
+                <semantics>Concentration measured as Kg per cubic meter.</semantics>
             </simpleData>
             <simpleData>
                 <name>PercentFloat64</name>
@@ -1629,14 +1629,14 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <dataType>UuidArrayOfHLAbyte16</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>Array with UUIDs</semantics>
+                <semantics>Array of Unique Identifiers expressed as UUIDs.</semantics>
             </arrayData>
             <arrayData>
-                <name>ArrayOfWorldLocationStruct3</name>
+                <name>GeocentricPolygon</name>
                 <dataType>WorldLocationStruct</dataType>
                 <cardinality>[3..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>3 or more locations, specifying a region (area)</semantics>
+                <semantics>A polygon in world locations.</semantics>
             </arrayData>
             <arrayData>
                 <name>NETN_ArrayOfSupplyStruct</name>
@@ -1653,11 +1653,25 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <semantics>HLA Federate Name</semantics>
             </arrayData>
             <arrayData>
-                <name>ArrayOfWorldLocationStruct2</name>
+                <name>GeocentricPath</name>
                 <dataType>WorldLocationStruct</dataType>
                 <cardinality>[2..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A polygonal chain with size &gt;= 2.</semantics>
+                <semantics>An array of geocentric world locations with at least two elements. </semantics>
+            </arrayData>
+            <arrayData>
+                <name>GeodeticPath</name>
+                <dataType>GeodeticLocation</dataType>
+                <cardinality>[2..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A list of lat, lon coordinates in WGS84 reference system specifying a path where each segement is a great circle between locations.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>GeodeticPolygon</name>
+                <dataType>GeodeticLocation</dataType>
+                <cardinality>[3..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A geographical area bounded by a path where the first and last point in the path are closed. Each point is a geodetic coordinate in WGS84 on the earth surface. Each segment is a great circle between locations.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
@@ -1706,6 +1720,51 @@ The combination of FederateHandle and a counter gives a unique TransactionId in 
                     <name>Quantity</name>
                     <dataType>QuantityFloat32</dataType>
                     <semantics>The number of units of the supply type.  The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>GeodeticCircle</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>A geodetic point and radius specifying a circle on the surface of the earth WGS84 where radius is a great circle distance on the surface.</semantics>
+                <field>
+                    <name>CenterPoint</name>
+                    <dataType>GeodeticLocation</dataType>
+                    <semantics>The center of the circular area. Lat, Long on WGS84.</semantics>
+                </field>
+                <field>
+                    <name>Radius</name>
+                    <dataType>MeterFloat32</dataType>
+                    <semantics>The radius of the circular area.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>GeodeticLocation</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>A geodetic point, specified by latitude and longitude, with unspecified altitude. WGS84</semantics>
+                <field>
+                    <name>Latitude</name>
+                    <dataType>LatLongDegreesFloat64</dataType>
+                    <semantics></semantics>
+                </field>
+                <field>
+                    <name>Longitude</name>
+                    <dataType>LatLongDegreesFloat64</dataType>
+                    <semantics></semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>GeodeticQuadrangle</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>A latitude-longitude quadrangle is a region bounded by two meridians and two parallels.</semantics>
+                <field>
+                    <name>Point1</name>
+                    <dataType>GeodeticLocation</dataType>
+                    <semantics>Lat, Long on WGS84</semantics>
+                </field>
+                <field>
+                    <name>Point2</name>
+                    <dataType>GeodeticLocation</dataType>
+                    <semantics>Lat, Long on WGS84</semantics>
                 </field>
             </fixedRecordData>
         </fixedRecordDataTypes>
