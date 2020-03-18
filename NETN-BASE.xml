@@ -64,7 +64,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <units>Second</units>
                 <resolution>1</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Number of seconds since 1 January 1970</semantics>
+                <semantics>The number of seconds since 1 Jan 1970 (wallclock time) or since the start of the simulation (logical time).</semantics>
             </simpleData>
             <simpleData>
                 <name>CounterInt32</name>
@@ -104,7 +104,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <units>Degree of arc</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Compass direction measured clockwise relative to an origin. If not stated elsewhere, the origin is true north. Value may be outside the interval [0, 360[, and should then be interpreted as the corresponding value within the interval.</semantics>
+                <semantics>Compass direction measured clockwise relative to an origin. If not stated elsewhere, the origin is true north. Value may be outside the interval [0, 360), and should then be interpreted as the corresponding value modulo 360 within the interval.</semantics>
             </simpleData>
             <simpleData>
                 <name>LatLongDegreesFloat64</name>
@@ -137,6 +137,58 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
                 <semantics>A time interval in seconds.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>MIDcode</name>
+                <representation>HLAinteger16BE</representation>
+                <units>NA</units>
+                <resolution>NA</resolution>
+                <accuracy>3 decimal digits</accuracy>
+                <semantics>The Maritime Identification Digits (MID) for an individual vessel is a three digits code. See https://www.itu.int/en/ITU-R and also https://en.wikipedia.org/wiki/Maritime_identification_digits.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>IMOcode</name>
+                <representation>HLAinteger32BE</representation>
+                <units>NA</units>
+                <resolution>NA</resolution>
+                <accuracy>30 bits</accuracy>
+                <semantics>The International Maritime Organization (IMO) number is a unique identifier for vessels. See https://www.itu.int/en/ITU-R.
+
+The IMO number is made of the three letters "IMO" followed by a seven-digit number. This number consists of a six-digit sequential unique number followed by a check digit. The integrity of an IMO number can be verified using its check digit.This is done by multiplying each of the first six digits by a factor of 2 to 7 corresponding to their position from right to left. The rightmost digit of this sum is the check digit. For example, for IMO 9074729: (9×7) + (0×6) + (7×5) + (4×4) + (7×3) + (2×2) = 139. 
+
+This attribute represents the 7 digits value of the IMO number. The value shall be zero for not available (default). The value shall also be zero for inland vessels.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>ShipType</name>
+                <representation>HLAoctet</representation>
+                <units>NA</units>
+                <resolution>NA</resolution>
+                <accuracy>8 bits</accuracy>
+                <semantics>The type of ship and cargo. See https://www.itu.int/en/ITU-R.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>DegreesPerSecondFloat32</name>
+                <representation>HLAfloat32BE</representation>
+                <units>Degrees/second</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>The turn rate in degrees per second, where: (a) zero value: not turning; (b) positive value: turning right; (c) negative value: turning left.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>AltitudeMeterFloat64</name>
+                <representation>HLAfloat64BE</representation>
+                <units>meters</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>The altitude in meters. The type of height is defined by the context of use (i.e. height Above Mean Sea Level, height Above Ground Level).</semantics>
+            </simpleData>
+            <simpleData>
+                <name>DraughtMeterFloat32</name>
+                <representation>HLAfloat32BE</representation>
+                <units>meters</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>The draught in meters.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
