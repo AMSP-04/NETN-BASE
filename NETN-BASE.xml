@@ -115,14 +115,6 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <semantics>Represents a measure of either latitude or longitude.</semantics>
             </simpleData>
             <simpleData>
-                <name>SpeedMeterPerSecondFloat32</name>
-                <representation>HLAfloat32BE</representation>
-                <units>Meters per second</units>
-                <resolution>NA</resolution>
-                <accuracy>NA</accuracy>
-                <semantics>Speed in meters per second (m/s).</semantics>
-            </simpleData>
-            <simpleData>
                 <name>ConcentrationKgPerMeterCubedFloat32</name>
                 <representation>HLAfloat32BE</representation>
                 <units>Kg/m3</units>
@@ -1596,6 +1588,45 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <value>1</value>
                 </enumerator>
             </enumeratedData>
+            <enumeratedData>
+                <name>PointTypeEnum32</name>
+                <representation>HLAinteger32BE</representation>
+                <semantics>Specifies if the point is the actual location or if it is a reference to registred NETN_GeoObject.Point through a UUID.</semantics>
+                <enumerator>
+                    <name>Location</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>UuidReference</name>
+                    <value>1</value>
+                </enumerator>
+            </enumeratedData>
+            <enumeratedData>
+                <name>PathTypeEnum32</name>
+                <representation>HLAinteger32BE</representation>
+                <semantics>Specifies if the path is the actual path with waypoints or if it is a reference to registred NETN_GeoObject.Path through a UUID.</semantics>
+                <enumerator>
+                    <name>PathObject</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>UuidReference</name>
+                    <value>1</value>
+                </enumerator>
+            </enumeratedData>
+            <enumeratedData>
+                <name>AreaTypeEnum32</name>
+                <representation>HLAinteger32BE</representation>
+                <semantics>Specifies if the area is a polygon or a circle.</semantics>
+                <enumerator>
+                    <name>Polygon</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>Circle</name>
+                    <value>2</value>
+                </enumerator>
+            </enumeratedData>
         </enumeratedDataTypes>
         <arrayDataTypes>
             <arrayData>
@@ -1657,7 +1688,7 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <dataType>WorldLocationStruct</dataType>
                 <cardinality>[2..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>An array of geocentric world locations with at least two elements. </semantics>
+                <semantics>An array of geocentric world locations with at least two elements.</semantics>
             </arrayData>
             <arrayData>
                 <name>GeodeticPath</name>
@@ -1672,6 +1703,13 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <cardinality>[3..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A geographical area bounded by a path where the first and last point in the path are closed. Each point is a geodetic coordinate in WGS84 on the earth surface. Each segment is a great circle between locations.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>ArrayOfWorldLocationStruct</name>
+                <dataType>WorldLocationStruct</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A polygonal chain with geocentric points, may be empty.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
@@ -1767,8 +1805,83 @@ The combination of FederateHandle and a counter gives a unique TransactionId in 
                     <semantics>Lat, Long on WGS84</semantics>
                 </field>
             </fixedRecordData>
+            <fixedRecordData>
+                <name>GeocentricCircle</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Circle</semantics>
+                <field>
+                    <name>Location</name>
+                    <dataType>WorldLocationStruct</dataType>
+                    <semantics>Origo.</semantics>
+                </field>
+                <field>
+                    <name>Radius</name>
+                    <dataType>MeterFloat32</dataType>
+                    <semantics>The radius of the circle.</semantics>
+                </field>
+            </fixedRecordData>
         </fixedRecordDataTypes>
-        <variantRecordDataTypes/>
+        <variantRecordDataTypes>
+            <variantRecordData>
+                <name>AreaVariantStruct</name>
+                <discriminant>AreaType</discriminant>
+                <dataType>AreaTypeEnum32</dataType>
+                <alternative>
+                    <enumerator>Polygon</enumerator>
+                    <name>Polygon</name>
+                    <dataType>GeocentricPolygon</dataType>
+                    <semantics>A closed polygonal chain that defines the area. The first and last point coincides.</semantics>
+                </alternative>
+                <alternative>
+                    <enumerator>Circle</enumerator>
+                    <name>Circle</name>
+                    <dataType>GeocentricCircle</dataType>
+                    <semantics>A circle that defines the area.</semantics>
+                </alternative>
+                <encoding>HLAvariantRecord</encoding>
+                <semantics>Defines the BaseStruct.</semantics>
+            </variantRecordData>
+            <variantRecordData>
+                <name>PathVariantStruct</name>
+                <discriminant>PathType</discriminant>
+                <dataType>PathTypeEnum32</dataType>
+                <alternative>
+                    <enumerator>PathObject</enumerator>
+                    <name>Waypoints</name>
+                    <dataType>ArrayOfWorldLocationStruct</dataType>
+                    <semantics>The path defined by waypoints, not necessarily registered in the federation execution as a NETN_GeoObject.Path. 
+ 
+The array can be empty (size=0).</semantics>
+                </alternative>
+                <alternative>
+                    <enumerator>UuidReference</enumerator>
+                    <name>UUID</name>
+                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                    <semantics>A UUID that referes to a NETN_GeoObject.Path that is registred iin the federation execution.</semantics>
+                </alternative>
+                <encoding>HLAvariantRecord</encoding>
+                <semantics>Defines the path, either as a polygonal chain or a UUID that refers to a in the federation execution registred NETN_GeoObject.Path.</semantics>
+            </variantRecordData>
+            <variantRecordData>
+                <name>PointVariantStruct</name>
+                <discriminant>PointType</discriminant>
+                <dataType>PointTypeEnum32</dataType>
+                <alternative>
+                    <enumerator>Location</enumerator>
+                    <name>Location</name>
+                    <dataType>WorldLocationStruct</dataType>
+                    <semantics>The geocentric location.</semantics>
+                </alternative>
+                <alternative>
+                    <enumerator>UuidReference</enumerator>
+                    <name>UUID</name>
+                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                    <semantics>A UUID that refers to a NETN_GeoObject.Point.</semantics>
+                </alternative>
+                <encoding>HLAvariantRecord</encoding>
+                <semantics>Defines the point, either a Location or a UUID reference to a NETN_GeoObject.Point.</semantics>
+            </variantRecordData>
+        </variantRecordDataTypes>
     </dataTypes>
     <notes/>
 </objectModel>
