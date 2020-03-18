@@ -159,7 +159,7 @@ The IMO number is made of the three letters "IMO" followed by a seven-digit numb
 This attribute represents the 7 digits value of the IMO number. The value shall be zero for not available (default). The value shall also be zero for inland vessels.</semantics>
             </simpleData>
             <simpleData>
-                <name>ShipType</name>
+                <name>ShipTypeCode</name>
                 <representation>HLAoctet</representation>
                 <units>NA</units>
                 <resolution>NA</resolution>
