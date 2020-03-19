@@ -152,10 +152,10 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <units>NA</units>
                 <resolution>NA</resolution>
                 <accuracy>30 bits</accuracy>
-                <semantics>The International Maritime Organization (IMO) number is a unique identifier for vessels. See https://www.itu.int/en/ITU-R.
-
+                <semantics>The International Maritime Organization (IMO) number is a unique identifier for vessels. See https://www.itu.int/en/ITU-R. 
+ 
 The IMO number is made of the three letters "IMO" followed by a seven-digit number. This number consists of a six-digit sequential unique number followed by a check digit. The integrity of an IMO number can be verified using its check digit.This is done by multiplying each of the first six digits by a factor of 2 to 7 corresponding to their position from right to left. The rightmost digit of this sum is the check digit. For example, for IMO 9074729: (9×7) + (0×6) + (7×5) + (4×4) + (7×3) + (2×2) = 139. 
-
+ 
 This attribute represents the 7 digits value of the IMO number. The value shall be zero for not available (default). The value shall also be zero for inland vessels.</semantics>
             </simpleData>
             <simpleData>
@@ -1679,6 +1679,20 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
                     <value>2</value>
                 </enumerator>
             </enumeratedData>
+            <enumeratedData>
+                <name>AltitudeTypeEnum8</name>
+                <representation>HLAoctet</representation>
+                <semantics>AMSL = Above Mean Sea Level 
+AGL = Abve Ground Level</semantics>
+                <enumerator>
+                    <name>AMSL</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>AGL</name>
+                    <value>2</value>
+                </enumerator>
+            </enumeratedData>
         </enumeratedDataTypes>
         <arrayDataTypes>
             <arrayData>
@@ -1763,6 +1777,20 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A polygonal chain with geocentric points, may be empty.</semantics>
             </arrayData>
+            <arrayData>
+                <name>SymbolIdentifierArray30</name>
+                <dataType>HLAASCIIchar</dataType>
+                <cardinality>30</cardinality>
+                <encoding>HLAfixedArray</encoding>
+                <semantics>MIL-STD-2525D symbol code.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>SymbolIdentifierArray15</name>
+                <dataType>HLAASCIIchar</dataType>
+                <cardinality>15</cardinality>
+                <encoding>HLAfixedArray</encoding>
+                <semantics>MIL-STD-2525C symbol code.</semantics>
+            </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
             <fixedRecordData>
@@ -1834,12 +1862,12 @@ The combination of FederateHandle and a counter gives a unique TransactionId in 
                 <field>
                     <name>Latitude</name>
                     <dataType>LatLongDegreesFloat64</dataType>
-                    <semantics></semantics>
+                    <semantics>The latitude in degrees.</semantics>
                 </field>
                 <field>
                     <name>Longitude</name>
                     <dataType>LatLongDegreesFloat64</dataType>
-                    <semantics></semantics>
+                    <semantics>The longitude in degrees.</semantics>
                 </field>
             </fixedRecordData>
             <fixedRecordData>
