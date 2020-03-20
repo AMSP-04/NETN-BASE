@@ -1,31 +1,37 @@
 ## Changelog NETN-BASE
 
 ### NETN-BASE#1 Harmonize data types
-* Added Simple data type `ConcentrationKgPerMeterCubedFloat32`
-* Added Simple data type `SpeedMeterPerSecondFloat32`
-* Added Simple data type `PercentFloat64`
-* Updated semantics of data type `QuantityFloat32`
-* Added Simple data type `QuantityFloat64`
-* Added Simple data type `QuantityInt32`
-* Renamed data type `TimeSecInt64` to `EpochTimeSecInt64`
-* Added data type `TimeSecInt32`
-* Added data type `DirectionDegreesFloat32`
-* Added data type `LatLongDegreesFloat64`
-* Added datatype `FederateName` (from TMR).
-* Added datatype `CancellationReasonEnum32` (from TMR).
-* Added datatype `TransactionId` (from ETR and TMR).
+* Added datatype `ConcentrationKgPerMeterCubedFloat32`
+* Added datatype `SpeedMeterPerSecondFloat32`
+* Added datatype `PercentFloat64`
+* Updated semantics of datatype `QuantityFloat32`
+* Added datatype `QuantityFloat64`
+* Added datatype `QuantityInt32`
+* Renamed datatype `TimeSecInt64` to `EpochTimeSecInt64` and updated semantics for logical time
+* Added datatype `TimeSecInt32`
+* Added datatype `DirectionDegreesFloat32`
+* Added datatype `LatLongDegreesFloat64`
+* Added datatype `FederateName` (from TMR)
+* Added datatype `CancellationReasonEnum32` (from TMR)
+* Added datatype `TransactionId` (from ETR and TMR)
 * Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
 * Changed `modelIdentification` `other` to include license information
-* Changed `modelIdentification` `useHistory` to only include formally relesed versions. 
+* Changed `modelIdentification` `useHistory` to only include formally released versions
+* Added datatype `DegreesPerSecondFloat32` 
+* Added datatype `AltitudeMeterFloat64 `
+* Added datatype `DraughtMeterFloat32 `
+* Added datatype `IMOType `
+* Added datatype `MIDType`
+* Added datatype `ShipTypeType`
 
 ### NETN-BASE#2 Add Generic datatypes for geographical features e.g. Path datatype
 * Renamed `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
 * Renamed `ArrayOfWorldLocationStruct2` to `GeocentricPath`
-* Added Array Datatpe `GeodeticPath`
-* Added Array Datatpe `GeodeticPolygon`
-* Added FixedRecord Datatype `GeodeticCircle`
-* Added FixedRecord Datatype `GeodeticLocation`
-* FixedRecord Datatype `GeodeticQuadrangle`
+* Added Array datatape `GeodeticPath`
+* Added Array datatape `GeodeticPolygon`
+* Added FixedRecord datatype `GeodeticCircle`
+* Added FixedRecord datatype `GeodeticLocation`
+* FixedRecord datatype `GeodeticQuadrangle`
 
 
 ### Changes for v.1.0.2
