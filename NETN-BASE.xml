@@ -3,14 +3,15 @@
     <modelIdentification>
         <name>NETN-BASE</name>
         <type>FOM</type>
-        <version>1.1 (RC 1)</version>
-        <modificationDate>2020-02-25</modificationDate>
+        <version>2.0 (Baseline MAR 2020)</version>
+        <modificationDate>2020-03-23</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
-        <description>Base module for NETN FOM v2 modules. Mainly datatypes for use in other NETN FOM modules</description>
+        <description>Base module for NETN FOM modules. Mainly datatypes for use in other NETN FOM modules</description>
         <useLimitation></useLimitation>
-        <useHistory>v1.0.2 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0 and AMSP-04 Ed A</useHistory>
+        <useHistory>v1.0.2 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
+        <useHistory>v2.0.0 - Updated version developed by MSG-163 Release included in NETN-FOM v3.0</useHistory>
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
