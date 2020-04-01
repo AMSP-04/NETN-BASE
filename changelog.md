@@ -4,19 +4,14 @@
 * Added datatype `ConcentrationKgPerMeterCubedFloat32`
 * Added datatype `SpeedMeterPerSecondFloat32`
 * Added datatype `PercentFloat64`
-* Updated semantics of datatype `QuantityFloat32`
 * Added datatype `QuantityFloat64`
 * Added datatype `QuantityInt32`
-* Renamed datatype `TimeSecInt64` to `EpochTimeSecInt64` and updated semantics for logical time
 * Added datatype `TimeSecInt32`
 * Added datatype `DirectionDegreesFloat32`
 * Added datatype `LatLongDegreesFloat64`
-* Added datatype `FederateName` (from TMR)
-* Added datatype `CancellationReasonEnum32` (from TMR)
-* Added datatype `TransactionId` (from ETR and TMR)
-* Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
-* Changed `modelIdentification` `other` to include license information
-* Changed `modelIdentification` `useHistory` to only include formally released versions
+* Added datatype `FederateName`
+* Added datatype `CancellationReasonEnum32`
+* Added datatype `TransactionId`
 * Added datatype `DegreesPerSecondFloat32` 
 * Added datatype `AltitudeMeterFloat64 `
 * Added datatype `DraughtMeterFloat32 `
@@ -24,16 +19,21 @@
 * Added datatype `MIDType`
 * Added datatype `ShipTypeType`
 * Added datatype `ArrayOfStringType`
+* Updated datatype `QuantityFloat32`
+* Renamed & updated datatype `TimeSecInt64` to `EpochTimeSecInt64` 
+* Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
+* Changed `modelIdentification` `other` to include license information
+* Changed `modelIdentification` `useHistory` to only include formally released versions
 
-### NETN-BASE#2 Add Generic datatypes for geographical features e.g. Path datatype
-* Renamed `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
-* Renamed `ArrayOfWorldLocationStruct2` to `GeocentricPath`
-* Added Array datatape `GeodeticPath`
-* Added Array datatape `GeodeticPolygon`
-* Added FixedRecord datatype `GeodeticCircle`
-* Added FixedRecord datatype `GeodeticLocation`
-* FixedRecord datatype `GeodeticQuadrangle`
 
+### [NETN-BASE#2 Add Generic datatypes for geographical features e.g. Path datatype](https://github.com/AMSP-04/NETN-BASE/issues/2)
+* Added datatype `GeodeticPath`
+* Added datatype `GeodeticPolygon`
+* Added datatype `GeodeticCircle`
+* Added datatype `GeodeticLocation`
+* Added datatype `GeodeticQuadrangle`
+* Renamed datatype `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
+* Renamed datatype `ArrayOfWorldLocationStruct2` to `GeocentricPath`
 
 ### Changes for v.1.0.2
 Version 1.0.2 was developed by MSG-106 & MSG-134 and included in NETN-FOM v2.0 and AMSP-04 Ed A.
