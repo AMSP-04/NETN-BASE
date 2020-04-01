@@ -1,6 +1,6 @@
 ## Changelog NETN-BASE
 
-### NETN-BASE#1 Harmonize data types
+### [NETN-BASE#1 Harmonize data types](https://github.com/AMSP-04/NETN-BASE/issues/1)
 * Added datatype `ConcentrationKgPerMeterCubedFloat32`
 * Added datatype `SpeedMeterPerSecondFloat32`
 * Added datatype `PercentFloat64`
