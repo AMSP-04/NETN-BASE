@@ -23,6 +23,7 @@
 * Added datatype `IMOType `
 * Added datatype `MIDType`
 * Added datatype `ShipTypeType`
+* Added datatype `ArrayOfStringType`
 
 ### NETN-BASE#2 Add Generic datatypes for geographical features e.g. Path datatype
 * Renamed `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`

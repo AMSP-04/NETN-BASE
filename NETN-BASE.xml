@@ -3,8 +3,8 @@
     <modelIdentification>
         <name>NETN-BASE</name>
         <type>FOM</type>
-        <version>2.0 (Baseline MAR 2020)</version>
-        <modificationDate>2020-03-23</modificationDate>
+        <version>2.0</version>
+        <modificationDate>2020-04-01</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -51,7 +51,7 @@
             <identification>RPR-Base</identification>
         </reference>
         <other>
-Copyright © 2019 by NATO/OTAN. All rights reserved.
+Copyright © 2020 by NATO/OTAN. All rights reserved.
 This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License.
 
 Above license gives you the right to use and redistribute the NETN FOM Module (XML file and Documentation) in its entirety without modification. You are also allowed to develop your own new FOM Modules (in separate XML files and separate documentation) that build-on/extends the NETN module by reference. You are NOT allowed to modify the NETN FOM Module or its documentation without prior permission by the NATO Modelling and Simulation Group.</other>
@@ -1784,6 +1784,13 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
                 <cardinality>15</cardinality>
                 <encoding>HLAfixedArray</encoding>
                 <semantics>MIL-STD-2525C symbol code.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>ArrayOfStringType</name>
+                <dataType>HLAunicodeString</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>An general array datatype for representing a set of strings.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
