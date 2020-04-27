@@ -1694,6 +1694,95 @@ AGL = Abve Ground Level</semantics>
                     <value>2</value>
                 </enumerator>
             </enumeratedData>
+            <enumeratedData>
+                <name>EchelonEnum32</name>
+                <representation>HLAinteger32BE</representation>
+                <semantics>Identifies the aggregate echelon level.</semantics>
+                <enumerator>
+                    <name>NONE</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>TEAM</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>CREW</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>SQUAD</name>
+                    <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>SECTION</name>
+                    <value>4</value>
+                </enumerator>
+                <enumerator>
+                    <name>PLATOON</name>
+                    <value>5</value>
+                </enumerator>
+                <enumerator>
+                    <name>DETACHMENT</name>
+                    <value>6</value>
+                </enumerator>
+                <enumerator>
+                    <name>COMPANY</name>
+                    <value>7</value>
+                </enumerator>
+                <enumerator>
+                    <name>BATTERY</name>
+                    <value>8</value>
+                </enumerator>
+                <enumerator>
+                    <name>TROOP</name>
+                    <value>9</value>
+                </enumerator>
+                <enumerator>
+                    <name>BATTALION</name>
+                    <value>10</value>
+                </enumerator>
+                <enumerator>
+                    <name>SQUADRON</name>
+                    <value>11</value>
+                </enumerator>
+                <enumerator>
+                    <name>REGIMENT</name>
+                    <value>12</value>
+                </enumerator>
+                <enumerator>
+                    <name>GROUP</name>
+                    <value>13</value>
+                </enumerator>
+                <enumerator>
+                    <name>BRIGADE</name>
+                    <value>14</value>
+                </enumerator>
+                <enumerator>
+                    <name>DIVISION</name>
+                    <value>15</value>
+                </enumerator>
+                <enumerator>
+                    <name>CORPS</name>
+                    <value>16</value>
+                </enumerator>
+                <enumerator>
+                    <name>ARMY</name>
+                    <value>17</value>
+                </enumerator>
+                <enumerator>
+                    <name>ARMYGROUP</name>
+                    <value>18</value>
+                </enumerator>
+                <enumerator>
+                    <name>FRONT</name>
+                    <value>19</value>
+                </enumerator>
+                <enumerator>
+                    <name>REGION</name>
+                    <value>20</value>
+                </enumerator>
+            </enumeratedData>
         </enumeratedDataTypes>
         <arrayDataTypes>
             <arrayData>
@@ -1773,14 +1862,14 @@ A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represent
             </arrayData>
             <arrayData>
                 <name>SymbolIdentifierArray30</name>
-                <dataType>HLAASCIIchar</dataType>
+                <dataType>HLAunicodeChar</dataType>
                 <cardinality>30</cardinality>
                 <encoding>HLAfixedArray</encoding>
                 <semantics>MIL-STD-2525D symbol code.</semantics>
             </arrayData>
             <arrayData>
                 <name>SymbolIdentifierArray15</name>
-                <dataType>HLAASCIIchar</dataType>
+                <dataType>HLAunicodeChar</dataType>
                 <cardinality>15</cardinality>
                 <encoding>HLAfixedArray</encoding>
                 <semantics>MIL-STD-2525C symbol code.</semantics>

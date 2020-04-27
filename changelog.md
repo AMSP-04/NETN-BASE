@@ -19,6 +19,9 @@
 * Added datatype `MIDType`
 * Added datatype `ShipTypeType`
 * Added datatype `ArrayOfStringType`
+* Added datatype `SymbolIdentifier15`
+* Added datatype `SymbolIdentifier30`
+* Added datatype `EchelonEnum32`
 * Updated datatype `QuantityFloat32`
 * Renamed & updated datatype `TimeSecInt64` to `EpochTimeSecInt64` 
 * Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
