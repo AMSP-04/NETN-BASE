@@ -8,7 +8,7 @@ The NETN-BASE FOM Module provides common definitions of datatypes and extends th
 
 ## Licence
 
-Copyright (C) 2019 NATO/OTAN.
+Copyright (C) 2020 NATO/OTAN.
 This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 International License](LICENCE.md). 
 
 The work includes the [NETN-BASE.xml](NETN-BASE.xml) FOM Module and [documentation](NETN-BASE.md).
