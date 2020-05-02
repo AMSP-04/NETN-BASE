@@ -1602,6 +1602,10 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
                     <name>NotOtherwiseSpecified</name>
                     <value>347</value>
                 </enumerator>
+                <enumerator>
+                    <name>Other</name>
+                    <value>0</value>
+                </enumerator>
             </enumeratedData>
             <enumeratedData>
                 <name>DamageStatusEnhancedEnum32</name>
