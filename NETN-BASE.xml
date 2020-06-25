@@ -1801,12 +1801,9 @@ AGL = Abve Ground Level</semantics>
                 <dataType>HLAbyte</dataType>
                 <cardinality>16</cardinality>
                 <encoding>HLAfixedArray</encoding>
-                <semantics>16 bytes in the UUID. 
- 
-A universally unique identifier (UUID), standardized by the Open Software Foundation (OSF) as part of the Distributed Computing Environment (DCE). 
- 
-A UUID is a 16-byte (128-bit) number. In its canonical form, a UUID is represented by 32 hexadecimal digits, displayed in five groups separated by hyphens, in the form 8-4-4-4-12 for a total of 36 characters (32 digits and four hyphens). For example: 
-550e8400-e29b-41d4-a716-446655440000</semantics>
+                <semantics>UUIDs are exchanged as a byte array and are encoded according to RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs.
+
+For example, 00112233-4455-6677-8899-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 66 77 88 99 aa bb cc dd ee ff.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfUuid</name>
