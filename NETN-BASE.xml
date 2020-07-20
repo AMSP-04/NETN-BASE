@@ -108,12 +108,12 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <semantics>Represents a measure of either latitude or longitude.</semantics>
             </simpleData>
             <simpleData>
-                <name>ConcentrationKgPerMeterCubedFloat32</name>
+                <name>MassDensityFloat32</name>
                 <representation>HLAfloat32BE</representation>
-                <units>Kg/m3</units>
+                <units>kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Concentration measured as Kg per cubic meter.</semantics>
+                <semantics>Density of substance measured as kg per cubic meter.</semantics>
             </simpleData>
             <simpleData>
                 <name>PercentFloat64</name>
@@ -182,6 +182,14 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
                 <semantics>The draught in meters.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>MassConcentrationFloat32</name>
+                <representation>HLAfloat32BE</representation>
+                <units>kg/m3</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>Concentration of a substance measured as kg/m3.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>

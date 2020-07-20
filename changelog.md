@@ -2,41 +2,58 @@
 
 ### Changes for v2.0
 
-* Added datatype `ConcentrationKgPerMeterCubedFloat32`
-* Added datatype `SpeedMeterPerSecondFloat32`
-* Added datatype `PercentFloat64`
-* Added datatype `QuantityFloat64`
-* Added datatype `QuantityInt32`
-* Added datatype `TimeSecInt32`
-* Added datatype `DirectionDegreesFloat32`
-* Added datatype `LatLongDegreesFloat64`
-* Added datatype `FederateName`
-* Added datatype `CancellationReasonEnum32`
-* Added datatype `TransactionId`
-* Added datatype `DegreesPerSecondFloat32` 
-* Added datatype `AltitudeMeterFloat64 `
-* Added datatype `DraughtMeterFloat32 `
-* Added datatype `IMOType `
-* Added datatype `MIDType`
-* Added datatype `ShipTypeType`
-* Added datatype `ArrayOfStringType`
-* Added datatype `SymbolIdentifier15`
-* Added datatype `SymbolIdentifier30`
-* Added datatype `EchelonEnum32`
-* Added datatype `GeodeticPath`
-* Added datatype `GeodeticPolygon`
-* Added datatype `GeodeticCircle`
-* Added datatype `GeodeticLocation`
-* Added datatype `GeodeticQuadrangle`
-* Added datatype `UUID`
-* Renamed datatype `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
-* Renamed datatype `ArrayOfWorldLocationStruct2` to `GeocentricPath`
-* Changed datatype `TransactionId` encoding to UUID.
-* Updated datatype `QuantityFloat32`
-* Renamed & updated datatype `TimeSecInt64` to `EpochTimeSecInt64` 
 * Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
 * Changed `modelIdentification` `other` to include license information
 * Changed `modelIdentification` `useHistory` to only include formally released versions
+
+#### Simple Datatypes
+* Added datatype `AltitudeMeterFloat64`
+* Added datatype `DegreesPerSecondFloat32` 
+* Added datatype `DirectionDegreesFloat32`
+* Added datatype `DraughtMeterFloat32`
+* Modified datatype `TimeSecInt64` to `EpochTimeSecInt64` 
+* Added datatype `IMOType`
+* Added datatype `LatLongDegreesFloat64`
+* Added datatype `MassConcentrationFloat32`
+* Added datatype `MassDensityFloat32`
+* Added datatype `MIDType`
+* Added datatype `PercentFloat64`
+* Updated datatype `QuantityFloat32`
+* Added datatype `QuantityFloat64`
+* Added datatype `QuantityInt32`
+* Added datatype `ShipTypeType`
+* Added datatype `TimeSecInt32`
+
+#### Enumerated Datatypes
+
+* Added datatype `CancellationReasonEnum32`
+* Added datatype `EchelonEnum32`
+
+#### Array Datatypes
+
+* Added datatype `ArrayOfStringType`
+* Added datatype `FederateName`
+* Modified datatype `ArrayOfWorldLocationStruct2` to `GeocentricPath`
+* Modified datatype `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
+* Added datatype `GeodeticPath`
+* Added datatype `GeodeticPolygon`
+* Added datatype `SymbolIdentifier15`
+* Added datatype `SymbolIdentifier30`
+* Added datatype `TransactionId`
+* Added datatype `UUID`
+
+#### Fixed Record Datatypes
+* Added datatype `GeocentricCircle`
+* Added datatype `GeodeticCircle`
+* Added datatype `GeodeticLocation`
+* Added datatype `GeodeticQuadrangle`
+
+#### Variant Record Datatypes
+* Added datatype `AreaVariantStruct`
+* Added datatype `PathVariantStruct`
+* Added datatype `PointVariantStruct`
+
+
 
 ### Changes for v1.0.2
 Version 1.0.2 was developed by MSG-106 & MSG-134 and included in NETN-FOM v2.0 and AMSP-04 Ed A.

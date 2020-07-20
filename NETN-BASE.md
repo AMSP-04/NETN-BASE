@@ -13,13 +13,14 @@ The NETN-BASE FOM Module provides common definitions of datatypes and extends th
 |Name|Units|Semantics|
 |---|---|---|
 |AltitudeMeterFloat64|meters|The altitude in meters. The type of height is defined by the context of use (i.e. height Above Mean Sea Level, height Above Ground Level).|
-|ConcentrationKgPerMeterCubedFloat32|Kg/m3|Concentration measured as Kg per cubic meter.|
 |DegreesPerSecondFloat32|Degrees/second|The turn rate in degrees per second, where: (a) zero value: not turning; (b) positive value: turning right; (c) negative value: turning left.|
 |DirectionDegreesFloat32|Degree of arc|Compass direction measured clockwise relative to an origin. If not stated elsewhere, the origin is true north. Value may be outside the interval [0, 360), and should then be interpreted as the corresponding value modulo 360 within the interval.|
 |DraughtMeterFloat32|meters|The draught in meters.|
 |EpochTimeSecInt64|Second|The number of seconds since 1 Jan 1970 (wallclock time) or since the start of the simulation (logical time).|
 |IMOType|NA|The International Maritime Organization (IMO) number is a unique identifier for vessels.|
 |LatLongDegreesFloat64|Degree of arc|Represents a measure of either latitude or longitude.|
+|MassConcentrationFloat32|kg/m3|Concentration of a substance measured as kg per cubic meter.|
+|MassDensityFloat32|kg/m3|Density of a substance measured as kg per cubic meter.|
 |MIDType|NA|The Maritime Identification Digits (MID) for an individual vessel is a three digits code.|
 |PercentFloat64|Percent (%)|A percentage (0-100).|
 |QuantityFloat32|NA|A generic floating-point quantity.|
@@ -62,7 +63,6 @@ The NETN-BASE FOM Module provides common definitions of datatypes and extends th
 |UUID|HLAbyte|16|4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.|
 |UuidArrayOfHLAbyte16|HLAbyte|16|UUIDs are exchanged as a byte array and are encoded according to RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.|
 
-
 ### Fixed Record Datatypes
 
 |Name|Fields|Semantics|
@@ -72,8 +72,6 @@ The NETN-BASE FOM Module provides common definitions of datatypes and extends th
 |GeodeticLocation|Latitude, Longitude|A geodetic point, specified by latitude and longitude, with unspecified altitude. WGS84|
 |GeodeticQuadrangle|Point1, Point2|A latitude-longitude quadrangle is a region bounded by two meridians and two parallels.|
 |NETN_SupplyStruct|SupplyType, Quantity|Same encoding as RPR2 SupplyStruct.|
-
-
 
 ### Variant Record Datatypes
 
