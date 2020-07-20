@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>2.0</version>
-        <modificationDate>2020-07-05</modificationDate>
+        <modificationDate>2020-07-20</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -1880,6 +1880,15 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>An general array datatype for representing a set of strings.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>UUID</name>
+                <dataType>HLAbyte</dataType>
+                <cardinality>16</cardinality>
+                <encoding>HLAfixedArray</encoding>
+                <semantics>4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
+ 
+For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>

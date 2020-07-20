@@ -1,6 +1,7 @@
 ## Changelog NETN-BASE
 
-### [NETN-BASE#1 Harmonize data types](https://github.com/AMSP-04/NETN-BASE/issues/1)
+### Changes for v2.0
+
 * Added datatype `ConcentrationKgPerMeterCubedFloat32`
 * Added datatype `SpeedMeterPerSecondFloat32`
 * Added datatype `PercentFloat64`
@@ -22,6 +23,14 @@
 * Added datatype `SymbolIdentifier15`
 * Added datatype `SymbolIdentifier30`
 * Added datatype `EchelonEnum32`
+* Added datatype `GeodeticPath`
+* Added datatype `GeodeticPolygon`
+* Added datatype `GeodeticCircle`
+* Added datatype `GeodeticLocation`
+* Added datatype `GeodeticQuadrangle`
+* Added datatype `UUID`
+* Renamed datatype `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
+* Renamed datatype `ArrayOfWorldLocationStruct2` to `GeocentricPath`
 * Changed datatype `TransactionId` encoding to UUID.
 * Updated datatype `QuantityFloat32`
 * Renamed & updated datatype `TimeSecInt64` to `EpochTimeSecInt64` 
@@ -29,17 +38,7 @@
 * Changed `modelIdentification` `other` to include license information
 * Changed `modelIdentification` `useHistory` to only include formally released versions
 
-
-### [NETN-BASE#2 Add Generic datatypes for geographical features e.g. Path datatype](https://github.com/AMSP-04/NETN-BASE/issues/2)
-* Added datatype `GeodeticPath`
-* Added datatype `GeodeticPolygon`
-* Added datatype `GeodeticCircle`
-* Added datatype `GeodeticLocation`
-* Added datatype `GeodeticQuadrangle`
-* Renamed datatype `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
-* Renamed datatype `ArrayOfWorldLocationStruct2` to `GeocentricPath`
-
-### Changes for v.1.0.2
+### Changes for v1.0.2
 Version 1.0.2 was developed by MSG-106 & MSG-134 and included in NETN-FOM v2.0 and AMSP-04 Ed A.
 
 * v1.0.0 - First version in NETN FOM v2
