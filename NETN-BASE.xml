@@ -1687,7 +1687,7 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>AltitudeTypeEnum8</name>
                 <representation>HLAoctet</representation>
-                <semantics>The reference for altitude. AMSL = Above Mean Sea Level or AGL = Abve Ground Level.</semantics>
+                <semantics>The reference for altitude. AMSL = Above Mean Sea Level or AGL = Above Ground Level.</semantics>
                 <enumerator>
                     <name>AMSL</name>
                     <value>1</value>
