@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>2.0</version>
-        <modificationDate>2020-07-05</modificationDate>
+        <modificationDate>2020-07-21</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -55,7 +55,7 @@ Copyright © 2020 by NATO/OTAN. All rights reserved.
 This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License.
 
 Above license gives you the right to use and redistribute the NETN FOM Module (XML file and Documentation) in its entirety without modification. You are also allowed to develop your own new FOM Modules (in separate XML files and separate documentation) that build-on/extends the NETN module by reference. You are NOT allowed to modify the NETN FOM Module or its documentation without prior permission by the NATO Modelling and Simulation Group.</other>
-        <glyph type="png" height="64" width="64" alt="">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</glyph>
+        <glyph type="png" height="48" width="48" alt="">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</glyph>
     </modelIdentification>
     <dataTypes>
         <simpleDataTypes>
@@ -94,42 +94,42 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
             <simpleData>
                 <name>DirectionDegreesFloat32</name>
                 <representation>HLAfloat32BE</representation>
-                <units>Degree of arc</units>
+                <units>Degree</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Compass direction measured clockwise relative to an origin. If not stated elsewhere, the origin is true north. Value may be outside the interval [0, 360), and should then be interpreted as the corresponding value modulo 360 within the interval.</semantics>
+                <semantics>Compass direction measured clockwise relative to true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
             </simpleData>
             <simpleData>
                 <name>LatLongDegreesFloat64</name>
                 <representation>HLAfloat64BE</representation>
-                <units>Degree of arc</units>
+                <units>Degree</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Represents a measure of either latitude or longitude.</semantics>
+                <semantics>Represents a measure of either latitude or longitude in decimal degrees of arc.</semantics>
             </simpleData>
             <simpleData>
-                <name>ConcentrationKgPerMeterCubedFloat32</name>
+                <name>MassDensityFloat32</name>
                 <representation>HLAfloat32BE</representation>
-                <units>Kg/m3</units>
+                <units>kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Concentration measured as Kg per cubic meter.</semantics>
+                <semantics>Density of substance measured as kg per cubic meter.</semantics>
             </simpleData>
             <simpleData>
                 <name>PercentFloat64</name>
                 <representation>HLAfloat64BE</representation>
-                <units>Percent (%)</units>
+                <units>Percent</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>A percentage (0-100).</semantics>
+                <semantics>A generic measure of percentage (0-100).</semantics>
             </simpleData>
             <simpleData>
                 <name>TimeSecInt32</name>
                 <representation>HLAinteger32BE</representation>
-                <units>Second (s)</units>
+                <units>Second</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>A time interval in seconds.</semantics>
+                <semantics>A generic time interval in seconds.</semantics>
             </simpleData>
             <simpleData>
                 <name>MIDType</name>
@@ -170,25 +170,33 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <simpleData>
                 <name>AltitudeMeterFloat64</name>
                 <representation>HLAfloat64BE</representation>
-                <units>meters</units>
+                <units>Meter</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>The altitude in meters. The type of height is defined by the context of use (i.e. height Above Mean Sea Level, height Above Ground Level).</semantics>
+                <semantics>Generic representation of altitude defined by the context of use, i.e. height Above Mean Sea Level, height Above Ground Level.</semantics>
             </simpleData>
             <simpleData>
                 <name>DraughtMeterFloat32</name>
                 <representation>HLAfloat32BE</representation>
-                <units>meters</units>
+                <units>Meter</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>The draught in meters.</semantics>
+                <semantics>The vertical distance between the waterline and the bottom of the hull (keel), with the thickness of the hull included; Draught determines the minimum depth of water a ship or boat can safely navigate.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>MassConcentrationFloat32</name>
+                <representation>HLAfloat32BE</representation>
+                <units>kg/m3</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>Concentration of a substance measured as kg/m3.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
             <enumeratedData>
                 <name>ActiveStatusEnum8</name>
                 <representation>HLAoctet</representation>
-                <semantics>An inactive object should not be shown on C4I systems and can not move or interact with other objects.</semantics>
+                <semantics>A state which indicates the status of an object concerning its participation in the simulation. An object in an inactive state is not simulated and does not interact with other objects.</semantics>
                 <enumerator>
                     <name>Other</name>
                     <value>0</value>
@@ -205,7 +213,7 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>AggregateMissionEnum16</name>
                 <representation>HLAinteger16BE</representation>
-                <semantics>The specific value that represents the general class or nature of activity (from JC3IEDM action-event-category-code)</semantics>
+                <semantics>Representation of the general class or nature of activity related to a unit's mission. Enumerations are based on JC3IEDM action-event-category-code.</semantics>
                 <enumerator>
                     <name>Abdication</name>
                     <value>1</value>
@@ -1602,7 +1610,7 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>DamageStatusEnhancedEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>The damage status of an object</semantics>
+                <semantics>The damage status of an object.</semantics>
                 <enumerator>
                     <name>NoDamage</name>
                     <value>0</value>
@@ -1627,7 +1635,7 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>CancellationReasonEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Describes the reason for the cancellation</semantics>
+                <semantics>Describes the reason for a cancellation.</semantics>
                 <enumerator>
                     <name>Other</name>
                     <value>0</value>
@@ -1640,7 +1648,7 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>PointTypeEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Specifies if the point is the actual location or if it is a reference to registred NETN_GeoObject.Point through a UUID.</semantics>
+                <semantics>Specifies if a point is defined by a location or by reference to a point object in the federation.</semantics>
                 <enumerator>
                     <name>Location</name>
                     <value>0</value>
@@ -1653,9 +1661,9 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>PathTypeEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Specifies if the path is the actual path with waypoints or if it is a reference to registred NETN_GeoObject.Path through a UUID.</semantics>
+                <semantics>Specifies if a path is defined by waypoints or by reference to a path object in the federation.</semantics>
                 <enumerator>
-                    <name>PathObject</name>
+                    <name>Waypoints</name>
                     <value>0</value>
                 </enumerator>
                 <enumerator>
@@ -1666,7 +1674,7 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>AreaTypeEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Specifies if the area is a polygon or a circle.</semantics>
+                <semantics>Specifies if a generic area is a polygon or a circle.</semantics>
                 <enumerator>
                     <name>Polygon</name>
                     <value>1</value>
@@ -1679,8 +1687,7 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>AltitudeTypeEnum8</name>
                 <representation>HLAoctet</representation>
-                <semantics>AMSL = Above Mean Sea Level 
-AGL = Abve Ground Level</semantics>
+                <semantics>The reference for altitude. AMSL = Above Mean Sea Level or AGL = Above Ground Level.</semantics>
                 <enumerator>
                     <name>AMSL</name>
                     <value>1</value>
@@ -1693,7 +1700,7 @@ AGL = Abve Ground Level</semantics>
             <enumeratedData>
                 <name>EchelonEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Identifies the unit's echelon level.</semantics>
+                <semantics>The echelon level of a unit.</semantics>
                 <enumerator>
                     <name>NONE</name>
                     <value>0</value>
@@ -1786,7 +1793,7 @@ AGL = Abve Ground Level</semantics>
                 <dataType>HLAunicodeChar</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>Unique identifier for an entity. A more user friendly identifier than UUID, used in Logistics protocol for Consumer and Provider.</semantics>
+                <semantics>Identifier for a simulated entity. Callsigns should be unique in the context in which they are used but are not required to be globally unique.</semantics>
             </arrayData>
             <arrayData>
                 <name>TransactionId</name>
@@ -1800,7 +1807,11 @@ AGL = Abve Ground Level</semantics>
                 <dataType>HLAbyte</dataType>
                 <cardinality>16</cardinality>
                 <encoding>HLAfixedArray</encoding>
-                <semantics>UUIDs are exchanged as a byte array and are encoded according to RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
+                <semantics>Deprecated.
+
+UUIDs are exchanged as a byte array and are encoded according to RFC 
+ 
+4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
  
 For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
             </arrayData>
@@ -1809,28 +1820,28 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <dataType>UuidArrayOfHLAbyte16</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>Array of Unique Identifiers expressed as UUIDs.</semantics>
+                <semantics>Deprecated. Array of Unique Identifiers expressed as UUIDs.</semantics>
             </arrayData>
             <arrayData>
                 <name>GeocentricPolygon</name>
                 <dataType>WorldLocationStruct</dataType>
                 <cardinality>[3..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A polygon in world locations.</semantics>
+                <semantics>A polygon defined as a closed polygonal chain of geocentric world locations where the last location is connected to the first.</semantics>
             </arrayData>
             <arrayData>
                 <name>NETN_ArrayOfSupplyStruct</name>
                 <dataType>NETN_SupplyStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>Array with NETN SupplyStructs</semantics>
+                <semantics>A set of supply descriptions.</semantics>
             </arrayData>
             <arrayData>
                 <name>FederateName</name>
                 <dataType>HLAunicodeChar</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>HLA Federate Name</semantics>
+                <semantics>The unique name of a federate participating in an HLA federation.</semantics>
             </arrayData>
             <arrayData>
                 <name>GeocentricPath</name>
@@ -1844,21 +1855,21 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <dataType>GeodeticLocation</dataType>
                 <cardinality>[2..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A list of lat, lon coordinates in WGS84 reference system specifying a path where each segement is a great circle between locations.</semantics>
+                <semantics>A sequence of geodetic locations defining a path where each segment is a great circle between locations.</semantics>
             </arrayData>
             <arrayData>
                 <name>GeodeticPolygon</name>
                 <dataType>GeodeticLocation</dataType>
                 <cardinality>[3..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A geographical area bounded by a path where the first and last point in the path are closed. Each point is a geodetic coordinate in WGS84 on the earth surface. Each segment is a great circle between locations.</semantics>
+                <semantics>A sequence of geodetic locations defining a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth surface, and each segment is a great circle between locations.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfWorldLocationStruct</name>
                 <dataType>WorldLocationStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A polygonal chain with geocentric points, may be empty.</semantics>
+                <semantics>A polygonal chain (path) expressed as a sequence of geocentric points.</semantics>
             </arrayData>
             <arrayData>
                 <name>SymbolIdentifierArray30</name>
@@ -1879,14 +1890,30 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <dataType>HLAunicodeString</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>An general array datatype for representing a set of strings.</semantics>
+                <semantics>A generic representation of a set of strings.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>UUID</name>
+                <dataType>HLAbyte</dataType>
+                <cardinality>16</cardinality>
+                <encoding>HLAfixedArray</encoding>
+                <semantics>4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
+ 
+For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>ArrayOfUUID</name>
+                <dataType>UUID</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A set of Unique Identifiers as UUID.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
             <fixedRecordData>
                 <name>NETN_SupplyStruct</name>
                 <encoding>HLAfixedRecord</encoding>
-                <semantics>Same encoding as RPR2 SupplyStruct.</semantics>
+                <semantics>Description of supply. Same encoding as RPR2 SupplyStruct.</semantics>
                 <field>
                     <name>SupplyType</name>
                     <dataType>EntityTypeStruct</dataType>
@@ -1901,7 +1928,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             <fixedRecordData>
                 <name>GeodeticCircle</name>
                 <encoding>HLAfixedRecord</encoding>
-                <semantics>A geodetic point and radius specifying a circle on the surface of the earth WGS84 where radius is a great circle distance on the surface.</semantics>
+                <semantics>A geodetic point and radius specifying a circle on the surface of the earth WGS84 where the radius is a great circle distance on the surface.</semantics>
                 <field>
                     <name>CenterPoint</name>
                     <dataType>GeodeticLocation</dataType>
@@ -1946,7 +1973,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             <fixedRecordData>
                 <name>GeocentricCircle</name>
                 <encoding>HLAfixedRecord</encoding>
-                <semantics>Circle</semantics>
+                <semantics>A circle on the local tangent plane (North-East-Down) of the centre at the specified location.</semantics>
                 <field>
                     <name>Location</name>
                     <dataType>WorldLocationStruct</dataType>
@@ -1977,14 +2004,14 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                     <semantics>A circle that defines the area.</semantics>
                 </alternative>
                 <encoding>HLAvariantRecord</encoding>
-                <semantics>Defines the BaseStruct.</semantics>
+                <semantics>Description of an area in the local tangent plane (North-East-Down) of the alternatives.</semantics>
             </variantRecordData>
             <variantRecordData>
                 <name>PathVariantStruct</name>
                 <discriminant>PathType</discriminant>
                 <dataType>PathTypeEnum32</dataType>
                 <alternative>
-                    <enumerator>PathObject</enumerator>
+                    <enumerator>Waypoints</enumerator>
                     <name>Waypoints</name>
                     <dataType>ArrayOfWorldLocationStruct</dataType>
                     <semantics>The path defined by waypoints, not necessarily registered in the federation execution as a NETN_GeoObject.Path. 
@@ -1998,7 +2025,7 @@ The array can be empty (size=0).</semantics>
                     <semantics>A UUID that referes to a NETN_GeoObject.Path that is registred iin the federation execution.</semantics>
                 </alternative>
                 <encoding>HLAvariantRecord</encoding>
-                <semantics>Defines the path, either as a polygonal chain or a UUID that refers to a in the federation execution registred NETN_GeoObject.Path.</semantics>
+                <semantics>Defines a path, either as a polygonal chain of waypoints or a UUID that refers to a path object in the federation.</semantics>
             </variantRecordData>
             <variantRecordData>
                 <name>PointVariantStruct</name>
@@ -2017,7 +2044,7 @@ The array can be empty (size=0).</semantics>
                     <semantics>A UUID that refers to a NETN_GeoObject.Point.</semantics>
                 </alternative>
                 <encoding>HLAvariantRecord</encoding>
-                <semantics>Defines the point, either a Location or a UUID reference to a NETN_GeoObject.Point.</semantics>
+                <semantics>Defines the point, either a Location or a UUID reference to a point object in the federation.</semantics>
             </variantRecordData>
         </variantRecordDataTypes>
     </dataTypes>

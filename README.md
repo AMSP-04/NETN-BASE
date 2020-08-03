@@ -2,6 +2,7 @@
 NATO Education and Training Network Base FOM Module
 
 ## Introduction
+
 ### Purpose
 The NETN-BASE FOM Module provides common definitions of datatypes and extends the RPR-BASE FOM Module.
 
@@ -32,8 +33,8 @@ Version numbering of this FOM Module and associated documentation is based on th
 
 |Version|Description|
 |---|---|
-|v1.0.2 | Initial release of NETN-BASE as used in NETN FOM v2.0 as part of AMPS-04 Ed A|
-|v (tbd) ||
+|v1.0.2 | Initial release of NETN-BASE as used in NETN FOM v2.0|
+|v2.0 | Updated version developed by MSG-163. Release included in NETN-FOM v3.0|
 
 [Changelog](changelog.md)
 
