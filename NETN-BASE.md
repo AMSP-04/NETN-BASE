@@ -51,6 +51,7 @@ The NETN-BASE FOM Module provides standard definitions of datatypes and extends 
 |ArrayOfUuid|UuidArrayOfHLAbyte16|Dynamic|Deprecated. Array of Unique Identifiers expressed as UUIDs.|
 |ArrayOfUUID|UUID|Dynamic|A set of Unique Identifiers as UUID.|
 |ArrayOfWorldLocationStruct|WorldLocationStruct|Dynamic|A polygonal chain (path) expressed as a sequence of geocentric points.|
+|ArrayOfText64|Text64|Dynamic|A set of names of max length 64 unicode characters.|
 |Callsign|HLAunicodeChar|Dynamic|Identifier for a simulated entity. Callsigns should be unique in the context in which they are used but are not required to be globally unique.|
 |FederateName|HLAunicodeChar|Dynamic|The unique name of a federate participating in an HLA federation.|
 |GeocentricPath|WorldLocationStruct|[2..2147483647]|An array of geocentric world locations with at least two elements.|
@@ -60,6 +61,7 @@ The NETN-BASE FOM Module provides standard definitions of datatypes and extends 
 |NETN_ArrayOfSupplyStruct|NETN_SupplyStruct|Dynamic|A set of supply descriptions.|
 |SymbolIdentifierArray15|HLAunicodeChar|15|MIL-STD-2525C symbol code.|
 |SymbolIdentifierArray30|HLAunicodeChar|30|MIL-STD-2525D symbol code.|
+|Text64|HLAunicodeChar|[0..64]|Text of max length 64 characters.|
 |TransactionId|HLAbyte|16|Unique identifier for a transaction. Encoded according to RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs.|
 |UUID|HLAbyte|16|4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.|
 |UuidArrayOfHLAbyte16|HLAbyte|16|Deprecated. UUIDs are exchanged as a byte array and are encoded according to RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.|

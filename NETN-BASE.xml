@@ -1807,8 +1807,8 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
                 <dataType>HLAbyte</dataType>
                 <cardinality>16</cardinality>
                 <encoding>HLAfixedArray</encoding>
-                <semantics>Deprecated.
-
+                <semantics>Deprecated. 
+ 
 UUIDs are exchanged as a byte array and are encoded according to RFC 
  
 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
@@ -1907,6 +1907,20 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A set of Unique Identifiers as UUID.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text64</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..64]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 64 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>ArrayOfText64</name>
+                <dataType>Text64</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A set of names of max length 64 unicode characters.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>

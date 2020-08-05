@@ -33,6 +33,7 @@ Version 2.0 was developed by MSG-163 and included in NETN-FOM v3.0.
 #### Array Datatypes
 
 * Added datatype `ArrayOfStringType`
+* Added datatype `ArrayOfText64`
 * Added datatype `FederateName`
 * Modified datatype `ArrayOfWorldLocationStruct2` to `GeocentricPath`
 * Modified datatype `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
@@ -40,6 +41,7 @@ Version 2.0 was developed by MSG-163 and included in NETN-FOM v3.0.
 * Added datatype `GeodeticPolygon`
 * Added datatype `SymbolIdentifier15`
 * Added datatype `SymbolIdentifier30`
+* Added datatype `Text64`
 * Added datatype `TransactionId`
 * Added datatype `UUID`
 
