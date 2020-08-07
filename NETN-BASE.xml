@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>2.0</version>
-        <modificationDate>2020-08-05</modificationDate>
+        <modificationDate>2020-08-07</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -1846,7 +1846,13 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Deprecated. Array of Unique Identifiers expressed as UUIDs.</semantics>
             </arrayData>
-           
+            <arrayData>
+                <name>GeocentricPolygon</name>
+                <dataType>WorldLocationStruct</dataType>
+                <cardinality>[3..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A polygon defined as a closed polygonal chain of geocentric world locations where the last location is connected to the first.</semantics>
+            </arrayData>
             <arrayData>
                 <name>NETN_ArrayOfSupplyStruct</name>
                 <dataType>NETN_SupplyStruct</dataType>
