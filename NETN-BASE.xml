@@ -1872,20 +1872,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>A polygonal chain (path) expressed as a sequence of geocentric points.</semantics>
             </arrayData>
             <arrayData>
-                <name>SymbolIdentifierArray30</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>30</cardinality>
-                <encoding>HLAfixedArray</encoding>
-                <semantics>MIL-STD-2525D symbol code.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>SymbolIdentifierArray15</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>15</cardinality>
-                <encoding>HLAfixedArray</encoding>
-                <semantics>MIL-STD-2525C symbol code.</semantics>
-            </arrayData>
-            <arrayData>
                 <name>ArrayOfStringType</name>
                 <dataType>HLAunicodeString</dataType>
                 <cardinality>Dynamic</cardinality>
