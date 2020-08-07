@@ -42,6 +42,7 @@ The NETN-BASE FOM Module provides standard definitions of datatypes and extends 
 |EchelonEnum32|HLAinteger32BE|The echelon level of a unit.|
 |PathTypeEnum32|HLAinteger32BE|Specifies if a path is defined by waypoints or by reference to a path object in the federation.|
 |PointTypeEnum32|HLAinteger32BE|Specifies if a point is defined by a location or by reference to a point object in the federation.|
+|SymbolStandardEnum32|HLAinteger32BE|Military symbology standards.|
 
 ### Array Datatypes
 
@@ -83,5 +84,6 @@ The NETN-BASE FOM Module provides standard definitions of datatypes and extends 
 |AreaVariantStruct|AreaTypeEnum32|Polygon, Circle|Description of an area in the local tangent plane (North-East-Down) of the alternatives.|
 |PathVariantStruct|PathTypeEnum32|Waypoints, UUID|Defines a path, either as a polygonal chain of waypoints or a UUID that refers to a path object in the federation.|
 |PointVariantStruct|PointTypeEnum32|Location, UUID|Defines the point, either a Location or a UUID reference to a point object in the federation.|
+|SymbolVariantStruct|SymbolStandardEnum32|SIC15, SIC30|Defines military symbol codes for different symbology standards.|
 
 

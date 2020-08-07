@@ -29,6 +29,8 @@ Version 2.0 was developed by MSG-163 and included in NETN-FOM v3.0.
 
 * Added datatype `CancellationReasonEnum32`
 * Added datatype `EchelonEnum32`
+* Added datatype `EchelonEnum32`
+* Added datatype `SymbolStandardEnum32`
 
 #### Array Datatypes
 
@@ -55,6 +57,7 @@ Version 2.0 was developed by MSG-163 and included in NETN-FOM v3.0.
 * Added datatype `AreaVariantStruct`
 * Added datatype `PathVariantStruct`
 * Added datatype `PointVariantStruct`
+* Added datatype `SymbolVariantStruct`
 
 
 
