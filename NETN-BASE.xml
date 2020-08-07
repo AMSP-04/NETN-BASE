@@ -1846,13 +1846,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Deprecated. Array of Unique Identifiers expressed as UUIDs.</semantics>
             </arrayData>
-            <arrayData>
-                <name>GeocentricPolygon</name>
-                <dataType>WorldLocationStruct</dataType>
-                <cardinality>[3..2147483647]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>A polygon defined as a closed polygonal chain of geocentric world locations where the last location is connected to the first.</semantics>
-            </arrayData>
+           
             <arrayData>
                 <name>NETN_ArrayOfSupplyStruct</name>
                 <dataType>NETN_SupplyStruct</dataType>
@@ -1866,13 +1860,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>The unique name of a federate participating in an HLA federation.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>GeocentricPath</name>
-                <dataType>WorldLocationStruct</dataType>
-                <cardinality>[2..2147483647]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>An array of geocentric world locations with at least two elements.</semantics>
             </arrayData>
             <arrayData>
                 <name>GeodeticPath</name>
@@ -1910,13 +1897,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
  
 For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>ArrayOfUUID</name>
-                <dataType>UUID</dataType>
-                <cardinality>Dynamic</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>A set of Unique Identifiers as UUID.</semantics>
             </arrayData>
             <arrayData>
                 <name>Text64</name>
@@ -1999,21 +1979,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                     <name>Point2</name>
                     <dataType>GeodeticLocation</dataType>
                     <semantics>Lat, Long on WGS84</semantics>
-                </field>
-            </fixedRecordData>
-            <fixedRecordData>
-                <name>GeocentricCircle</name>
-                <encoding>HLAfixedRecord</encoding>
-                <semantics>A circle on the local tangent plane (North-East-Down) of the centre at the specified location.</semantics>
-                <field>
-                    <name>Location</name>
-                    <dataType>WorldLocationStruct</dataType>
-                    <semantics>Origo.</semantics>
-                </field>
-                <field>
-                    <name>Radius</name>
-                    <dataType>MeterFloat32</dataType>
-                    <semantics>The radius of the circle.</semantics>
                 </field>
             </fixedRecordData>
             <fixedRecordData>
