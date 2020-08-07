@@ -1674,7 +1674,7 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
             <enumeratedData>
                 <name>AreaTypeEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Specifies if a generic area is a polygon or a circle.</semantics>
+                <semantics>Specifies if a an area is defined as a set of points, point+radius or two points.</semantics>
                 <enumerator>
                     <name>Polygon</name>
                     <value>1</value>
@@ -1682,6 +1682,10 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
                 <enumerator>
                     <name>Circle</name>
                     <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>Rect</name>
+                    <value>3</value>
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
@@ -1992,6 +1996,26 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                     <semantics>The radius of the circle.</semantics>
                 </field>
             </fixedRecordData>
+            <fixedRecordData>
+                <name>GeodeticPoint</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>A geodetic point, specified by latitude, longitude and altitude.</semantics>
+                <field>
+                    <name>Latitude</name>
+                    <dataType>LatLongDegreesFloat64</dataType>
+                    <semantics>The latitude in degrees.</semantics>
+                </field>
+                <field>
+                    <name>Longitude</name>
+                    <dataType>LatLongDegreesFloat64</dataType>
+                    <semantics>The longitude in degrees.</semantics>
+                </field>
+                <field>
+                    <name>Altitude</name>
+                    <dataType>AltitudeMeterFloat64</dataType>
+                    <semantics>Height Above Mean Sea Level</semantics>
+                </field>
+            </fixedRecordData>
         </fixedRecordDataTypes>
         <variantRecordDataTypes>
             <variantRecordData>
@@ -2001,17 +2025,23 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <alternative>
                     <enumerator>Polygon</enumerator>
                     <name>Polygon</name>
-                    <dataType>GeocentricPolygon</dataType>
-                    <semantics>A closed polygonal chain that defines the area. The first and last point coincides.</semantics>
+                    <dataType>GeodeticPolygon</dataType>
+                    <semantics>A sequence of geodetic locations defining a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth surface, and each segment is a great circle between locations.</semantics>
                 </alternative>
                 <alternative>
                     <enumerator>Circle</enumerator>
                     <name>Circle</name>
-                    <dataType>GeocentricCircle</dataType>
-                    <semantics>A circle that defines the area.</semantics>
+                    <dataType>GeodeticCircle</dataType>
+                    <semantics>A geodetic point and radius specifying a circle on the surface of the earth WGS84 where the radius is a great circle distance on the surface.</semantics>
+                </alternative>
+                <alternative>
+                    <enumerator>Rect</enumerator>
+                    <name>Quadrangle</name>
+                    <dataType>GeodeticQuadrangle</dataType>
+                    <semantics>A latitude-longitude quadrangle is a region bounded by two meridians and two parallels.</semantics>
                 </alternative>
                 <encoding>HLAvariantRecord</encoding>
-                <semantics>Description of an area in the local tangent plane (North-East-Down) of the alternatives.</semantics>
+                <semantics>Description of an area relative to the earths surface.</semantics>
             </variantRecordData>
             <variantRecordData>
                 <name>PathVariantStruct</name>
