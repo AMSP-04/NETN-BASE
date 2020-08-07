@@ -1672,11 +1672,11 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
-                <name>AreaTypeEnum32</name>
+                <name>GeoLocationTypeEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Specifies if a an area is defined as a set of points, point+radius or two points.</semantics>
+                <semantics>Specifies different ways to reference geographical locations.</semantics>
                 <enumerator>
-                    <name>Polygon</name>
+                    <name>Point</name>
                     <value>1</value>
                 </enumerator>
                 <enumerator>
@@ -1684,8 +1684,28 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
                     <value>2</value>
                 </enumerator>
                 <enumerator>
-                    <name>Rect</name>
+                    <name>Polygon</name>
                     <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>Quadrangle</name>
+                    <value>4</value>
+                </enumerator>
+                <enumerator>
+                    <name>Path</name>
+                    <value>5</value>
+                </enumerator>
+                <enumerator>
+                    <name>NETN_UUID</name>
+                    <value>6</value>
+                </enumerator>
+                <enumerator>
+                    <name>RPR_Entity</name>
+                    <value>7</value>
+                </enumerator>
+                <enumerator>
+                    <name>NameReference</name>
+                    <value>8</value>
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
@@ -2021,27 +2041,27 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             <variantRecordData>
                 <name>AreaVariantStruct</name>
                 <discriminant>AreaType</discriminant>
-                <dataType>AreaTypeEnum32</dataType>
+                <dataType>GeoLocationTypeEnum32</dataType>
                 <alternative>
                     <enumerator>Polygon</enumerator>
-                    <name>Polygon</name>
+                    <name>GeodeticPolygon</name>
                     <dataType>GeodeticPolygon</dataType>
                     <semantics>A sequence of geodetic locations defining a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth surface, and each segment is a great circle between locations.</semantics>
                 </alternative>
                 <alternative>
                     <enumerator>Circle</enumerator>
-                    <name>Circle</name>
+                    <name>GeodeticCircle</name>
                     <dataType>GeodeticCircle</dataType>
                     <semantics>A geodetic point and radius specifying a circle on the surface of the earth WGS84 where the radius is a great circle distance on the surface.</semantics>
                 </alternative>
                 <alternative>
-                    <enumerator>Rect</enumerator>
-                    <name>Quadrangle</name>
+                    <enumerator>Quadrangle</enumerator>
+                    <name>GeodeticQuadrangle</name>
                     <dataType>GeodeticQuadrangle</dataType>
                     <semantics>A latitude-longitude quadrangle is a region bounded by two meridians and two parallels.</semantics>
                 </alternative>
                 <encoding>HLAvariantRecord</encoding>
-                <semantics>Description of an area relative to the earths surface.</semantics>
+                <semantics>Description of an area relative to the earth's surface.</semantics>
             </variantRecordData>
             <variantRecordData>
                 <name>PathVariantStruct</name>
