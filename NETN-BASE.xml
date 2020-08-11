@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>2.0</version>
-        <modificationDate>2020-08-05</modificationDate>
+        <modificationDate>2020-08-07</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -1672,16 +1672,40 @@ This attribute represents the 7 digits value of the IMO number. The value shall 
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
-                <name>AreaTypeEnum32</name>
+                <name>GeoLocationTypeEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Specifies if a generic area is a polygon or a circle.</semantics>
+                <semantics>Specifies different ways to reference geographical locations.</semantics>
                 <enumerator>
-                    <name>Polygon</name>
+                    <name>Point</name>
                     <value>1</value>
                 </enumerator>
                 <enumerator>
                     <name>Circle</name>
                     <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>Polygon</name>
+                    <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>Quadrangle</name>
+                    <value>4</value>
+                </enumerator>
+                <enumerator>
+                    <name>Path</name>
+                    <value>5</value>
+                </enumerator>
+                <enumerator>
+                    <name>NETN_UUID</name>
+                    <value>6</value>
+                </enumerator>
+                <enumerator>
+                    <name>RPR_Entity</name>
+                    <value>7</value>
+                </enumerator>
+                <enumerator>
+                    <name>NameReference</name>
+                    <value>8</value>
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
@@ -1822,13 +1846,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Deprecated. Array of Unique Identifiers expressed as UUIDs.</semantics>
             </arrayData>
-            <arrayData>
-                <name>GeocentricPolygon</name>
-                <dataType>WorldLocationStruct</dataType>
-                <cardinality>[3..2147483647]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>A polygon defined as a closed polygonal chain of geocentric world locations where the last location is connected to the first.</semantics>
-            </arrayData>
+           
             <arrayData>
                 <name>NETN_ArrayOfSupplyStruct</name>
                 <dataType>NETN_SupplyStruct</dataType>
@@ -1842,13 +1860,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>The unique name of a federate participating in an HLA federation.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>GeocentricPath</name>
-                <dataType>WorldLocationStruct</dataType>
-                <cardinality>[2..2147483647]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>An array of geocentric world locations with at least two elements.</semantics>
             </arrayData>
             <arrayData>
                 <name>GeodeticPath</name>
@@ -1872,20 +1883,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>A polygonal chain (path) expressed as a sequence of geocentric points.</semantics>
             </arrayData>
             <arrayData>
-                <name>SymbolIdentifierArray30</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>30</cardinality>
-                <encoding>HLAfixedArray</encoding>
-                <semantics>MIL-STD-2525D symbol code.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>SymbolIdentifierArray15</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>15</cardinality>
-                <encoding>HLAfixedArray</encoding>
-                <semantics>MIL-STD-2525C symbol code.</semantics>
-            </arrayData>
-            <arrayData>
                 <name>ArrayOfStringType</name>
                 <dataType>HLAunicodeString</dataType>
                 <cardinality>Dynamic</cardinality>
@@ -1902,13 +1899,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
 For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
             </arrayData>
             <arrayData>
-                <name>ArrayOfUUID</name>
-                <dataType>UUID</dataType>
-                <cardinality>Dynamic</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>A set of Unique Identifiers as UUID.</semantics>
-            </arrayData>
-            <arrayData>
                 <name>Text64</name>
                 <dataType>HLAunicodeChar</dataType>
                 <cardinality>[0..64]</cardinality>
@@ -1921,6 +1911,13 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A set of names of max length 64 unicode characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>SymbolIdentifier</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A symbol identifier is represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
@@ -1985,18 +1982,23 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 </field>
             </fixedRecordData>
             <fixedRecordData>
-                <name>GeocentricCircle</name>
+                <name>GeodeticPoint</name>
                 <encoding>HLAfixedRecord</encoding>
-                <semantics>A circle on the local tangent plane (North-East-Down) of the centre at the specified location.</semantics>
+                <semantics>A geodetic point, specified by latitude, longitude and altitude.</semantics>
                 <field>
-                    <name>Location</name>
-                    <dataType>WorldLocationStruct</dataType>
-                    <semantics>Origo.</semantics>
+                    <name>Latitude</name>
+                    <dataType>LatLongDegreesFloat64</dataType>
+                    <semantics>The latitude in degrees.</semantics>
                 </field>
                 <field>
-                    <name>Radius</name>
-                    <dataType>MeterFloat32</dataType>
-                    <semantics>The radius of the circle.</semantics>
+                    <name>Longitude</name>
+                    <dataType>LatLongDegreesFloat64</dataType>
+                    <semantics>The longitude in degrees.</semantics>
+                </field>
+                <field>
+                    <name>Altitude</name>
+                    <dataType>AltitudeMeterFloat64</dataType>
+                    <semantics>Height Above Mean Sea Level</semantics>
                 </field>
             </fixedRecordData>
         </fixedRecordDataTypes>
@@ -2004,21 +2006,27 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             <variantRecordData>
                 <name>AreaVariantStruct</name>
                 <discriminant>AreaType</discriminant>
-                <dataType>AreaTypeEnum32</dataType>
+                <dataType>GeoLocationTypeEnum32</dataType>
                 <alternative>
                     <enumerator>Polygon</enumerator>
-                    <name>Polygon</name>
-                    <dataType>GeocentricPolygon</dataType>
-                    <semantics>A closed polygonal chain that defines the area. The first and last point coincides.</semantics>
+                    <name>GeodeticPolygon</name>
+                    <dataType>GeodeticPolygon</dataType>
+                    <semantics>A sequence of geodetic locations defining a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth surface, and each segment is a great circle between locations.</semantics>
                 </alternative>
                 <alternative>
                     <enumerator>Circle</enumerator>
-                    <name>Circle</name>
-                    <dataType>GeocentricCircle</dataType>
-                    <semantics>A circle that defines the area.</semantics>
+                    <name>GeodeticCircle</name>
+                    <dataType>GeodeticCircle</dataType>
+                    <semantics>A geodetic point and radius specifying a circle on the surface of the earth WGS84 where the radius is a great circle distance on the surface.</semantics>
+                </alternative>
+                <alternative>
+                    <enumerator>Quadrangle</enumerator>
+                    <name>GeodeticQuadrangle</name>
+                    <dataType>GeodeticQuadrangle</dataType>
+                    <semantics>A latitude-longitude quadrangle is a region bounded by two meridians and two parallels.</semantics>
                 </alternative>
                 <encoding>HLAvariantRecord</encoding>
-                <semantics>Description of an area in the local tangent plane (North-East-Down) of the alternatives.</semantics>
+                <semantics>Description of an area relative to the earth's surface.</semantics>
             </variantRecordData>
             <variantRecordData>
                 <name>PathVariantStruct</name>

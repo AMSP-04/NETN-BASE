@@ -29,14 +29,17 @@ Version 2.0 was developed by MSG-163 and included in NETN-FOM v3.0.
 
 * Added datatype `CancellationReasonEnum32`
 * Added datatype `EchelonEnum32`
+* Added datatype `EchelonEnum32`
+* Added datatype `SymbolStandardEnum32`
+* Added datatype `GeoLocationTypeEnum32`
 
 #### Array Datatypes
 
 * Added datatype `ArrayOfStringType`
 * Added datatype `ArrayOfText64`
 * Added datatype `FederateName`
-* Modified datatype `ArrayOfWorldLocationStruct2` to `GeocentricPath`
-* Modified datatype `ArrayOfWorldLocationStruct3` to `GeocentricPolygon`
+* Removed datatype `ArrayOfWorldLocationStruct2` 
+* Removed datatype `ArrayOfWorldLocationStruct3`
 * Added datatype `GeodeticPath`
 * Added datatype `GeodeticPolygon`
 * Added datatype `SymbolIdentifier15`
@@ -50,11 +53,13 @@ Version 2.0 was developed by MSG-163 and included in NETN-FOM v3.0.
 * Added datatype `GeodeticCircle`
 * Added datatype `GeodeticLocation`
 * Added datatype `GeodeticQuadrangle`
+* Added datatype `GeodeticPoint`
 
 #### Variant Record Datatypes
 * Added datatype `AreaVariantStruct`
 * Added datatype `PathVariantStruct`
 * Added datatype `PointVariantStruct`
+* Added datatype `SymbolVariantStruct`
 
 
 
