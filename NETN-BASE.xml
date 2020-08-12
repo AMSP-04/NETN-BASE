@@ -132,56 +132,12 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <semantics>A generic time interval in seconds.</semantics>
             </simpleData>
             <simpleData>
-                <name>MIDType</name>
-                <representation>HLAinteger16BE</representation>
-                <units>NA</units>
-                <resolution>NA</resolution>
-                <accuracy>3 decimal digits</accuracy>
-                <semantics>The Maritime Identification Digits (MID) for an individual vessel is a three digits code. See https://www.itu.int/en/ITU-R and also https://en.wikipedia.org/wiki/Maritime_identification_digits.</semantics>
-            </simpleData>
-            <simpleData>
-                <name>IMOType</name>
-                <representation>HLAinteger32BE</representation>
-                <units>NA</units>
-                <resolution>NA</resolution>
-                <accuracy>30 bits</accuracy>
-                <semantics>The International Maritime Organization (IMO) number is a unique identifier for vessels. See https://www.itu.int/en/ITU-R. 
- 
-The IMO number is made of the three letters "IMO" followed by a seven-digit number. This number consists of a six-digit sequential unique number followed by a check digit. The integrity of an IMO number can be verified using its check digit.This is done by multiplying each of the first six digits by a factor of 2 to 7 corresponding to their position from right to left. The rightmost digit of this sum is the check digit. For example, for IMO 9074729: (9×7) + (0×6) + (7×5) + (4×4) + (7×3) + (2×2) = 139. 
- 
-This attribute represents the 7 digits value of the IMO number. The value shall be zero for not available (default). The value shall also be zero for inland vessels.</semantics>
-            </simpleData>
-            <simpleData>
-                <name>ShipTypeType</name>
-                <representation>HLAoctet</representation>
-                <units>NA</units>
-                <resolution>NA</resolution>
-                <accuracy>8 bits</accuracy>
-                <semantics>The type of ship and cargo. See https://www.itu.int/en/ITU-R.</semantics>
-            </simpleData>
-            <simpleData>
-                <name>DegreesPerSecondFloat32</name>
-                <representation>HLAfloat32BE</representation>
-                <units>Degrees/second</units>
-                <resolution>NA</resolution>
-                <accuracy>NA</accuracy>
-                <semantics>The turn rate in degrees per second, where: (a) zero value: not turning; (b) positive value: turning right; (c) negative value: turning left.</semantics>
-            </simpleData>
-            <simpleData>
                 <name>AltitudeMeterFloat64</name>
                 <representation>HLAfloat64BE</representation>
                 <units>Meter</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
                 <semantics>Generic representation of altitude defined by the context of use, i.e. height Above Mean Sea Level, height Above Ground Level.</semantics>
-            </simpleData>
-            <simpleData>
-                <name>DraughtMeterFloat32</name>
-                <representation>HLAfloat32BE</representation>
-                <units>Meter</units>
-                <resolution>NA</resolution>
-                <accuracy>NA</accuracy>
-                <semantics>The vertical distance between the waterline and the bottom of the hull (keel), with the thickness of the hull included; Draught determines the minimum depth of water a ship or boat can safely navigate.</semantics>
             </simpleData>
             <simpleData>
                 <name>MassConcentrationFloat32</name>
@@ -1846,7 +1802,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Deprecated. Array of Unique Identifiers expressed as UUIDs.</semantics>
             </arrayData>
-           
             <arrayData>
                 <name>NETN_ArrayOfSupplyStruct</name>
                 <dataType>NETN_SupplyStruct</dataType>
