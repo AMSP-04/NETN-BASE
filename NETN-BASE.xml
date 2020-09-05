@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>2.0</version>
-        <modificationDate>2020-08-07</modificationDate>
+        <modificationDate>2020-09-05</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -35,16 +35,6 @@
             <pocName>MSG-106 Enhanced CAX Architecture, Desing and Methodology</pocName>
             <pocOrg>NATO Modelling and Simulation Group</pocOrg>
             <pocEmail>msg@cso.nato.int</pocEmail>
-        </poc>
-        <poc>
-            <pocType>Contributor</pocType>
-            <pocName>Lennart Olsson</pocName>
-            <pocOrg>Pitch Technologies, Sweden</pocOrg>
-        </poc>
-        <poc>
-            <pocType>Contributor</pocType>
-            <pocName>Björn Löfstrand</pocName>
-            <pocOrg>Pitch Technologies, Sweden</pocOrg>
         </poc>
         <reference>
             <type>Dependency</type>
