@@ -1914,19 +1914,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A symbol identifier is represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
             </arrayData>
-            <arrayData>
-                <name>UuidArrayOfHLAbyte16</name>
-                <dataType>HLAbyte</dataType>
-                <cardinality>16</cardinality>
-                <encoding>HLAfixedArray</encoding>
-                <semantics>Deprecated. 
- 
-UUIDs are exchanged as a byte array and are encoded according to RFC 
- 
-4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
- 
-For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
-            </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
             <fixedRecordData>
