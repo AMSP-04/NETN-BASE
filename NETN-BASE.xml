@@ -63,7 +63,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics> Optional. A symbol identifier represented as a string.</semantics>
+                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                 </attribute>
                 <attribute>
                     <name>Status</name>
@@ -1827,13 +1827,6 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Identifier for a simulated entity. Callsigns should be unique in the context in which they are used but are not required to be globally unique.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>TransactionId</name>
-                <dataType>HLAbyte</dataType>
-                <cardinality>16</cardinality>
-                <encoding>HLAfixedArray</encoding>
-                <semantics>Unique identifier for a transaction. Encoded according to RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfUuid</name>
