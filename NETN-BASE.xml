@@ -96,19 +96,6 @@ An inactive instance may have its instance attributes updated by a federate but 
             <name>HLAinteractionRoot</name>
         </interactionClass>
     </interactions>
-    <switches>
-        <autoProvide isEnabled="true"/>
-        <conveyRegionDesignatorSets isEnabled="false"/>
-        <conveyProducingFederate isEnabled="false"/>
-        <attributeScopeAdvisory isEnabled="false"/>
-        <attributeRelevanceAdvisory isEnabled="false"/>
-        <objectClassRelevanceAdvisory isEnabled="false"/>
-        <interactionRelevanceAdvisory isEnabled="false"/>
-        <serviceReporting isEnabled="false"/>
-        <exceptionReporting isEnabled="false"/>
-        <delaySubscriptionEvaluation isEnabled="false"/>
-        <automaticResignAction resignAction="CancelThenDeleteThenDivest"/>
-    </switches>
     <dataTypes>
         <basicDataRepresentations/>
         <simpleDataTypes>
