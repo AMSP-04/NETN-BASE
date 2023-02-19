@@ -3,7 +3,9 @@
 ### Changes for v3.0
 Version 3.0 was developed by MSG-191 and included in NETN-FOM v4.0.
 
-* Added `Id` attribute to `HLAobjectRoot` objectClass
+* Added `UniqueId` attribute to extend `HLAobjectRoot` objectClass
+* Added `Status` attribute to extend `BaseEntity` objectClass
+* Added `SymbolId` attribute to extend `BaseEntity` objectClass
 * Removed datatype `TransactionId` and changed all occurrences to `UUID` 
 
 ### Changes for v2.0
