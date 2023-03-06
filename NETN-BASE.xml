@@ -3,8 +3,8 @@
     <modelIdentification>
         <name>NETN-BASE</name>
         <type>FOM</type>
-        <version>3.0</version>
-        <modificationDate>2023-02-19</modificationDate>
+        <version>2.1</version>
+        <modificationDate>2023-02-20</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -12,7 +12,7 @@
         <useLimitation></useLimitation>
         <useHistory>v1.0.2 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
         <useHistory>v2.0.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0</useHistory>
-        <useHistory>v3.0.0 - Updated version developed by MSG-191. Release included in NETN-FOM v4.0</useHistory>
+        <useHistory>v2.1.0 - Updated version developed by MSG-191. Release included in NETN-FOM v4.0</useHistory>
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -60,21 +60,20 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
             <sharing>Neither</sharing>
             <semantics></semantics>
             <attribute>
-                    <name>UniqueId</name>
-                    <dataType>UUID</dataType>
-                    <updateType>Static</updateType>
-                    <updateCondition>NA</updateCondition>
-                    <ownership>DivestAcquire</ownership>
-                    <sharing>PublishSubscribe</sharing>
-                    <transportation>HLAreliable</transportation>
-                    <order>Receive</order>
-                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
-                </attribute>
+                <name>UniqueId</name>
+                <dataType>UUID</dataType>
+                <updateType>Static</updateType>
+                <updateCondition>NA</updateCondition>
+                <ownership>DivestAcquire</ownership>
+                <sharing>PublishSubscribe</sharing>
+                <transportation>HLAreliable</transportation>
+                <order>Receive</order>
+                <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+            </attribute>
             <objectClass>
                 <name>BaseEntity</name>
                 <sharing>Subscribe</sharing>
                 <semantics>A base class of aggregate and discrete scenario domain participants. The BaseEntity class is characterized by being located at a particular location in space and independently movable, if capable of movement at all. It specifically excludes elements normally considered to be a component of another element. The BaseEntity class is intended to be a container for common attributes for entities of this type. Since it lacks sufficient class specific attributes that are required for simulation purposes, federates cannot publish objects of this class. Certain simulation management federates, e.g. viewers, may subscribe to this class. Simulation federates will normally subscribe to one of the subclasses, to gain the extra information required to properly simulate the entity.</semantics>
-                
                 <attribute>
                     <name>Status</name>
                     <dataType>ActiveStatusEnum8</dataType>
@@ -101,11 +100,6 @@ An inactive instance may have its instance attributes updated by a federate but 
             </objectClass>
         </objectClass>
     </objects>
-    <interactions>
-        <interactionClass>
-            <name>HLAinteractionRoot</name>
-        </interactionClass>
-    </interactions>
     <dataTypes>
         <basicDataRepresentations/>
         <simpleDataTypes>
@@ -214,6 +208,63 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <enumerator>
                     <name>Inactive</name>
                     <value>2</value>
+                </enumerator>
+            </enumeratedData>
+            <enumeratedData>
+                <name>HostilityStatusCodeEnum32</name>
+                <representation>HLAinteger32BE</representation>
+                <semantics>The specific value that represents the perceived hostility status.</semantics>
+                <enumerator>
+                    <name>AFR</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>AHO</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>AIV</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>ANT</name>
+                    <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>FAKER</name>
+                    <value>4</value>
+                </enumerator>
+                <enumerator>
+                    <name>FR</name>
+                    <value>5</value>
+                </enumerator>
+                <enumerator>
+                    <name>HO</name>
+                    <value>6</value>
+                </enumerator>
+                <enumerator>
+                    <name>IV</name>
+                    <value>7</value>
+                </enumerator>
+                <enumerator>
+                    <name>JOKER</name>
+                    <value>8</value>
+                </enumerator>
+                <enumerator>
+                    <name>NEUTRL</name>
+                    <value>9</value>
+                </enumerator>
+                <enumerator>
+                    <name>PENDNG</name>
+                    <value>10</value>
+                </enumerator>
+                <enumerator>
+                    <name>SUSPCT</name>
+                    <value>11</value>
+                </enumerator>
+                <enumerator>
+                    <name>UNK</name>
+                    <value>12</value>
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
@@ -1984,6 +2035,26 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                     <name>Altitude</name>
                     <dataType>AltitudeMeterFloat64</dataType>
                     <semantics>Height Above Mean Sea Level</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>WorldLocationStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>The location of an object in the world coordinate system, as specified in IEEE Std 1278.1-1995 section 1.3.2.</semantics>
+                <field>
+                    <name>X</name>
+                    <dataType>MeterFloat64</dataType>
+                    <semantics>Distance from the origin along the X axis.</semantics>
+                </field>
+                <field>
+                    <name>Y</name>
+                    <dataType>MeterFloat64</dataType>
+                    <semantics>Distance from the origin along the Y axis.</semantics>
+                </field>
+                <field>
+                    <name>Z</name>
+                    <dataType>MeterFloat64</dataType>
+                    <semantics>Distance from the origin along the Z axis.</semantics>
                 </field>
             </fixedRecordData>
         </fixedRecordDataTypes>

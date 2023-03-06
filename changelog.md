@@ -1,12 +1,21 @@
 ## Changelog NETN-BASE
 
-### Changes for v3.0
-Version 3.0 was developed by MSG-191 and included in NETN-FOM v4.0.
+### Changes for v2.1
+Version 2.1 was developed by MSG-191 and included in NETN-FOM v4.0.
 
 * Added `UniqueId` attribute to extend `HLAobjectRoot` objectClass
 * Added `Status` attribute to extend `BaseEntity` objectClass
 * Added `SymbolId` attribute to extend `BaseEntity` objectClass
-* Removed datatype `TransactionId` and changed all occurrences to `UUID` 
+* Added Enumerated Datatype `HostilityStatusCodeEnum32` moved from NETN-ORG
+
+#### Array Datatypes
+
+* Removed datatype `TransactionId` and changed all dependencies to use `UUID` instead
+
+#### Fixed Record Datatypes
+
+* Added datatype `WorldLocationStruct` for RPR-FOM v2 and RPR-FOM v3 compatibility
+
 
 ### Changes for v2.0
 Version 2.0 was developed by MSG-163 and included in NETN-FOM v3.0.
