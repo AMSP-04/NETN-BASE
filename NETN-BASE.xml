@@ -1867,8 +1867,36 @@ An inactive instance may have its instance attributes updated by a federate but 
                     <value>20</value>
                 </enumerator>
             </enumeratedData>
+            <enumeratedData>
+                <name>DamageStatusEnum32</name>
+                <representation>RPRunsignedInteger32BE</representation>
+                <semantics>Damaged appearance</semantics>
+                <enumerator>
+                    <name>NoDamage</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>SlightDamage</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>ModerateDamage</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>Destroyed</name>
+                    <value>3</value>
+                </enumerator>
+            </enumeratedData>
         </enumeratedDataTypes>
         <arrayDataTypes>
+            <arrayData>
+                <name>SupplyStructArray</name>
+                <dataType>SupplyStruct</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A list of supply types and the number of each being offered or requested.</semantics>
+            </arrayData>
             <arrayData>
                 <name>Callsign</name>
                 <dataType>HLAunicodeChar</dataType>
@@ -1882,13 +1910,6 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Array of Unique Identifiers expressed as UUIDs.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>NETN_ArrayOfSupplyStruct</name>
-                <dataType>NETN_SupplyStruct</dataType>
-                <cardinality>Dynamic</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>A set of supply descriptions.</semantics>
             </arrayData>
             <arrayData>
                 <name>FederateName</name>
@@ -1957,21 +1978,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
-            <fixedRecordData>
-                <name>NETN_SupplyStruct</name>
-                <encoding>HLAfixedRecord</encoding>
-                <semantics>Description of supply. Same encoding as RPR2 SupplyStruct.</semantics>
-                <field>
-                    <name>SupplyType</name>
-                    <dataType>EntityTypeStruct</dataType>
-                    <semantics>The type of supply (as described in the Bit Encoded Values for Use with Protocols for Distributed Interactive Simulation Applications)</semantics>
-                </field>
-                <field>
-                    <name>Quantity</name>
-                    <dataType>QuantityFloat32</dataType>
-                    <semantics>The number of units of the supply type.  The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
-                </field>
-            </fixedRecordData>
             <fixedRecordData>
                 <name>GeodeticCircle</name>
                 <encoding>HLAfixedRecord</encoding>
@@ -2055,6 +2061,21 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                     <name>Z</name>
                     <dataType>MeterFloat64</dataType>
                     <semantics>Distance from the origin along the Z axis.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>SupplyStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Represents a single supply type and the quantity being offered or requested.</semantics>
+                <field>
+                    <name>SupplyType</name>
+                    <dataType>EntityTypeStruct</dataType>
+                    <semantics>The type of supply being offered or requested.</semantics>
+                </field>
+                <field>
+                    <name>Quantity</name>
+                    <dataType>Float32</dataType>
+                    <semantics>The number of units of the supply type. The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
                 </field>
             </fixedRecordData>
         </fixedRecordDataTypes>

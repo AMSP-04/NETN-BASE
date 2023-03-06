@@ -7,6 +7,9 @@ Version 2.1 was developed by MSG-191 and included in NETN-FOM v4.0.
 * Added `Status` attribute to extend `BaseEntity` objectClass
 * Added `SymbolId` attribute to extend `BaseEntity` objectClass
 * Added Enumerated Datatype `HostilityStatusCodeEnum32` moved from NETN-ORG
+* Added Enumerade Datatype `DamageStatusEnum32` a copy the same datatype in RPR FOM 2 Enumerations
+* Replaced Fixed Record datatype `NETN_SupplyStruct` with `SupplyStruct` a copy the same datatype in RPR Logistics
+* Replaced Array datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` a copy the same datatype in RPR Logistics
 
 #### Array Datatypes
 
