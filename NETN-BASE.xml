@@ -1671,16 +1671,16 @@ An inactive instance may have its instance attributes updated by a federate but 
                     <value>347</value>
                 </enumerator>
                 <enumerator>
-                    <name>Other</name>
-                    <value>0</value>
-                </enumerator>
-                <enumerator>
                     <name>Stopped</name>
                     <value>348</value>
                 </enumerator>
                 <enumerator>
                     <name>Waiting</name>
                     <value>349</value>
+                </enumerator>
+                <enumerator>
+                    <name>Other</name>
+                    <value>0</value>
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
