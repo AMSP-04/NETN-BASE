@@ -1520,144 +1520,152 @@ An inactive instance may have its instance attributes updated by a federate but 
                     <value>312</value>
                 </enumerator>
                 <enumerator>
-                    <name>StateOfWar</name>
+                    <name>Stopped</name>
                     <value>313</value>
                 </enumerator>
                 <enumerator>
-                    <name>Strafing_Aerial</name>
+                    <name>StateOfWar</name>
                     <value>314</value>
                 </enumerator>
                 <enumerator>
-                    <name>Strike</name>
+                    <name>Strafing_Aerial</name>
                     <value>315</value>
                 </enumerator>
                 <enumerator>
-                    <name>Suicide</name>
+                    <name>Strike</name>
                     <value>316</value>
                 </enumerator>
                 <enumerator>
-                    <name>Supporting</name>
+                    <name>Suicide</name>
                     <value>317</value>
                 </enumerator>
                 <enumerator>
-                    <name>Suppressing</name>
+                    <name>Supporting</name>
                     <value>318</value>
                 </enumerator>
                 <enumerator>
-                    <name>Surrender</name>
+                    <name>Suppressing</name>
                     <value>319</value>
                 </enumerator>
                 <enumerator>
-                    <name>Surveillance_Electronic</name>
+                    <name>Surrender</name>
                     <value>320</value>
                 </enumerator>
                 <enumerator>
-                    <name>SuspensionOfHostilities</name>
+                    <name>Surveillance_Electronic</name>
                     <value>321</value>
                 </enumerator>
                 <enumerator>
-                    <name>Terrorism</name>
+                    <name>SuspensionOfHostilities</name>
                     <value>322</value>
                 </enumerator>
                 <enumerator>
-                    <name>Threaten</name>
+                    <name>Terrorism</name>
                     <value>323</value>
                 </enumerator>
                 <enumerator>
-                    <name>Torture</name>
+                    <name>Threaten</name>
                     <value>324</value>
                 </enumerator>
                 <enumerator>
-                    <name>Transporting</name>
+                    <name>Torture</name>
                     <value>325</value>
                 </enumerator>
                 <enumerator>
-                    <name>Traversing</name>
+                    <name>Transporting</name>
                     <value>326</value>
                 </enumerator>
                 <enumerator>
-                    <name>TreatyViolation</name>
+                    <name>Traversing</name>
                     <value>327</value>
                 </enumerator>
                 <enumerator>
-                    <name>Troublemaking_Agitating</name>
+                    <name>TreatyViolation</name>
                     <value>328</value>
                 </enumerator>
                 <enumerator>
-                    <name>Troublemaking_Bullying</name>
+                    <name>Troublemaking_Agitating</name>
                     <value>329</value>
                 </enumerator>
                 <enumerator>
-                    <name>Troublemaking_Harassing</name>
+                    <name>Troublemaking_Bullying</name>
                     <value>330</value>
                 </enumerator>
                 <enumerator>
-                    <name>Troublemaking_Hooliganism</name>
+                    <name>Troublemaking_Harassing</name>
                     <value>331</value>
                 </enumerator>
                 <enumerator>
-                    <name>Troublemaking_Inciting</name>
+                    <name>Troublemaking_Hooliganism</name>
                     <value>332</value>
                 </enumerator>
                 <enumerator>
-                    <name>Troublemaking_Intimidating</name>
+                    <name>Troublemaking_Inciting</name>
                     <value>333</value>
                 </enumerator>
                 <enumerator>
-                    <name>Turning</name>
+                    <name>Troublemaking_Intimidating</name>
                     <value>334</value>
                 </enumerator>
                 <enumerator>
-                    <name>UnexplodedOrdnanceDiscovery</name>
+                    <name>Turning</name>
                     <value>335</value>
                 </enumerator>
                 <enumerator>
-                    <name>VandalismOrRapeOrLootOrRansackOrPlunderOrSack</name>
+                    <name>UnexplodedOrdnanceDiscovery</name>
                     <value>336</value>
                 </enumerator>
                 <enumerator>
-                    <name>Verifying</name>
+                    <name>VandalismOrRapeOrLootOrRansackOrPlunderOrSack</name>
                     <value>337</value>
                 </enumerator>
                 <enumerator>
-                    <name>VesselSinking</name>
+                    <name>Verifying</name>
                     <value>338</value>
                 </enumerator>
                 <enumerator>
-                    <name>VolcanicEruption</name>
+                    <name>VesselSinking</name>
                     <value>339</value>
                 </enumerator>
                 <enumerator>
-                    <name>WarOrCrisisAlert</name>
+                    <name>VolcanicEruption</name>
                     <value>340</value>
                 </enumerator>
                 <enumerator>
-                    <name>WarOrMilitaryConference</name>
+                    <name>Waiting</name>
                     <value>341</value>
                 </enumerator>
                 <enumerator>
-                    <name>WarCrime</name>
+                    <name>WarOrCrisisAlert</name>
                     <value>342</value>
                 </enumerator>
                 <enumerator>
-                    <name>WeaponFiring</name>
+                    <name>WarOrMilitaryConference</name>
                     <value>343</value>
                 </enumerator>
                 <enumerator>
-                    <name>Withdrawal</name>
+                    <name>WarCrime</name>
                     <value>344</value>
                 </enumerator>
                 <enumerator>
-                    <name>WithdrawalUnderPressure</name>
+                    <name>WeaponFiring</name>
                     <value>345</value>
                 </enumerator>
                 <enumerator>
-                    <name>Witnessing</name>
+                    <name>Withdrawal</name>
                     <value>346</value>
                 </enumerator>
                 <enumerator>
-                    <name>NotOtherwiseSpecified</name>
+                    <name>WithdrawalUnderPressure</name>
                     <value>347</value>
+                </enumerator>
+                <enumerator>
+                    <name>Witnessing</name>
+                    <value>348</value>
+                </enumerator>
+                <enumerator>
+                    <name>NotOtherwiseSpecified</name>
+                    <value>349</value>
                 </enumerator>
                 <enumerator>
                     <name>Other</name>
