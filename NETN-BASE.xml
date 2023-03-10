@@ -70,6 +70,17 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <order>Receive</order>
                 <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
             </attribute>
+            <attribute>
+                <name>ModelingFederateId</name>
+                <dataType>UUID</dataType>
+                <updateType>Static</updateType>
+                <updateCondition>NA</updateCondition>
+                <ownership>DivestAcquire</ownership>
+                <sharing>PublishSubscribe</sharing>
+                <transportation>HLAreliable</transportation>
+                <order>Receive</order>
+                <semantics>Optional. The unique ID of the federate with the main responsibility for modeling.</semantics>
+            </attribute>
             <objectClass>
                 <name>BaseEntity</name>
                 <sharing>Subscribe</sharing>
