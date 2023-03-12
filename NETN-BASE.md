@@ -1,12 +1,13 @@
-
 # NETN-BASE
 The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.
 
 This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and is primarily intended to support interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network. The NETN-BASE FOM module is available as an XML file for use in HLA-based federations.
 
-## Object Classes
+## Object Classes 
 
 ### HLAobjectRoot
+
+
 |Attribute|Dataype|Semantics|
 |---|---|---|
 |ModelingFederateId|UUID|Optional. The unique ID of the federate with the main responsibility for modelling.|
@@ -20,8 +21,9 @@ A base class of aggregate and discrete scenario domain participants. The BaseEnt
 |Status|ActiveStatusEnum8|Required. Indicates if this entity currently is being simulated or not. E.g. an entity mounted or embarked on transports can be set to Inactive. During an inactive state, the attribute values may not reflect accurate or current values. All attributes must be updated to represent the current status of the object instance before setting the state to Active.|
 |SymbolId|SymbolIdentifier|Optional. A symbol identifier is represented as a string formatted according to identified symbology standards.|
 
-## Datatypes
-
+## Datatypes 
+        
+        
 ### Simple Datatype
 |Name|Units|Semantics|
 |---|---|---|
