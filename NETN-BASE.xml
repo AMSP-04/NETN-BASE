@@ -6,11 +6,9 @@
         <version>2.1</version>
         <modificationDate>2023-03-12</modificationDate>
         <securityClassification>Not Classified</securityClassification>
-        <purpose>The NETN-BASE FOM Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
+        <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
-        <description>NATO Education and Training Network (NETN) Base Datatypes (BASE) Module. 
-        
-This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and is primarily intended to support interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network. The NETN-BASE FOM module is available as an XML file for use in HLA-based federations.</description>
+        <description>This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and is primarily intended to support interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network. The NETN-BASE FOM module is available as an XML file for use in HLA-based federations.</description>
         <useLimitation></useLimitation>
         <useHistory>v1.0.2 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
         <useHistory>v2.0.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0</useHistory>
