@@ -4,6 +4,7 @@
 Version 2.1 was developed by MSG-191 and included in NETN-FOM v4.0.
 
 * Added `UniqueId` attribute to extend `HLAobjectRoot` objectClass
+* Added `FederateApplicationId` attribute to extend `HLAobjectRoot` objectClass
 * Added `Status` attribute to extend `BaseEntity` objectClass
 * Added `SymbolId` attribute to extend `BaseEntity` objectClass
 * Added Enumerated Datatype `HostilityStatusCodeEnum32` moved from NETN-ORG
