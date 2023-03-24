@@ -202,6 +202,14 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <accuracy>NA</accuracy>
                 <semantics>Concentration of a substance measured as kg/m3.</semantics>
             </simpleData>
+            <simpleData>
+                <name>TimeMillisecondInt64</name>
+                <representation>HLAinteger64BE</representation>
+                <units>Millisecond (ms)</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>A generic representation of milliseconds, unit symbol ms.</semantics>
+            </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
             <enumeratedData>

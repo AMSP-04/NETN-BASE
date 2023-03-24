@@ -12,6 +12,7 @@ Version 2.1 was developed by MSG-191 and included in NETN-FOM v4.0.
 * Replaced Fixed Record datatype `NETN_SupplyStruct` with `SupplyStruct` a copy the same datatype in RPR Logistics
 * Replaced Array datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` a copy the same datatype in RPR Logistics
 * Added `WorldLocationPath` a copy of `GeodeticPath` but represented in `WorldLocationStructs`
+* Added new simple datatype `TimeMillisecondInt64`
 
 #### Array Datatypes
 
