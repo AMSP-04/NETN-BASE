@@ -4,15 +4,15 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>2.1</version>
-        <modificationDate>2023-02-20</modificationDate>
+        <modificationDate>2023-03-25</modificationDate>
         <securityClassification>Not Classified</securityClassification>
-        <purpose></purpose>
+        <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
-        <description>Base module for the NATO FOM modules.</description>
+        <description>This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and is primarily intended to support interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network. The NETN-BASE FOM module is available as an XML file for use in HLA-based federations.</description>
         <useLimitation></useLimitation>
-        <useHistory>v1.0.2 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
-        <useHistory>v2.0.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0</useHistory>
-        <useHistory>v2.1.0 - Updated version developed by MSG-191. Release included in NETN-FOM v4.0</useHistory>
+        <useHistory notes="netn-base_3">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
+        <useHistory notes="netn-base_2">v2.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0</useHistory>
+        <useHistory notes="netn_base_1">v2.1 - Updated version developed by MSG-191. Release included in NATO-FOM v4.0</useHistory>
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -79,7 +79,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <sharing>PublishSubscribe</sharing>
                 <transportation>HLAreliable</transportation>
                 <order>Receive</order>
-                <semantics>Optional. The unique ID of the federate with the main responsibility for modeling.</semantics>
+                <semantics>Optional. The unique ID of the federate with the main responsibility for modelling.</semantics>
             </attribute>
             <objectClass>
                 <name>BaseEntity</name>
@@ -94,8 +94,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
-An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
+                    <semantics>Required. Indicates if this entity currently is being simulated or not. E.g. an entity mounted or embarked on transports can be set to Inactive. During an inactive state, the attribute values may not reflect accurate or current values. All attributes must be updated to represent the current status of the object instance before setting the state to Active.</semantics>
                 </attribute>
                 <attribute>
                     <name>SymbolId</name>
@@ -106,7 +105,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                     <sharing>PublishSubscribe</sharing>
                     <transportation>HLAreliable</transportation>
                     <order>Receive</order>
-                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
+                    <semantics>Optional. A symbol identifier is represented as a string formatted according to identified symbology standards.</semantics>
                 </attribute>
             </objectClass>
         </objectClass>
@@ -152,7 +151,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <units>Degree</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Compass direction measured clockwise relative to true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
+                <semantics>The compass direction is measured clockwise relative to the true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
             </simpleData>
             <simpleData>
                 <name>LatLongDegreesFloat64</name>
@@ -168,7 +167,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <units>kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Density of substance measured as kg per cubic meter.</semantics>
+                <semantics>The density of a substance is measured as kg/m3.</semantics>
             </simpleData>
             <simpleData>
                 <name>PercentFloat64</name>
@@ -200,7 +199,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <units>kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Concentration of a substance measured as kg/m3.</semantics>
+                <semantics>The concentration of a substance is measured as kg/m3.</semantics>
             </simpleData>
             <simpleData>
                 <name>TimeMillisecondInt64</name>
@@ -232,7 +231,7 @@ An inactive instance may have its instance attributes updated by a federate but 
             <enumeratedData>
                 <name>HostilityStatusCodeEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>The specific value that represents the perceived hostility status.</semantics>
+                <semantics>The value represents the perceived hostility status.</semantics>
                 <enumerator>
                     <name>AFR</name>
                     <value>0</value>
@@ -1719,7 +1718,7 @@ An inactive instance may have its instance attributes updated by a federate but 
             <enumeratedData>
                 <name>CancellationReasonEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Describes the reason for a cancellation.</semantics>
+                <semantics>Describes the reason for cancellation.</semantics>
                 <enumerator>
                     <name>Other</name>
                     <value>0</value>
@@ -1936,7 +1935,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <dataType>UUID</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>Array of Unique Identifiers expressed as UUIDs.</semantics>
+                <semantics>An array of Unique Identifiers expressed as UUIDs.</semantics>
             </arrayData>
             <arrayData>
                 <name>FederateName</name>
@@ -1950,21 +1949,21 @@ An inactive instance may have its instance attributes updated by a federate but 
                 <dataType>GeodeticLocation</dataType>
                 <cardinality>[2..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A sequence of geodetic locations defining a path where each segment is a great circle between locations.</semantics>
+                <semantics>A sequence of geodetic locations defines a path where each segment is a great circle between locations.</semantics>
             </arrayData>
             <arrayData>
                 <name>GeodeticPolygon</name>
                 <dataType>GeodeticLocation</dataType>
                 <cardinality>[3..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A sequence of geodetic locations defining a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth surface, and each segment is a great circle between locations.</semantics>
+                <semantics>A sequence of geodetic locations defines a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth's surface, and each segment is a great circle between locations.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfWorldLocationStruct</name>
                 <dataType>WorldLocationStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A polygonal chain (path) expressed as a sequence of geocentric points.</semantics>
+                <semantics>A polygonal chain (path) is expressed as a sequence of geocentric points.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfStringType</name>
@@ -1994,14 +1993,14 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <dataType>Text64</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A set of names of max length 64 unicode characters.</semantics>
+                <semantics>A set of names of max length 64 Unicode characters.</semantics>
             </arrayData>
             <arrayData>
                 <name>SymbolIdentifier</name>
                 <dataType>HLAunicodeChar</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A symbol identifier is represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                <semantics>A symbol identifier is represented as a string. The symbol standard used is indicated using a URI notation (uri:xxxxxxxxxx). The following URI should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
             </arrayData>
             <arrayData>
                 <name>WorldLocationPath</name>
@@ -2060,7 +2059,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             <fixedRecordData>
                 <name>GeodeticPoint</name>
                 <encoding>HLAfixedRecord</encoding>
-                <semantics>A geodetic point, specified by latitude, longitude and altitude.</semantics>
+                <semantics>A geodetic point is specified by latitude, longitude and altitude.</semantics>
                 <field>
                     <name>Latitude</name>
                     <dataType>LatLongDegreesFloat64</dataType>
@@ -2181,4 +2180,76 @@ The array can be empty (size=0).</semantics>
             </variantRecordData>
         </variantRecordDataTypes>
     </dataTypes>
+    <notes>
+        <note>
+            <label>netn_base_1</label>
+            <semantics>* Added `UniqueId` attribute to extend `HLAobjectRoot` objectClass 
+* Added `Status` attribute to extend `BaseEntity` objectClass 
+* Added `SymbolId` attribute to extend `BaseEntity` objectClass 
+* Added Enumerated Datatype `HostilityStatusCodeEnum32` moved from NETN-ORG 
+* Added Enumerade Datatype `DamageStatusEnum32` a copy the same datatype in RPR FOM 2 Enumerations 
+* Replaced Fixed Record datatype `NETN_SupplyStruct` with `SupplyStruct` a copy the same datatype in RPR Logistics 
+* Replaced Array datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` a copy the same datatype in RPR Logistics 
+* Removed datatype `TransactionId` and changed all dependencies to use `UUID` instead 
+* Added datatype `WorldLocationStruct` for RPR-FOM v2 and RPR-FOM v3 compatibility</semantics>
+        </note>
+        <note>
+            <label>netn-base_2</label>
+            <semantics>* Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
+* Changed `modelIdentification` `other` to include license information
+* Changed `modelIdentification` `useHistory` to only include formally released versions
+* Added datatype `AltitudeMeterFloat64`
+* Added datatype `DegreesPerSecondFloat32` 
+* Added datatype `DirectionDegreesFloat32`
+* Added datatype `DraughtMeterFloat32`
+* Modified datatype `TimeSecInt64` to `EpochTimeSecInt64` 
+* Added datatype `IMOType`
+* Added datatype `LatLongDegreesFloat64`
+* Added datatype `MassConcentrationFloat32`
+* Added datatype `MassDensityFloat32`
+* Added datatype `MIDType`
+* Added datatype `PercentFloat64`
+* Updated datatype `QuantityFloat32`
+* Added datatype `QuantityFloat64`
+* Added datatype `QuantityInt32`
+* Added datatype `ShipTypeType`
+* Added datatype `TimeSecInt32`
+* Added datatype `CancellationReasonEnum32`
+* Added datatype `EchelonEnum32`
+* Added datatype `EchelonEnum32`
+* Added datatype `SymbolStandardEnum32`
+* Added datatype `GeoLocationTypeEnum32`
+* Added datatype `ArrayOfStringType`
+* Added datatype `ArrayOfText64`
+* Added datatype `FederateName`
+* Removed datatype `ArrayOfWorldLocationStruct2` 
+* Removed datatype `ArrayOfWorldLocationStruct3`
+* Added datatype `GeodeticPath`
+* Added datatype `GeodeticPolygon`
+* Added datatype `SymbolIdentifier15`
+* Added datatype `SymbolIdentifier30`
+* Added datatype `Text64`
+* Added datatype `TransactionId`
+* Added datatype `UUID`
+* Added datatype `GeocentricCircle`
+* Added datatype `GeodeticCircle`
+* Added datatype `GeodeticLocation`
+* Added datatype `GeodeticQuadrangle`
+* Added datatype `GeodeticPoint`
+* Added datatype `AreaVariantStruct`
+* Added datatype `PathVariantStruct`
+* Added datatype `PointVariantStruct`
+* Added datatype `SymbolVariantStruct`</semantics>
+        </note>
+        <note>
+            <label>netn-base_3</label>
+            <semantics>* v1.0.0 - First version in NETN FOM v2
+* v1.0.1 - Added array data type: ArrayOfWorldLocation3 (moved from NETN_Aggregate FOM module)
+* v1.0.2 - Renamed data type, new name: ArrayOfWorldLocationStruct3. Updated References, Dependency
+
+
+Previous history
+Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010, NETN_Service_Consumer_Provider_v1.0.3_2010 and NETN_Logistics_v1.1.2_2010.</semantics>
+        </note>
+    </notes>
 </objectModel>
