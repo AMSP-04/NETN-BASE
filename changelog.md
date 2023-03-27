@@ -6,7 +6,6 @@
 * v1.0.1 - Added array data type: ArrayOfWorldLocation3 (moved from NETN_Aggregate FOM module)
 * v1.0.2 - Renamed data type, new name: ArrayOfWorldLocationStruct3. Updated References, Dependency
 
-
 Previous history
 Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010, NETN_Service_Consumer_Provider_v1.0.3_2010 and NETN_Logistics_v1.1.2_2010.
 
@@ -63,6 +62,7 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 ### v2.1 - Updated version developed by MSG-191. Release included in NATO-FOM v4.0
 
 * Added `UniqueId` attribute to extend `HLAobjectRoot` objectClass 
+* Added `FederateApplicationId` attribute to extend `HLAobjectRoot` objectClass
 * Added `Status` attribute to extend `BaseEntity` objectClass 
 * Added `SymbolId` attribute to extend `BaseEntity` objectClass 
 * Added Enumerated Datatype `HostilityStatusCodeEnum32` moved from NETN-ORG 
@@ -71,4 +71,6 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Replaced Array datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` a copy the same datatype in RPR Logistics 
 * Removed datatype `TransactionId` and changed all dependencies to use `UUID` instead 
 * Added datatype `WorldLocationStruct` for RPR-FOM v2 and RPR-FOM v3 compatibility
-
+* Added `WorldLocationPath` a copy of `GeodeticPath` but represented in `WorldLocationStructs`
+* Added new simple datatype `TimeMillisecondInt64`
+* Removed datatype `TransactionId` and changed all dependencies to use `UUID` instead

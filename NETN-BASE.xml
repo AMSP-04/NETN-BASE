@@ -201,6 +201,14 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <accuracy>NA</accuracy>
                 <semantics>The concentration of a substance is measured as kg/m3.</semantics>
             </simpleData>
+            <simpleData>
+                <name>TimeMillisecondInt64</name>
+                <representation>HLAinteger64BE</representation>
+                <units>Millisecond (ms)</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>A generic representation of milliseconds, unit symbol ms.</semantics>
+            </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
             <enumeratedData>
@@ -1993,6 +2001,13 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A symbol identifier is represented as a string. The symbol standard used is indicated using a URI notation (uri:xxxxxxxxxx). The following URI should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>WorldLocationPath</name>
+                <dataType>WorldLocationStruct</dataType>
+                <cardinality>[2..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A sequence of WorldLocationStructs to represent a path.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
