@@ -1,8 +1,8 @@
-# NETN-BASE
 
+# NETN-BASE
 |Version| Date| Dependencies|
 |---|---|---|
-|2.1|2023-03-18|RPR-Base|
+|2.1|2023-03-25|RPR-Base|
 
 The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.
 
@@ -11,30 +11,33 @@ This module is a base module for all other NETN-FOM modules. It specifies standa
 
 
 
-
 ## Object Classes
 
-Note that inherited and dependency parameters are not explicitly listed for each interaction class below. Only parameters defined in this FOM Module are listed. 
+Note that inherited and dependency attributes are not included in the description of object classes.
 
-<img src="./images/objectclasses.png">
-
+```mermaid
+graph RL
+BaseEntity-->HLAobjectRoot
+```
 
 ### HLAobjectRoot
 
 
-    
+
 |Attribute|Datatype|Semantics|
 |---|---|---|
-|FederateApplicationId|UUID|Optional. The unique ID of the federate with the main responsibility for modelling.|
 |UniqueId|UUID|Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|FederateApplicationId|UUID|Optional. The unique ID of the federate with the main responsibility for modelling.|
+
 ### BaseEntity
 
 A base class of aggregate and discrete scenario domain participants. The BaseEntity class is characterized by being located at a particular location in space and independently movable, if capable of movement at all. It specifically excludes elements normally considered to be a component of another element. The BaseEntity class is intended to be a container for common attributes for entities of this type. Since it lacks sufficient class specific attributes that are required for simulation purposes, federates cannot publish objects of this class. Certain simulation management federates, e.g. viewers, may subscribe to this class. Simulation federates will normally subscribe to one of the subclasses, to gain the extra information required to properly simulate the entity.
-    
+
 |Attribute|Datatype|Semantics|
 |---|---|---|
 |Status|ActiveStatusEnum8|Required. Indicates if this entity currently is being simulated or not. E.g. an entity mounted or embarked on transports can be set to Inactive. During an inactive state, the attribute values may not reflect accurate or current values. All attributes must be updated to represent the current status of the object instance before setting the state to Active.|
 |SymbolId|SymbolIdentifier|Optional. A symbol identifier is represented as a string formatted according to identified symbology standards.|
+
 ## Datatypes
 
 Note that only datatypes defined in this FOM Module are listed below. Please refer to FOM Modules on which this module depends for other referenced datatypes.
