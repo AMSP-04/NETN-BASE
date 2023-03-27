@@ -3,15 +3,16 @@
     <modelIdentification>
         <name>NETN-BASE</name>
         <type>FOM</type>
-        <version>2.0</version>
-        <modificationDate>2020-09-05</modificationDate>
+        <version>2.1</version>
+        <modificationDate>2023-03-25</modificationDate>
         <securityClassification>Not Classified</securityClassification>
-        <purpose></purpose>
+        <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
-        <description>Base module for NETN FOM modules. Mainly datatypes for use in other NETN FOM modules</description>
+        <description>This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and is primarily intended to support interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network. The NETN-BASE FOM module is available as an XML file for use in HLA-based federations.</description>
         <useLimitation></useLimitation>
-        <useHistory>v1.0.2 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
-        <useHistory>v2.0.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0</useHistory>
+        <useHistory notes="netn-base_3">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
+        <useHistory notes="netn-base_2">v2.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0</useHistory>
+        <useHistory notes="netn_base_1">v2.1 - Updated version developed by MSG-191. Release included in NATO-FOM v4.0</useHistory>
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -20,7 +21,7 @@
         </poc>
         <poc>
             <pocType>Primary author</pocType>
-            <pocName>MSG-163 Evolution of NATO Standards for Federated Simulation</pocName>
+            <pocName>MSG-106 Enhanced CAX Architecture, Desing and Methodology</pocName>
             <pocOrg>NATO Modelling and Simulation Group</pocOrg>
             <pocEmail>msg@cso.nato.int</pocEmail>
         </poc>
@@ -32,7 +33,13 @@
         </poc>
         <poc>
             <pocType>Primary author</pocType>
-            <pocName>MSG-106 Enhanced CAX Architecture, Desing and Methodology</pocName>
+            <pocName>MSG-163 Evolution of NATO Standards for Federated Simulation</pocName>
+            <pocOrg>NATO Modelling and Simulation Group</pocOrg>
+            <pocEmail>msg@cso.nato.int</pocEmail>
+        </poc>
+        <poc>
+            <pocType>Primary author</pocType>
+            <pocName>MSG-191 NATO Standards for Federated Simulation and Services for Integration, Verification and Certification</pocName>
             <pocOrg>NATO Modelling and Simulation Group</pocOrg>
             <pocEmail>msg@cso.nato.int</pocEmail>
         </poc>
@@ -44,10 +51,67 @@
 Copyright © 2020 by NATO/OTAN. All rights reserved.
 This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License.
 
-Above license gives you the right to use and redistribute the NETN FOM Module (XML file and Documentation) in its entirety without modification. You are also allowed to develop your own new FOM Modules (in separate XML files and separate documentation) that build-on/extends the NETN module by reference. You are NOT allowed to modify the NETN FOM Module or its documentation without prior permission by the NATO Modelling and Simulation Group.</other>
+Above license gives you the right to use and redistribute this FOM Module (XML file and Documentation) in its entirety without modification. You are also allowed to develop your own new FOM Modules (in separate XML files and separate documentation) that build-on/extends this FOM module by reference. You are NOT allowed to modify this FOM Module or its documentation without prior permission by the NATO Modelling and Simulation Group.</other>
         <glyph type="png" height="48" width="48" alt="">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</glyph>
     </modelIdentification>
+    <objects>
+        <objectClass>
+            <name>HLAobjectRoot</name>
+            <sharing>Neither</sharing>
+            <semantics></semantics>
+            <attribute>
+                <name>UniqueId</name>
+                <dataType>UUID</dataType>
+                <updateType>Static</updateType>
+                <updateCondition>NA</updateCondition>
+                <ownership>DivestAcquire</ownership>
+                <sharing>PublishSubscribe</sharing>
+                <transportation>HLAreliable</transportation>
+                <order>Receive</order>
+                <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+            </attribute>
+            <attribute>
+                <name>FederateApplicationId</name>
+                <dataType>UUID</dataType>
+                <updateType>Static</updateType>
+                <updateCondition>NA</updateCondition>
+                <ownership>DivestAcquire</ownership>
+                <sharing>PublishSubscribe</sharing>
+                <transportation>HLAreliable</transportation>
+                <order>Receive</order>
+                <semantics>Optional. The unique ID of the federate with the main responsibility for modelling.</semantics>
+            </attribute>
+            <objectClass>
+                <name>BaseEntity</name>
+                <sharing>Subscribe</sharing>
+                <semantics>A base class of aggregate and discrete scenario domain participants. The BaseEntity class is characterized by being located at a particular location in space and independently movable, if capable of movement at all. It specifically excludes elements normally considered to be a component of another element. The BaseEntity class is intended to be a container for common attributes for entities of this type. Since it lacks sufficient class specific attributes that are required for simulation purposes, federates cannot publish objects of this class. Certain simulation management federates, e.g. viewers, may subscribe to this class. Simulation federates will normally subscribe to one of the subclasses, to gain the extra information required to properly simulate the entity.</semantics>
+                <attribute>
+                    <name>Status</name>
+                    <dataType>ActiveStatusEnum8</dataType>
+                    <updateType>Conditional</updateType>
+                    <updateCondition>On Change</updateCondition>
+                    <ownership>DivestAcquire</ownership>
+                    <sharing>PublishSubscribe</sharing>
+                    <transportation>HLAreliable</transportation>
+                    <order>Receive</order>
+                    <semantics>Required. Indicates if this entity currently is being simulated or not. E.g. an entity mounted or embarked on transports can be set to Inactive. During an inactive state, the attribute values may not reflect accurate or current values. All attributes must be updated to represent the current status of the object instance before setting the state to Active.</semantics>
+                </attribute>
+                <attribute>
+                    <name>SymbolId</name>
+                    <dataType>SymbolIdentifier</dataType>
+                    <updateType>Conditional</updateType>
+                    <updateCondition>On Change</updateCondition>
+                    <ownership>DivestAcquire</ownership>
+                    <sharing>PublishSubscribe</sharing>
+                    <transportation>HLAreliable</transportation>
+                    <order>Receive</order>
+                    <semantics>Optional. A symbol identifier is represented as a string formatted according to identified symbology standards.</semantics>
+                </attribute>
+            </objectClass>
+        </objectClass>
+    </objects>
     <dataTypes>
+        <basicDataRepresentations/>
         <simpleDataTypes>
             <simpleData>
                 <name>EpochTimeSecInt64</name>
@@ -87,7 +151,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <units>Degree</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Compass direction measured clockwise relative to true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
+                <semantics>The compass direction is measured clockwise relative to the true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
             </simpleData>
             <simpleData>
                 <name>LatLongDegreesFloat64</name>
@@ -103,7 +167,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <units>kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Density of substance measured as kg per cubic meter.</semantics>
+                <semantics>The density of a substance is measured as kg/m3.</semantics>
             </simpleData>
             <simpleData>
                 <name>PercentFloat64</name>
@@ -135,7 +199,15 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <units>kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Concentration of a substance measured as kg/m3.</semantics>
+                <semantics>The concentration of a substance is measured as kg/m3.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>TimeMillisecondInt64</name>
+                <representation>HLAinteger64BE</representation>
+                <units>Millisecond (ms)</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>A generic representation of milliseconds, unit symbol ms.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
@@ -154,6 +226,63 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <enumerator>
                     <name>Inactive</name>
                     <value>2</value>
+                </enumerator>
+            </enumeratedData>
+            <enumeratedData>
+                <name>HostilityStatusCodeEnum32</name>
+                <representation>HLAinteger32BE</representation>
+                <semantics>The value represents the perceived hostility status.</semantics>
+                <enumerator>
+                    <name>AFR</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>AHO</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>AIV</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>ANT</name>
+                    <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>FAKER</name>
+                    <value>4</value>
+                </enumerator>
+                <enumerator>
+                    <name>FR</name>
+                    <value>5</value>
+                </enumerator>
+                <enumerator>
+                    <name>HO</name>
+                    <value>6</value>
+                </enumerator>
+                <enumerator>
+                    <name>IV</name>
+                    <value>7</value>
+                </enumerator>
+                <enumerator>
+                    <name>JOKER</name>
+                    <value>8</value>
+                </enumerator>
+                <enumerator>
+                    <name>NEUTRL</name>
+                    <value>9</value>
+                </enumerator>
+                <enumerator>
+                    <name>PENDNG</name>
+                    <value>10</value>
+                </enumerator>
+                <enumerator>
+                    <name>SUSPCT</name>
+                    <value>11</value>
+                </enumerator>
+                <enumerator>
+                    <name>UNK</name>
+                    <value>12</value>
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
@@ -1549,6 +1678,14 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <value>347</value>
                 </enumerator>
                 <enumerator>
+                    <name>Stopped</name>
+                    <value>348</value>
+                </enumerator>
+                <enumerator>
+                    <name>Waiting</name>
+                    <value>349</value>
+                </enumerator>
+                <enumerator>
                     <name>Other</name>
                     <value>0</value>
                 </enumerator>
@@ -1581,7 +1718,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
             <enumeratedData>
                 <name>CancellationReasonEnum32</name>
                 <representation>HLAinteger32BE</representation>
-                <semantics>Describes the reason for a cancellation.</semantics>
+                <semantics>Describes the reason for cancellation.</semantics>
                 <enumerator>
                     <name>Other</name>
                     <value>0</value>
@@ -1756,8 +1893,36 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <value>20</value>
                 </enumerator>
             </enumeratedData>
+            <enumeratedData>
+                <name>DamageStatusEnum32</name>
+                <representation>RPRunsignedInteger32BE</representation>
+                <semantics>Damaged appearance</semantics>
+                <enumerator>
+                    <name>NoDamage</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>SlightDamage</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>ModerateDamage</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>Destroyed</name>
+                    <value>3</value>
+                </enumerator>
+            </enumeratedData>
         </enumeratedDataTypes>
         <arrayDataTypes>
+            <arrayData>
+                <name>SupplyStructArray</name>
+                <dataType>SupplyStruct</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A list of supply types and the number of each being offered or requested.</semantics>
+            </arrayData>
             <arrayData>
                 <name>Callsign</name>
                 <dataType>HLAunicodeChar</dataType>
@@ -1766,38 +1931,11 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <semantics>Identifier for a simulated entity. Callsigns should be unique in the context in which they are used but are not required to be globally unique.</semantics>
             </arrayData>
             <arrayData>
-                <name>TransactionId</name>
-                <dataType>HLAbyte</dataType>
-                <cardinality>16</cardinality>
-                <encoding>HLAfixedArray</encoding>
-                <semantics>Unique identifier for a transaction. Encoded according to RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>UuidArrayOfHLAbyte16</name>
-                <dataType>HLAbyte</dataType>
-                <cardinality>16</cardinality>
-                <encoding>HLAfixedArray</encoding>
-                <semantics>Deprecated. 
- 
-UUIDs are exchanged as a byte array and are encoded according to RFC 
- 
-4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
- 
-For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
-            </arrayData>
-            <arrayData>
                 <name>ArrayOfUuid</name>
-                <dataType>UuidArrayOfHLAbyte16</dataType>
+                <dataType>UUID</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>Deprecated. Array of Unique Identifiers expressed as UUIDs.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>NETN_ArrayOfSupplyStruct</name>
-                <dataType>NETN_SupplyStruct</dataType>
-                <cardinality>Dynamic</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>A set of supply descriptions.</semantics>
+                <semantics>An array of Unique Identifiers expressed as UUIDs.</semantics>
             </arrayData>
             <arrayData>
                 <name>FederateName</name>
@@ -1811,21 +1949,21 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <dataType>GeodeticLocation</dataType>
                 <cardinality>[2..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A sequence of geodetic locations defining a path where each segment is a great circle between locations.</semantics>
+                <semantics>A sequence of geodetic locations defines a path where each segment is a great circle between locations.</semantics>
             </arrayData>
             <arrayData>
                 <name>GeodeticPolygon</name>
                 <dataType>GeodeticLocation</dataType>
                 <cardinality>[3..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A sequence of geodetic locations defining a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth surface, and each segment is a great circle between locations.</semantics>
+                <semantics>A sequence of geodetic locations defines a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth's surface, and each segment is a great circle between locations.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfWorldLocationStruct</name>
                 <dataType>WorldLocationStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A polygonal chain (path) expressed as a sequence of geocentric points.</semantics>
+                <semantics>A polygonal chain (path) is expressed as a sequence of geocentric points.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfStringType</name>
@@ -1855,32 +1993,24 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <dataType>Text64</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A set of names of max length 64 unicode characters.</semantics>
+                <semantics>A set of names of max length 64 Unicode characters.</semantics>
             </arrayData>
             <arrayData>
                 <name>SymbolIdentifier</name>
                 <dataType>HLAunicodeChar</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A symbol identifier is represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                <semantics>A symbol identifier is represented as a string. The symbol standard used is indicated using a URI notation (uri:xxxxxxxxxx). The following URI should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>WorldLocationPath</name>
+                <dataType>WorldLocationStruct</dataType>
+                <cardinality>[2..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A sequence of WorldLocationStructs to represent a path.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
-            <fixedRecordData>
-                <name>NETN_SupplyStruct</name>
-                <encoding>HLAfixedRecord</encoding>
-                <semantics>Description of supply. Same encoding as RPR2 SupplyStruct.</semantics>
-                <field>
-                    <name>SupplyType</name>
-                    <dataType>EntityTypeStruct</dataType>
-                    <semantics>The type of supply (as described in the Bit Encoded Values for Use with Protocols for Distributed Interactive Simulation Applications)</semantics>
-                </field>
-                <field>
-                    <name>Quantity</name>
-                    <dataType>QuantityFloat32</dataType>
-                    <semantics>The number of units of the supply type.  The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
-                </field>
-            </fixedRecordData>
             <fixedRecordData>
                 <name>GeodeticCircle</name>
                 <encoding>HLAfixedRecord</encoding>
@@ -1929,7 +2059,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             <fixedRecordData>
                 <name>GeodeticPoint</name>
                 <encoding>HLAfixedRecord</encoding>
-                <semantics>A geodetic point, specified by latitude, longitude and altitude.</semantics>
+                <semantics>A geodetic point is specified by latitude, longitude and altitude.</semantics>
                 <field>
                     <name>Latitude</name>
                     <dataType>LatLongDegreesFloat64</dataType>
@@ -1944,6 +2074,41 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                     <name>Altitude</name>
                     <dataType>AltitudeMeterFloat64</dataType>
                     <semantics>Height Above Mean Sea Level</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>WorldLocationStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>The location of an object in the world coordinate system, as specified in IEEE Std 1278.1-1995 section 1.3.2.</semantics>
+                <field>
+                    <name>X</name>
+                    <dataType>MeterFloat64</dataType>
+                    <semantics>Distance from the origin along the X axis.</semantics>
+                </field>
+                <field>
+                    <name>Y</name>
+                    <dataType>MeterFloat64</dataType>
+                    <semantics>Distance from the origin along the Y axis.</semantics>
+                </field>
+                <field>
+                    <name>Z</name>
+                    <dataType>MeterFloat64</dataType>
+                    <semantics>Distance from the origin along the Z axis.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>SupplyStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Represents a single supply type and the quantity being offered or requested.</semantics>
+                <field>
+                    <name>SupplyType</name>
+                    <dataType>EntityTypeStruct</dataType>
+                    <semantics>The type of supply being offered or requested.</semantics>
+                </field>
+                <field>
+                    <name>Quantity</name>
+                    <dataType>Float32</dataType>
+                    <semantics>The number of units of the supply type. The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
                 </field>
             </fixedRecordData>
         </fixedRecordDataTypes>
@@ -1988,7 +2153,7 @@ The array can be empty (size=0).</semantics>
                 <alternative>
                     <enumerator>UuidReference</enumerator>
                     <name>UUID</name>
-                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                    <dataType>UUID</dataType>
                     <semantics>A UUID that referes to a NETN_GeoObject.Path that is registred iin the federation execution.</semantics>
                 </alternative>
                 <encoding>HLAvariantRecord</encoding>
@@ -2007,7 +2172,7 @@ The array can be empty (size=0).</semantics>
                 <alternative>
                     <enumerator>UuidReference</enumerator>
                     <name>UUID</name>
-                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                    <dataType>UUID</dataType>
                     <semantics>A UUID that refers to a NETN_GeoObject.Point.</semantics>
                 </alternative>
                 <encoding>HLAvariantRecord</encoding>
@@ -2015,5 +2180,76 @@ The array can be empty (size=0).</semantics>
             </variantRecordData>
         </variantRecordDataTypes>
     </dataTypes>
-    <notes/>
+    <notes>
+        <note>
+            <label>netn_base_1</label>
+            <semantics>* Added `UniqueId` attribute to extend `HLAobjectRoot` objectClass 
+* Added `Status` attribute to extend `BaseEntity` objectClass 
+* Added `SymbolId` attribute to extend `BaseEntity` objectClass 
+* Added Enumerated Datatype `HostilityStatusCodeEnum32` moved from NETN-ORG 
+* Added Enumerade Datatype `DamageStatusEnum32` a copy the same datatype in RPR FOM 2 Enumerations 
+* Replaced Fixed Record datatype `NETN_SupplyStruct` with `SupplyStruct` a copy the same datatype in RPR Logistics 
+* Replaced Array datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` a copy the same datatype in RPR Logistics 
+* Removed datatype `TransactionId` and changed all dependencies to use `UUID` instead 
+* Added datatype `WorldLocationStruct` for RPR-FOM v2 and RPR-FOM v3 compatibility</semantics>
+        </note>
+        <note>
+            <label>netn-base_2</label>
+            <semantics>* Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified`
+* Changed `modelIdentification` `other` to include license information
+* Changed `modelIdentification` `useHistory` to only include formally released versions
+* Added datatype `AltitudeMeterFloat64`
+* Added datatype `DegreesPerSecondFloat32` 
+* Added datatype `DirectionDegreesFloat32`
+* Added datatype `DraughtMeterFloat32`
+* Modified datatype `TimeSecInt64` to `EpochTimeSecInt64` 
+* Added datatype `IMOType`
+* Added datatype `LatLongDegreesFloat64`
+* Added datatype `MassConcentrationFloat32`
+* Added datatype `MassDensityFloat32`
+* Added datatype `MIDType`
+* Added datatype `PercentFloat64`
+* Updated datatype `QuantityFloat32`
+* Added datatype `QuantityFloat64`
+* Added datatype `QuantityInt32`
+* Added datatype `ShipTypeType`
+* Added datatype `TimeSecInt32`
+* Added datatype `CancellationReasonEnum32`
+* Added datatype `EchelonEnum32`
+* Added datatype `EchelonEnum32`
+* Added datatype `SymbolStandardEnum32`
+* Added datatype `GeoLocationTypeEnum32`
+* Added datatype `ArrayOfStringType`
+* Added datatype `ArrayOfText64`
+* Added datatype `FederateName`
+* Removed datatype `ArrayOfWorldLocationStruct2` 
+* Removed datatype `ArrayOfWorldLocationStruct3`
+* Added datatype `GeodeticPath`
+* Added datatype `GeodeticPolygon`
+* Added datatype `SymbolIdentifier15`
+* Added datatype `SymbolIdentifier30`
+* Added datatype `Text64`
+* Added datatype `TransactionId`
+* Added datatype `UUID`
+* Added datatype `GeocentricCircle`
+* Added datatype `GeodeticCircle`
+* Added datatype `GeodeticLocation`
+* Added datatype `GeodeticQuadrangle`
+* Added datatype `GeodeticPoint`
+* Added datatype `AreaVariantStruct`
+* Added datatype `PathVariantStruct`
+* Added datatype `PointVariantStruct`
+* Added datatype `SymbolVariantStruct`</semantics>
+        </note>
+        <note>
+            <label>netn-base_3</label>
+            <semantics>* v1.0.0 - First version in NETN FOM v2
+* v1.0.1 - Added array data type: ArrayOfWorldLocation3 (moved from NETN_Aggregate FOM module)
+* v1.0.2 - Renamed data type, new name: ArrayOfWorldLocationStruct3. Updated References, Dependency
+
+
+Previous history
+Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010, NETN_Service_Consumer_Provider_v1.0.3_2010 and NETN_Logistics_v1.1.2_2010.</semantics>
+        </note>
+    </notes>
 </objectModel>
