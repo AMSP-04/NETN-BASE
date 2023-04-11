@@ -1858,6 +1858,23 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                     <value>3</value>
                 </enumerator>
             </enumeratedData>
+            <enumeratedData>
+                <name>SymbolTypeEnum</name>
+                <representation>HLAinteger32BE</representation>
+                <semantics>Type of symbol.</semantics>
+                <enumerator>
+                    <name>Unit</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>Equipment</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>Installation</name>
+                    <value>3</value>
+                </enumerator>
+            </enumeratedData>
         </enumeratedDataTypes>
         <arrayDataTypes>
             <arrayData>
@@ -1904,7 +1921,6 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
  
 For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
             </arrayData>
-            
             <arrayData>
                 <name>SymbolIdentifier</name>
                 <dataType>HLAunicodeChar</dataType>
@@ -1918,6 +1934,76 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>An array of LocationStruct elements representing a path. When projected on the earth's surface, the datatype can represent an area by connecting the first and last location in the array.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text5</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..5]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 5 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text21</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..21]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 21 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text24</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..24]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 24 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text20</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..20]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 20 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text9</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..9]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 9 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text3</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..3]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 3 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text2</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..2]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 2 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text1</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..1]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 1 character.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text15</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..15]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 15 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>Text8</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..8]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 8 characters.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
@@ -2021,7 +2107,232 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                     <semantics>The number of units of the supply type. The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
                 </field>
             </fixedRecordData>
+            <fixedRecordData>
+                <name>UnitSymbolAmplificationStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Text amplifiers for Unit symbols.</semantics>
+                <field>
+                    <name>ReinforcedOrReduced</name>
+                    <dataType>Text3</dataType>
+                    <semantics>A text amplifier in a unit symbol that displays (+) for reinforced, (-) for reduced, (±) reinforced and reduced.</semantics>
+                </field>
+                <field>
+                    <name>StaffComments</name>
+                    <dataType>Text20</dataType>
+                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                </field>
+                <field>
+                    <name>AdditionalInformation</name>
+                    <dataType>Text20</dataType>
+                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                </field>
+                <field>
+                    <name>EvaluationRating</name>
+                    <dataType>Text2</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+ 
+Reliability Ratings: 
+A-completely reliable 
+B-usually reliable 
+C-fairly reliable 
+D-not usually reliable 
+E-unreliable 
+F-reliability cannot be judged 
+ 
+Credibility Ratings: 
+1-confirmed by other sources 
+2-probably true 
+3-possibly true 
+4-doubtfully true 
+5-improbable 
+6-truth cannot be judged.</semantics>
+                </field>
+                <field>
+                    <name>CombatEffectiveness</name>
+                    <dataType>Text5</dataType>
+                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability.</semantics>
+                </field>
+                <field>
+                    <name>HigherFormation</name>
+                    <dataType>Text21</dataType>
+                    <semantics>A text amplifier for units that indicates number or title of higher echelon command (corps are designated by Roman numerals).</semantics>
+                </field>
+                <field>
+                    <name>IFF_SIF_AIS</name>
+                    <dataType>Text15</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                </field>
+                <field>
+                    <name>UniqueDesignation</name>
+                    <dataType>Text21</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                </field>
+                <field>
+                    <name>SpecialHeadquarters</name>
+                    <dataType>Text9</dataType>
+                    <semantics>A text modifier for a unit's special C2 Headquarters.</semantics>
+                </field>
+                <field>
+                    <name>EngagementBarText</name>
+                    <dataType>Text8</dataType>
+                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>EquipmentSymbolAmplificationStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Text amplifiers for Equipment symbols.</semantics>
+                <field>
+                    <name>Quantity</name>
+                    <dataType>Text9</dataType>
+                    <semantics>A text amplifier in an equipment symbol that identifies the number of items present.</semantics>
+                </field>
+                <field>
+                    <name>StaffComments</name>
+                    <dataType>Text20</dataType>
+                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                </field>
+                <field>
+                    <name>AdditionalInformation</name>
+                    <dataType>Text20</dataType>
+                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                </field>
+                <field>
+                    <name>EvaluationRating</name>
+                    <dataType>Text2</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+ 
+Reliability Ratings: 
+A-completely reliable 
+B-usually reliable 
+C-fairly reliable 
+D-not usually reliable 
+E-unreliable 
+F-reliability cannot be judged 
+ 
+Credibility Ratings: 
+1-confirmed by other sources 
+2-probably true 
+3-possibly true 
+4-doubtfully true 
+5-improbable 
+6-truth cannot be judged.</semantics>
+                </field>
+                <field>
+                    <name>SignatureEquipment</name>
+                    <dataType>Text1</dataType>
+                    <semantics>A text amplifier for hostile equipment; “!” indicates detectable electronic signatures.</semantics>
+                </field>
+                <field>
+                    <name>Hostile</name>
+                    <dataType>Text3</dataType>
+                    <semantics>A text amplifier for equipment; letters "ENY" denote hostile symbols.</semantics>
+                </field>
+                <field>
+                    <name>IFF_SIF_AIS</name>
+                    <dataType>Text15</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                </field>
+                <field>
+                    <name>UniqueDesignation</name>
+                    <dataType>Text21</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                </field>
+                <field>
+                    <name>EquipmentType</name>
+                    <dataType>Text24</dataType>
+                    <semantics>A text amplifier for equipment that indicates types of equipment.</semantics>
+                </field>
+                <field>
+                    <name>EngagementBarText</name>
+                    <dataType>Text8</dataType>
+                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>InstallationSymbolAmplificationStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Text amplifiers for Installation symbols.</semantics>
+                <field>
+                    <name>StaffComments</name>
+                    <dataType>Text20</dataType>
+                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                </field>
+                <field>
+                    <name>AdditionalInformation</name>
+                    <dataType>Text20</dataType>
+                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                </field>
+                <field>
+                    <name>EvaluationRating</name>
+                    <dataType>Text2</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+ 
+Reliability Ratings: 
+A-completely reliable 
+B-usually reliable 
+C-fairly reliable 
+D-not usually reliable 
+E-unreliable 
+F-reliability cannot be judged 
+ 
+Credibility Ratings: 
+1-confirmed by other sources 
+2-probably true 
+3-possibly true 
+4-doubtfully true 
+5-improbable 
+6-truth cannot be judged.</semantics>
+                </field>
+                <field>
+                    <name>CombatEffectiveness</name>
+                    <dataType>Text5</dataType>
+                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability.</semantics>
+                </field>
+                <field>
+                    <name>IFF_SIF_AIS</name>
+                    <dataType>Text15</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                </field>
+                <field>
+                    <name>UniqueDesignation</name>
+                    <dataType>Text21</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                </field>
+                <field>
+                    <name>EngagementBarText</name>
+                    <dataType>Text8</dataType>
+                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                </field>
+            </fixedRecordData>
         </fixedRecordDataTypes>
+        <variantRecordDataTypes>
+            <variantRecordData>
+                <name>SymbolAmplificationVariant</name>
+                <discriminant>SymbolType</discriminant>
+                <dataType>SymbolTypeEnum</dataType>
+                <alternative>
+                    <enumerator>Unit</enumerator>
+                    <name>UnitSymbol</name>
+                    <dataType>UnitSymbolAmplificationStruct</dataType>
+                    <semantics>Symbol amplification for unit symbol.</semantics>
+                </alternative>
+                <alternative>
+                    <enumerator>Equipment</enumerator>
+                    <name>EquipmentSymbol</name>
+                    <dataType>EquipmentSymbolAmplificationStruct</dataType>
+                    <semantics>Symbol amplification for equipment symbol.</semantics>
+                </alternative>
+                <alternative>
+                    <enumerator>Installation</enumerator>
+                    <name>InstallationSymbol</name>
+                    <dataType>InstallationSymbolAmplificationStruct</dataType>
+                    <semantics>Symbol amplification for installation symbol.</semantics>
+                </alternative>
+                <encoding>HLAvariantRecord</encoding>
+                <semantics>Different symbol amplification data for different types of symbols.</semantics>
+            </variantRecordData>
+        </variantRecordDataTypes>
     </dataTypes>
     <notes>
         <note>
@@ -2048,15 +2359,31 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
 * Removed datatype `TimeSecInt32` 
 * Removed datatype `GeoLocationTypeEnum32` 
 * Removed datatype `ArrayOfString` 
-* Removed datatype `Text64`
+* Removed datatype `Text64` 
 * Replaced datatype `PercentFloat64` with `PercentFloat32` 
 * Replaced datatype `EpochTimeSecInt64`  with `ScenarioTime` 
  
+* Added datatype `EquipmentSymbolAmplificationStruct` 
+* Added datatype `UnitSymbolAmplificationStruct` 
+* Added datatype `InstallationSymbolAmplificationStruct` 
 * Added datatype `TimeMillisecondIn64` 
 * Added datatype `ScenarioTime` 
 * Added datatype `HostilityStatusCodeEnum32` moved from NETN-ORG 
 * Added datatype `DamageStatusEnum32` 
-* Added datatype `LocationStruct`</semantics>
+* Added datatype `LocationStruct` 
+* Added datatype `SymbolAmplificationVariant`
+
+* Added datatype `Text5`
+* Added datatype `Text21`
+* Added datatype `Text24`
+* Added datatype `Text20`
+* Added datatype `Text9`
+* Added datatype `Text3`
+* Added datatype `Text2`
+* Added datatype `Text1`
+* Added datatype `Text15`
+* Added datatype `Text8`
+</semantics>
         </note>
         <note>
             <label>netn-base_2</label>
