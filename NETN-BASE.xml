@@ -2005,6 +2005,13 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Text of max length 8 characters.</semantics>
             </arrayData>
+            <arrayData>
+                <name>Text64</name>
+                <dataType>HLAunicodeChar</dataType>
+                <cardinality>[0..64]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Text of max length 64 characters.</semantics>
+            </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
             <fixedRecordData>
@@ -2371,19 +2378,18 @@ Credibility Ratings:
 * Added datatype `HostilityStatusCodeEnum32` moved from NETN-ORG 
 * Added datatype `DamageStatusEnum32` 
 * Added datatype `LocationStruct` 
-* Added datatype `SymbolAmplificationVariant`
-
-* Added datatype `Text5`
-* Added datatype `Text21`
-* Added datatype `Text24`
-* Added datatype `Text20`
-* Added datatype `Text9`
-* Added datatype `Text3`
-* Added datatype `Text2`
-* Added datatype `Text1`
-* Added datatype `Text15`
-* Added datatype `Text8`
-</semantics>
+* Added datatype `SymbolAmplificationVariant` 
+ 
+* Added datatype `Text5` 
+* Added datatype `Text21` 
+* Added datatype `Text24` 
+* Added datatype `Text20` 
+* Added datatype `Text9` 
+* Added datatype `Text3` 
+* Added datatype `Text2` 
+* Added datatype `Text1` 
+* Added datatype `Text15` 
+* Added datatype `Text8`</semantics>
         </note>
         <note>
             <label>netn-base_2</label>
