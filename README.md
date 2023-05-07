@@ -3,13 +3,13 @@
 
 |Version| Date| Dependencies|
 |---|---|---|
-|2.1|2023-03-18|RPR-Base|
+|3.0|2023-04-07|RPR-Base|
 
 > [Full Documentation](NETN-BASE.md)
 
 The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.
 
-This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and is primarily intended to support interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network. The NETN-BASE FOM module is available as an XML file for use in HLA-based federations.
+This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.
 
 
 
@@ -38,7 +38,7 @@ Version numbering of this FOM Module and associated documentation is based on th
 |---|
 |v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0|
 |v2.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0|
-|v2.1 - Updated version developed by MSG-191. Release included in NATO-FOM v4.0|
+|v3.0 - Updated version developed by MSG-191. The release is included in NATO-FOM v4.0|
 
 > [Changelog](changelog.md)
 
