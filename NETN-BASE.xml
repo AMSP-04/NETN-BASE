@@ -82,8 +82,8 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>Optional. Reference to the federate with the main responsibility for modelling the object behaviour.</semantics>
             </attribute>
             <attribute>
-                <name>Time</name>
-                <dataType>ScenarioTime</dataType>
+                <name>ScenarioTime</name>
+                <dataType>EpochTime</dataType>
                 <updateType>Static</updateType>
                 <updateCondition>NA</updateCondition>
                 <ownership>DivestAcquire</ownership>
@@ -112,8 +112,8 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>Optional. Reference to the federate application sending this interaction.</semantics>
             </parameter>
             <parameter>
-                <name>Time</name>
-                <dataType>ScenarioTime</dataType>
+                <name>ScenarioTime</name>
+                <dataType>EpochTime</dataType>
                 <semantics>Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
             </parameter>
         </interactionClass>
@@ -193,12 +193,12 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>A generic representation of milliseconds, unit symbol ms.</semantics>
             </simpleData>
             <simpleData>
-                <name>ScenarioTime</name>
+                <name>EpochTime</name>
                 <representation>HLAinteger64BE</representation>
                 <units>Millisecond (ms)</units>
                 <resolution>1</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+                <semantics>Scenario time is milliseconds since Epoch, where Epoch e.g. is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
