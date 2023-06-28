@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2023-04-12</modificationDate>
+        <modificationDate>2023-06-28</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
@@ -79,7 +79,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <sharing>PublishSubscribe</sharing>
                 <transportation>HLAreliable</transportation>
                 <order>Receive</order>
-                <semantics>Optional. Reference to the federate with the main responsibility for modelling the object behaviour.</semantics>
+                <semantics>Optional. Reference to the federate application with the main responsibility for modelling the object behaviour.</semantics>
             </attribute>
             <attribute>
                 <name>ScenarioTime</name>
@@ -121,14 +121,6 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
     <dataTypes>
         <simpleDataTypes>
             <simpleData>
-                <name>QuantityFloat32</name>
-                <representation>HLAfloat32BE</representation>
-                <units>NA</units>
-                <resolution>NA</resolution>
-                <accuracy>NA</accuracy>
-                <semantics>A generic floating-point quantity.</semantics>
-            </simpleData>
-            <simpleData>
                 <name>QuantityFloat64</name>
                 <representation>HLAfloat64BE</representation>
                 <units>NA</units>
@@ -138,7 +130,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
             </simpleData>
             <simpleData>
                 <name>QuantityInt32</name>
-                <representation>RPRunsignedInteger32BE</representation>
+                <representation>HLAinteger32BE</representation>
                 <units>NA</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
@@ -1899,7 +1891,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <dataType>SupplyStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>A list of supply types and their quantity.</semantics>
+                <semantics>A list of supply types and the number of each being offered or requested.</semantics>
             </arrayData>
             <arrayData>
                 <name>Callsign</name>
@@ -1950,7 +1942,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <dataType>LocationStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>An array of LocationStruct elements representing a path. When projected on the earth's surface, the datatype can represent an area by connecting the first and last location in the array.</semantics>
+                <semantics>Dynamic array of LocationStruct elements, may also contain no elements.</semantics>
             </arrayData>
             <arrayData>
                 <name>Text5</name>
@@ -2119,7 +2111,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             <fixedRecordData>
                 <name>SupplyStruct</name>
                 <encoding>HLAfixedRecord</encoding>
-                <semantics>The quantity of a supply type.</semantics>
+                <semantics>Represents a single supply type and the quantity being offered or requested.</semantics>
                 <field>
                     <name>SupplyType</name>
                     <dataType>EntityTypeStruct</dataType>
@@ -2224,7 +2216,7 @@ Credibility Ratings:
                 <field>
                     <name>EvaluationRating</name>
                     <dataType>Text2</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+                    <semantics>A text amplifier for units, equipment and installations with a one-letter reliability rating and a one-number credibility rating. 
  
 Reliability Ratings: 
 A-completely reliable 
@@ -2270,7 +2262,7 @@ Credibility Ratings:
                 <field>
                     <name>EngagementBarText</name>
                     <dataType>Text8</dataType>
-                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                    <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type.</semantics>
                 </field>
             </fixedRecordData>
             <fixedRecordData>
@@ -2290,7 +2282,7 @@ Credibility Ratings:
                 <field>
                     <name>EvaluationRating</name>
                     <dataType>Text2</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+                    <semantics>A text amplifier for units, equipment and installations with a one-letter reliability rating and a one-number credibility rating. 
  
 Reliability Ratings: 
 A-completely reliable 
@@ -2326,7 +2318,7 @@ Credibility Ratings:
                 <field>
                     <name>EngagementBarText</name>
                     <dataType>Text8</dataType>
-                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                    <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type.</semantics>
                 </field>
             </fixedRecordData>
         </fixedRecordDataTypes>
@@ -2373,6 +2365,8 @@ Credibility Ratings:
 * Removed datatype `PointVariantStruct` 
 * Removed datatype `PointTypeEnum32` 
 * Removed datatype `PathTypeEnum32` 
+* Removed datatype `QuantityFloat32`
+
 * Replaced datatype `NETN_SupplyStruct` with `SupplyStruct` 
 * Replaced datatype `ArrayOfWorldLocationStruct` with `LocationStructArray` 
 * Replaced datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` 
@@ -2407,7 +2401,9 @@ Credibility Ratings:
 * Added datatype `Text1` 
 * Added datatype `Text15` 
 * Added datatype `Text8` 
-* Added datatype `TransmitterOperationalStatusEnum8`</semantics>
+* Added datatype `TransmitterOperationalStatusEnum8` 
+ 
+* Changed representation of `QuantityInt32` to `HLAinteger32BE`</semantics>
         </note>
         <note>
             <label>netn-base_2</label>
@@ -2471,29 +2467,29 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
             <label>netn-base_1</label>
             <semantics>## Overview 
  
-## Unique Identification 
+### Unique Identification 
  
 In HLA, the RTI uses a handle of the data type `ObjectInstanceHandle` to identify instances in `RTIambassador` and `FederateAmbassador` services. Every object instance in a federation execution receives a unique handle when it is registered. The object instance has a unique name, either specified by the registering federate or generated by the RTI. The instance handle does not persist between different federation executions or if an object is removed and re-registered. The instance name is unique in a federation execution, but if generated by the RTI, it is not guaranteed to remain the same between federation executions. The federate can also provide an object instance name by first reserving the name and then using it when registering the object instance. Re-registering using the same name is not allowed. Therefore, object instances with auto-generated handles and names get new values if their owning federate leaves and later re-joins a federation execution. 
  
-The RPR-FOM use the `BaseEntity` attribute `EntityIdentifier` for unique entity identification. In addition, some RPR-FOM interactions use the object instance name to reference an object instance. The `EntityIdentifier` is a triple consisting of `SiteID`, `ApplicationID` and `EntityNumber`, where the site and application identify the federate registering the object and is responsible for updates of the RPR-FOM entity state attributes. The entity number is generated by the federate registering the object and is unique among all objects registered by the same federate. In addition, the `PhysicalEntity` attribute `Marking` and the `AggregateEntity` attribute `AggregateMarking` are sometimes used to identify instances in a federation execution by name. However, these attributes are not intended to identify entities uniquely and are limited-length strings. 
+The RPR-FOM uses the `BaseEntity` attribute `EntityIdentifier` for unique entity identification. In addition, some RPR-FOM interactions use the object instance name to reference an object instance. The `EntityIdentifier` is a triple consisting of `SiteID`, `ApplicationID` and `EntityNumber`, where the site and application identify the federate registering the object and is responsible for updates of the RPR-FOM entity state attributes. The entity number is generated by the federate registering the object and is unique among all objects registered by the same federate. In addition, the `PhysicalEntity` attribute `Marking` and the `AggregateEntity` attribute `AggregateMarking` are sometimes used to identify instances in a federation execution by name. However, these attributes are not intended to identify entities uniquely and are limited-length strings. 
  
-The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g. 550e8400-e29b-41d4-a716-446655440000. The MSDL standard uses the UUID format. 
+The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g., 550e8400-e29b-41d4-a716-446655440000.
  
 In the NATO FOM modules, references to objects use the UUID datatype and rely on federates to resolve references to objects with the referenced `UniqueId`. 
  
-Similarly, the NETN-BASE defines the `HLAinteractionRoot` parameter `UniqueId`. The primary purpose of this parameter is to allow other subsequent interactions, e.g. acknowledgements, to reference a previously sent interaction. 
+Similarly, the NETN-BASE defines the `HLAinteractionRoot` parameter `UniqueId`. The primary purpose of this parameter is to allow other subsequent interactions, e.g., acknowledgments, to reference a previously sent interaction. 
  
-## Federate Application 
+### Federate Application 
  
 The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `FederateApplication`, which allows the association of an object with a federate application based on pre-agreed UUID. For example, federation agreements can include a list of all participating federate applications with their assigned UUID. The `FederateApplication` attribute references the federate application with the primary responsibility for the object. Usually, the federate registering the object instance has the primary responsibility. However, in some cases, some other federate may register the object instance and then divest ownership for some or all attributes. In these cases, the `FederateApplication` attribute can trigger the referenced federate application to take attribute ownership and assume its modelling responsibility. 
  
 Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `FederateApplication`. The primary purpose of this parameter is to tag all interactions with sender information. This approach allows better logging of interactions for analysis and debugging. 
  
-## Scenario Time 
+### Scenario Time 
  
 Logical time (or Simulation Time) coordinates and synchronizes data exchange in a distributed simulation. HLA time management services can control the advancement of logical time. To pace logical time, use wall-clock time to manage a real-time or scaled real-time simulation. The RPR-FOM handles synchronization by timestamping each update and relying on synchronized system clocks to advance time. Logical time representation and the methods for synchronizing the advancing of time in a distributed simulation can vary between different federations. 
  
-Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation. E.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backwards. However, scenario time may move forwards, backwards, or jump in time. 
+Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation. E.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backward. However, scenario time may move forward or backward. 
  
 The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Time` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `Time`, which represents the send-time of the interaction specified as scenario time.</semantics>
         </note>
