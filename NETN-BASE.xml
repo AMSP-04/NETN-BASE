@@ -1887,7 +1887,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
         </enumeratedDataTypes>
         <arrayDataTypes>
             <arrayData>
-                <name>SupplyStructArray</name>
+                <name>ArrayOfSupplyStruct</name>
                 <dataType>SupplyStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
@@ -2020,6 +2020,13 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>[0..64]</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Text of max length 64 characters.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>ArrayOfResourceStatus</name>
+                <dataType>ResourceStatusStruct</dataType>
+                <cardinality>[1..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>The array of health states for a named resource.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
@@ -2321,6 +2328,46 @@ Credibility Ratings:
                     <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type.</semantics>
                 </field>
             </fixedRecordData>
+            <fixedRecordData>
+                <name>ResourceStatusStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>The name of a resource and the number of instances of that resource by health status.</semantics>
+                <field>
+                    <name>NumberHealthyOrIntact</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of healthy or intact resources</semantics>
+                </field>
+                <field>
+                    <name>NumberSlightlyDamaged</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of slightly damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberModeratelyDamaged</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of moderately damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberSignificantlyDamaged</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of significantly damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberDestroyed</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of destroyed or consumed resources</semantics>
+                </field>
+                <field>
+                    <name>ResourceName</name>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>The name of the resource</semantics>
+                </field>
+                <field>
+                    <name>ResourceType</name>
+                    <dataType>EntityTypeStruct</dataType>
+                    <semantics>The type of the resource (as described in the Bit Encoded Values for Use with Protocols for Distributed Interactive Simulation Applications)</semantics>
+                </field>
+            </fixedRecordData>
         </fixedRecordDataTypes>
         <variantRecordDataTypes>
             <variantRecordData>
@@ -2365,11 +2412,11 @@ Credibility Ratings:
 * Removed datatype `PointVariantStruct` 
 * Removed datatype `PointTypeEnum32` 
 * Removed datatype `PathTypeEnum32` 
-* Removed datatype `QuantityFloat32`
-
+* Removed datatype `QuantityFloat32` 
+ 
 * Replaced datatype `NETN_SupplyStruct` with `SupplyStruct` 
 * Replaced datatype `ArrayOfWorldLocationStruct` with `LocationStructArray` 
-* Replaced datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` 
+* Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStruct` 
 * Removed datatype `TransactionId` 
 * Removed datatype `UuidArrayOfHLAbyte16` 
 * Removed datatype `ArrayOfText64` 
@@ -2402,6 +2449,8 @@ Credibility Ratings:
 * Added datatype `Text15` 
 * Added datatype `Text8` 
 * Added datatype `TransmitterOperationalStatusEnum8` 
+* Added datatype `ResourceStatusStruct` 
+* Added datatype `ArrayOfResourceStatus` 
  
 * Changed representation of `QuantityInt32` to `HLAinteger32BE`</semantics>
         </note>
@@ -2473,7 +2522,7 @@ In HLA, the RTI uses a handle of the data type `ObjectInstanceHandle` to identif
  
 The RPR-FOM uses the `BaseEntity` attribute `EntityIdentifier` for unique entity identification. In addition, some RPR-FOM interactions use the object instance name to reference an object instance. The `EntityIdentifier` is a triple consisting of `SiteID`, `ApplicationID` and `EntityNumber`, where the site and application identify the federate registering the object and is responsible for updates of the RPR-FOM entity state attributes. The entity number is generated by the federate registering the object and is unique among all objects registered by the same federate. In addition, the `PhysicalEntity` attribute `Marking` and the `AggregateEntity` attribute `AggregateMarking` are sometimes used to identify instances in a federation execution by name. However, these attributes are not intended to identify entities uniquely and are limited-length strings. 
  
-The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g., 550e8400-e29b-41d4-a716-446655440000.
+The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g., 550e8400-e29b-41d4-a716-446655440000. 
  
 In the NATO FOM modules, references to objects use the UUID datatype and rely on federates to resolve references to objects with the referenced `UniqueId`. 
  
