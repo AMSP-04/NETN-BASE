@@ -6,7 +6,7 @@
 
 The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.
 
-This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.
+This module is a base module for all other NETN FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.
 
 
 
@@ -20,7 +20,7 @@ The RPR-FOM uses the `BaseEntity` attribute `EntityIdentifier` for unique entity
  
 The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g., 550e8400-e29b-41d4-a716-446655440000.
  
-In the NATO FOM modules, references to objects use the UUID datatype and rely on federates to resolve references to objects with the referenced `UniqueId`. 
+In the NETN FOM modules, references to objects use the UUID datatype and rely on federates to resolve references to objects with the referenced `UniqueId`. 
  
 Similarly, the NETN-BASE defines the `HLAinteractionRoot` parameter `UniqueId`. The primary purpose of this parameter is to allow other subsequent interactions, e.g., acknowledgments, to reference a previously sent interaction. 
  

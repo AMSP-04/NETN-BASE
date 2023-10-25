@@ -8,11 +8,11 @@
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
-        <description>This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.</description>
+        <description>This module is a base module for all other NETN FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.</description>
         <useLimitation></useLimitation>
-        <useHistory notes="netn-base_3">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
-        <useHistory notes="netn-base_2">v2.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0</useHistory>
-        <useHistory notes="netn_base_1">v3.0 - Updated version developed by MSG-191. The release is included in NATO-FOM v4.0</useHistory>
+        <useHistory notes="netn-base_3">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0</useHistory>
+        <useHistory notes="netn-base_2">v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0</useHistory>
+        <useHistory notes="netn_base_1">v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0</useHistory>
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -71,17 +71,6 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or defined during scenario initialization.</semantics>
             </attribute>
             <attribute>
-                <name>FederateApplication</name>
-                <dataType>UUID</dataType>
-                <updateType>Conditional</updateType>
-                <updateCondition>On change</updateCondition>
-                <ownership>DivestAcquire</ownership>
-                <sharing>PublishSubscribe</sharing>
-                <transportation>HLAreliable</transportation>
-                <order>Receive</order>
-                <semantics>Optional. Reference to the federate application with the main responsibility for modelling the object behaviour.</semantics>
-            </attribute>
-            <attribute>
                 <name>ScenarioTime</name>
                 <dataType>EpochTime</dataType>
                 <updateType>Static</updateType>
@@ -106,11 +95,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <dataType>UUID</dataType>
                 <semantics>Optional: A unique identifier for the interaction.</semantics>
             </parameter>
-            <parameter>
-                <name>FederateApplication</name>
-                <dataType>UUID</dataType>
-                <semantics>Optional. Reference to the federate application sending this interaction.</semantics>
-            </parameter>
+
             <parameter>
                 <name>ScenarioTime</name>
                 <dataType>EpochTime</dataType>
@@ -142,15 +127,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>Degree</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>The compass direction is measured clockwise relative to the true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
-            </simpleData>
-            <simpleData>
-                <name>LatLongDegreesFloat64</name>
-                <representation>HLAfloat64BE</representation>
-                <units>Degree</units>
-                <resolution>NA</resolution>
-                <accuracy>NA</accuracy>
-                <semantics>Represents a measure of either latitude or longitude in decimal degrees of arc.</semantics>
+                <semantics>The direction is measured clockwise relative to the true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
             </simpleData>
             <simpleData>
                 <name>MassDensityFloat32</name>
@@ -191,6 +168,22 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <resolution>1</resolution>
                 <accuracy>NA</accuracy>
                 <semantics>Scenario time is milliseconds since Epoch, where Epoch e.g. is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>LatitudeFloat64</name>
+                <representation>HLAfloat64BE</representation>
+                <units>Degree</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>An angular measurement that specifies the north–south position of a point on the surface. Latitude is given as an angle that ranges from –90 degrees at the south pole to 90 degrees at the north pole, with 0 at the Equator.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>LongitudeFloat64</name>
+                <representation>HLAfloat64BE</representation>
+                <units>Degree</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>An angular measurement that specifies the east–west position of a point on the surface. Longitude is given as an angle that ranges from –180 degrees to +180 degrees, with 0 at the prime meridian.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
@@ -1926,7 +1919,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <dataType>HLAbyte</dataType>
                 <cardinality>16</cardinality>
                 <encoding>HLAfixedArray</encoding>
-                <semantics>4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
+                <semantics>RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
  
 For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
             </arrayData>
@@ -2024,7 +2017,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
             <arrayData>
                 <name>ArrayOfResourceStatus</name>
                 <dataType>ResourceStatusStruct</dataType>
-                <cardinality>[1..2147483647]</cardinality>
+                <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>The array of health states for a named resource.</semantics>
             </arrayData>
@@ -2071,12 +2064,12 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>A geodetic point, specified by latitude and longitude, with unspecified altitude. WGS84</semantics>
                 <field>
                     <name>Latitude</name>
-                    <dataType>LatLongDegreesFloat64</dataType>
+                    <dataType>LatitudeFloat64</dataType>
                     <semantics>The latitude in degrees.</semantics>
                 </field>
                 <field>
                     <name>Longitude</name>
-                    <dataType>LatLongDegreesFloat64</dataType>
+                    <dataType>LongitudeFloat64</dataType>
                     <semantics>The longitude in degrees.</semantics>
                 </field>
             </fixedRecordData>
@@ -2101,12 +2094,12 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>A geodetic point is specified by latitude, longitude and altitude.</semantics>
                 <field>
                     <name>Latitude</name>
-                    <dataType>LatLongDegreesFloat64</dataType>
+                    <dataType>LatitudeFloat64</dataType>
                     <semantics>The latitude in degrees.</semantics>
                 </field>
                 <field>
                     <name>Longitude</name>
-                    <dataType>LatLongDegreesFloat64</dataType>
+                    <dataType>LongitudeFloat64</dataType>
                     <semantics>The longitude in degrees.</semantics>
                 </field>
                 <field>
@@ -2122,11 +2115,11 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <field>
                     <name>SupplyType</name>
                     <dataType>EntityTypeStruct</dataType>
-                    <semantics>The type of supply being offered or requested.</semantics>
+                    <semantics>The type of supply.</semantics>
                 </field>
                 <field>
                     <name>Quantity</name>
-                    <dataType>Float32</dataType>
+                    <dataType>QuantityFloat64</dataType>
                     <semantics>The number of units of the supply type. The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
                 </field>
             </fixedRecordData>
@@ -2334,27 +2327,27 @@ Credibility Ratings:
                 <semantics>The name of a resource and the number of instances of that resource by health status.</semantics>
                 <field>
                     <name>NumberHealthyOrIntact</name>
-                    <dataType>QuantityFloat64</dataType>
+                    <dataType>QuantityInt32</dataType>
                     <semantics>The number of healthy or intact resources</semantics>
                 </field>
                 <field>
                     <name>NumberSlightlyDamaged</name>
-                    <dataType>QuantityFloat64</dataType>
+                    <dataType>QuantityInt32</dataType>
                     <semantics>The number of slightly damaged resources</semantics>
                 </field>
                 <field>
                     <name>NumberModeratelyDamaged</name>
-                    <dataType>QuantityFloat64</dataType>
+                    <dataType>QuantityInt32</dataType>
                     <semantics>The number of moderately damaged resources</semantics>
                 </field>
                 <field>
                     <name>NumberSignificantlyDamaged</name>
-                    <dataType>QuantityFloat64</dataType>
+                    <dataType>QuantityInt32</dataType>
                     <semantics>The number of significantly damaged resources</semantics>
                 </field>
                 <field>
                     <name>NumberDestroyed</name>
-                    <dataType>QuantityFloat64</dataType>
+                    <dataType>QuantityInt32</dataType>
                     <semantics>The number of destroyed or consumed resources</semantics>
                 </field>
                 <field>
@@ -2401,7 +2394,6 @@ Credibility Ratings:
         <note>
             <label>netn_base_1</label>
             <semantics>* Added `HLAobjectRoot` attribute `UniqueId` 
-* Added `HLAobjectRoot` attribute `FederateApplication` 
 * Added `HLAobjectRoot` attribute `Time` 
 * Added `HLAinteractionRoot` attribute `UniqueId` 
 * Added `HLAinteractionRoot` attribute `FederateApplication` 
@@ -2452,7 +2444,9 @@ Credibility Ratings:
 * Added datatype `ResourceStatusStruct` 
 * Added datatype `ArrayOfResourceStatus` 
  
-* Changed representation of `QuantityInt32` to `HLAinteger32BE`</semantics>
+* Changed representation of `QuantityInt32` to `HLAinteger32BE` 
+ 
+* Replaced datatype `LatLongDegreesFloat64` with `LatitudeFloat64` and `LongitudeFloat64`</semantics>
         </note>
         <note>
             <label>netn-base_2</label>
@@ -2524,7 +2518,7 @@ The RPR-FOM uses the `BaseEntity` attribute `EntityIdentifier` for unique entity
  
 The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g., 550e8400-e29b-41d4-a716-446655440000. 
  
-In the NATO FOM modules, references to objects use the UUID datatype and rely on federates to resolve references to objects with the referenced `UniqueId`. 
+In the NETN FOM modules, references to objects use the UUID datatype and rely on federates to resolve references to objects with the referenced `UniqueId`. 
  
 Similarly, the NETN-BASE defines the `HLAinteractionRoot` parameter `UniqueId`. The primary purpose of this parameter is to allow other subsequent interactions, e.g., acknowledgments, to reference a previously sent interaction. 
  
