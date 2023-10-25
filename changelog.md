@@ -63,7 +63,6 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 ### v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0
 
 * Added `HLAobjectRoot` attribute `UniqueId` 
-* Added `HLAobjectRoot` attribute `FederateApplication` 
 * Added `HLAobjectRoot` attribute `Time` 
 * Added `HLAinteractionRoot` attribute `UniqueId` 
 * Added `HLAinteractionRoot` attribute `FederateApplication` 
@@ -74,9 +73,11 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Removed datatype `PointVariantStruct` 
 * Removed datatype `PointTypeEnum32` 
 * Removed datatype `PathTypeEnum32` 
+* Removed datatype `QuantityFloat32` 
+ 
 * Replaced datatype `NETN_SupplyStruct` with `SupplyStruct` 
 * Replaced datatype `ArrayOfWorldLocationStruct` with `LocationStructArray` 
-* Replaced datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` 
+* Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStruct` 
 * Removed datatype `TransactionId` 
 * Removed datatype `UuidArrayOfHLAbyte16` 
 * Removed datatype `ArrayOfText64` 
@@ -107,5 +108,12 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Added datatype `Text2` 
 * Added datatype `Text1` 
 * Added datatype `Text15` 
-* Added datatype `Text8`
+* Added datatype `Text8` 
+* Added datatype `TransmitterOperationalStatusEnum8` 
+* Added datatype `ResourceStatusStruct` 
+* Added datatype `ArrayOfResourceStatus` 
+ 
+* Changed representation of `QuantityInt32` to `HLAinteger32BE` 
+ 
+* Replaced datatype `LatLongDegreesFloat64` with `LatitudeFloat64` and `LongitudeFloat64`
 
