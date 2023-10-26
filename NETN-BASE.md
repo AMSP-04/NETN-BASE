@@ -2,7 +2,7 @@
 # NETN-BASE
 |Version| Date| Dependencies|
 |---|---|---|
-|3.0|2023-10-25|RPR-Base|
+|3.0|2023-06-28|RPR-Base|
 
 The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.
 
@@ -85,7 +85,7 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |AggregateStateFormationEnum32|Aggregate State-Formation [UID 205]|
 |AltitudeMeterFloat64|Generic representation of altitude defined by the context of use, i.e. height Above Mean Sea Level, height Above Ground Level.|
 |ArrayOfResourceStatus|The array of health states for a named resource.|
-|ArrayOfSupplyStruct|A list of supply types and the number of each being offered or requested.|
+|ArrayOfSupplyStatus|A list of supply types and the number of each being offered or requested.|
 |ArrayOfUuid|An array of Unique Identifiers expressed as UUIDs.|
 |Callsign|An identifier for a simulated entity. Callsigns should be unique in the context in which they are used but are not required to be globally unique.|
 |CancellationReasonEnum32|Describes the reason for cancellation.|
@@ -112,21 +112,10 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |QuantityFloat64|A generic floating-point quantity.|
 |QuantityInt32|A generic discrete quantity.|
 |ResourceStatusStruct|The name of a resource and the number of instances of that resource by health status.|
-|SupplyStruct|Represents a single supply type and the quantity being offered or requested.|
+|SupplyStatusStruct|Represents a single supply type and the quantity being offered or requested.|
 |SymbolAmplificationVariant|Different symbol amplification data for different types of symbols.|
 |SymbolIdentifier|A symbol identifier is represented as a string. The identifier uses a URI notation (uri:xxxxxxxxxx) where the URI moniker specifies the symbology standard, e.g. app6a, app6b, app6c, 2525b, 2525c, 2525d. If not provided, the federation agreement defines the default symbol standard.|
 |SymbolTypeEnum|Type of symbol.|
-|Text1|Text of max length 1 character.|
-|Text15|Text of max length 15 characters.|
-|Text2|Text of max length 2 characters.|
-|Text20|Text of max length 20 characters.|
-|Text21|Text of max length 21 characters.|
-|Text24|Text of max length 24 characters.|
-|Text3|Text of max length 3 characters.|
-|Text5|Text of max length 5 characters.|
-|Text64|Text of max length 64 characters.|
-|Text8|Text of max length 8 characters.|
-|Text9|Text of max length 9 characters.|
 |TimeMillisecondInt64|A generic representation of milliseconds, unit symbol ms.|
 |TransmitterOperationalStatusEnum8|The current operational state of a radio transmitter.|
 |UUID|RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.|
@@ -164,24 +153,13 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |Name|Element Datatype|Semantics|
 |---|---|---|
 |ArrayOfResourceStatus|ResourceStatusStruct|The array of health states for a named resource.|
-|ArrayOfSupplyStruct|SupplyStruct|A list of supply types and the number of each being offered or requested.|
+|ArrayOfSupplyStatus|SupplyStatusStruct|A list of supply types and the number of each being offered or requested.|
 |ArrayOfUuid|UUID|An array of Unique Identifiers expressed as UUIDs.|
 |Callsign|HLAunicodeChar|An identifier for a simulated entity. Callsigns should be unique in the context in which they are used but are not required to be globally unique.|
 |FederateName|HLAunicodeChar|The unique name of a federate participating in an HLA federation.|
 |GeodeticPolygon|GeodeticLocation|A sequence of geodetic locations defines a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth's surface, and each segment is a great circle between locations.|
 |LocationStructArray|LocationStruct|Dynamic array of LocationStruct elements, may also contain no elements.|
 |SymbolIdentifier|HLAunicodeChar|A symbol identifier is represented as a string. The identifier uses a URI notation (uri:xxxxxxxxxx) where the URI moniker specifies the symbology standard, e.g. app6a, app6b, app6c, 2525b, 2525c, 2525d. If not provided, the federation agreement defines the default symbol standard.|
-|Text1|HLAunicodeChar|Text of max length 1 character.|
-|Text15|HLAunicodeChar|Text of max length 15 characters.|
-|Text2|HLAunicodeChar|Text of max length 2 characters.|
-|Text20|HLAunicodeChar|Text of max length 20 characters.|
-|Text21|HLAunicodeChar|Text of max length 21 characters.|
-|Text24|HLAunicodeChar|Text of max length 24 characters.|
-|Text3|HLAunicodeChar|Text of max length 3 characters.|
-|Text5|HLAunicodeChar|Text of max length 5 characters.|
-|Text64|HLAunicodeChar|Text of max length 64 characters.|
-|Text8|HLAunicodeChar|Text of max length 8 characters.|
-|Text9|HLAunicodeChar|Text of max length 9 characters.|
 |UUID|HLAbyte|RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.|
         
 ### Fixed Record Datatypes
@@ -195,7 +173,7 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |InstallationSymbolAmplificationStruct|StaffComments, AdditionalInformation, EvaluationRating, CombatEffectiveness, IFF_SIF_AIS, UniqueDesignation, EngagementBarText|Text amplifiers for Installation symbols.|
 |LocationStruct|X, Y, Z|The location of a point in space. Unless specified otherwise for the attribute, parameter, or datatype field using this datatype, the location is in the world coordinate system, as specified in IEEE Std 1278.1-2012 section 1.6.3.|
 |ResourceStatusStruct|NumberHealthyOrIntact, NumberSlightlyDamaged, NumberModeratelyDamaged, NumberSignificantlyDamaged, NumberDestroyed, ResourceName, ResourceType|The name of a resource and the number of instances of that resource by health status.|
-|SupplyStruct|SupplyType, Quantity|Represents a single supply type and the quantity being offered or requested.|
+|SupplyStatusStruct|SupplyType, Quantity|Represents a single supply type and the quantity being offered or requested.|
 |UnitSymbolAmplificationStruct|ReinforcedOrReduced, StaffComments, AdditionalInformation, EvaluationRating, CombatEffectiveness, HigherFormation, IFF_SIF_AIS, UniqueDesignation, SpecialHeadquarters, EngagementBarText|Text amplifiers for Unit symbols.|
         
 ### Variant Record Datatypes

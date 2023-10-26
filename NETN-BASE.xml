@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2023-10-25</modificationDate>
+        <modificationDate>2023-06-28</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
@@ -95,7 +95,6 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <dataType>UUID</dataType>
                 <semantics>Optional: A unique identifier for the interaction.</semantics>
             </parameter>
-
             <parameter>
                 <name>ScenarioTime</name>
                 <dataType>EpochTime</dataType>
@@ -1880,8 +1879,8 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
         </enumeratedDataTypes>
         <arrayDataTypes>
             <arrayData>
-                <name>ArrayOfSupplyStruct</name>
-                <dataType>SupplyStruct</dataType>
+                <name>ArrayOfSupplyStatus</name>
+                <dataType>SupplyStatusStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A list of supply types and the number of each being offered or requested.</semantics>
@@ -1936,83 +1935,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>Dynamic array of LocationStruct elements, may also contain no elements.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text5</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..5]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 5 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text21</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..21]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 21 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text24</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..24]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 24 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text20</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..20]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 20 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text9</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..9]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 9 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text3</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..3]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 3 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text2</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..2]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 2 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text1</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..1]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 1 character.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text15</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..15]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 15 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text8</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..8]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 8 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text64</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..64]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 64 characters.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfResourceStatus</name>
@@ -2109,7 +2031,7 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 </field>
             </fixedRecordData>
             <fixedRecordData>
-                <name>SupplyStruct</name>
+                <name>SupplyStatusStruct</name>
                 <encoding>HLAfixedRecord</encoding>
                 <semantics>Represents a single supply type and the quantity being offered or requested.</semantics>
                 <field>
@@ -2129,23 +2051,23 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>Text amplifiers for Unit symbols.</semantics>
                 <field>
                     <name>ReinforcedOrReduced</name>
-                    <dataType>Text3</dataType>
-                    <semantics>A text amplifier in a unit symbol that displays (+) for reinforced, (-) for reduced, (±) reinforced and reduced.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier in a unit symbol that displays (+) for reinforced, (-) for reduced, (±) reinforced and reduced. Max length 3 characters.</semantics>
                 </field>
                 <field>
                     <name>StaffComments</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>AdditionalInformation</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>EvaluationRating</name>
-                    <dataType>Text2</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. Max length 2 characters. 
  
 Reliability Ratings: 
 A-completely reliable 
@@ -2165,33 +2087,33 @@ Credibility Ratings:
                 </field>
                 <field>
                     <name>CombatEffectiveness</name>
-                    <dataType>Text5</dataType>
-                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability. Max 5 characters.</semantics>
                 </field>
                 <field>
                     <name>HigherFormation</name>
-                    <dataType>Text21</dataType>
-                    <semantics>A text amplifier for units that indicates number or title of higher echelon command (corps are designated by Roman numerals).</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units that indicates number or title of higher echelon command (corps are designated by Roman numerals). Max 21 characters.</semantics>
                 </field>
                 <field>
                     <name>IFF_SIF_AIS</name>
-                    <dataType>Text15</dataType>
-                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes. Max 15 characters.</semantics>
                 </field>
                 <field>
                     <name>UniqueDesignation</name>
-                    <dataType>Text21</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology. Max 21 characters.</semantics>
                 </field>
                 <field>
                     <name>SpecialHeadquarters</name>
-                    <dataType>Text9</dataType>
-                    <semantics>A text modifier for a unit's special C2 Headquarters.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text modifier for a unit's special C2 Headquarters. Max length 9 characters.</semantics>
                 </field>
                 <field>
                     <name>EngagementBarText</name>
-                    <dataType>Text8</dataType>
-                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type. Max length 8 characters.</semantics>
                 </field>
             </fixedRecordData>
             <fixedRecordData>
@@ -2200,23 +2122,23 @@ Credibility Ratings:
                 <semantics>Text amplifiers for Equipment symbols.</semantics>
                 <field>
                     <name>Quantity</name>
-                    <dataType>Text9</dataType>
-                    <semantics>A text amplifier in an equipment symbol that identifies the number of items present.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier in an equipment symbol that identifies the number of items present. Max length 9 characters.</semantics>
                 </field>
                 <field>
                     <name>StaffComments</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>AdditionalInformation</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>EvaluationRating</name>
-                    <dataType>Text2</dataType>
-                    <semantics>A text amplifier for units, equipment and installations with a one-letter reliability rating and a one-number credibility rating. 
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations with a one-letter reliability rating and a one-number credibility rating. Max length 2 characters. 
  
 Reliability Ratings: 
 A-completely reliable 
@@ -2236,33 +2158,33 @@ Credibility Ratings:
                 </field>
                 <field>
                     <name>SignatureEquipment</name>
-                    <dataType>Text1</dataType>
-                    <semantics>A text amplifier for hostile equipment; “!” indicates detectable electronic signatures.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for hostile equipment; “!” indicates detectable electronic signatures. Max length 1 character.</semantics>
                 </field>
                 <field>
                     <name>Hostile</name>
-                    <dataType>Text3</dataType>
-                    <semantics>A text amplifier for equipment; letters "ENY" denote hostile symbols.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for equipment; letters "ENY" denote hostile symbols. Max length 3 characters.</semantics>
                 </field>
                 <field>
                     <name>IFF_SIF_AIS</name>
-                    <dataType>Text15</dataType>
-                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes. Max length 15 characters.</semantics>
                 </field>
                 <field>
                     <name>UniqueDesignation</name>
-                    <dataType>Text21</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology. Max length 21 characters.</semantics>
                 </field>
                 <field>
                     <name>EquipmentType</name>
-                    <dataType>Text24</dataType>
-                    <semantics>A text amplifier for equipment that indicates types of equipment.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for equipment that indicates types of equipment. Max length 24 characters.</semantics>
                 </field>
                 <field>
                     <name>EngagementBarText</name>
-                    <dataType>Text8</dataType>
-                    <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type. Max length 8 characters.</semantics>
                 </field>
             </fixedRecordData>
             <fixedRecordData>
@@ -2271,18 +2193,18 @@ Credibility Ratings:
                 <semantics>Text amplifiers for Installation symbols.</semantics>
                 <field>
                     <name>StaffComments</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>AdditionalInformation</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>EvaluationRating</name>
-                    <dataType>Text2</dataType>
-                    <semantics>A text amplifier for units, equipment and installations with a one-letter reliability rating and a one-number credibility rating. 
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations with a one-letter reliability rating and a one-number credibility rating. Max length 2 characters. 
  
 Reliability Ratings: 
 A-completely reliable 
@@ -2302,23 +2224,23 @@ Credibility Ratings:
                 </field>
                 <field>
                     <name>CombatEffectiveness</name>
-                    <dataType>Text5</dataType>
-                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability. Max length 5 characters.</semantics>
                 </field>
                 <field>
                     <name>IFF_SIF_AIS</name>
-                    <dataType>Text15</dataType>
-                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes. Max length 15 characters.</semantics>
                 </field>
                 <field>
                     <name>UniqueDesignation</name>
-                    <dataType>Text21</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology. Max length 21 characters.</semantics>
                 </field>
                 <field>
                     <name>EngagementBarText</name>
-                    <dataType>Text8</dataType>
-                    <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type. Max length 8 characters.</semantics>
                 </field>
             </fixedRecordData>
             <fixedRecordData>
@@ -2406,9 +2328,9 @@ Credibility Ratings:
 * Removed datatype `PathTypeEnum32` 
 * Removed datatype `QuantityFloat32` 
  
-* Replaced datatype `NETN_SupplyStruct` with `SupplyStruct` 
+* Replaced datatype `NETN_SupplyStruct` with `SupplyStatusStruct` 
 * Replaced datatype `ArrayOfWorldLocationStruct` with `LocationStructArray` 
-* Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStruct` 
+* Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStatus` 
 * Removed datatype `TransactionId` 
 * Removed datatype `UuidArrayOfHLAbyte16` 
 * Removed datatype `ArrayOfText64` 
@@ -2430,16 +2352,6 @@ Credibility Ratings:
 * Added datatype `LocationStruct` 
 * Added datatype `SymbolAmplificationVariant` 
  
-* Added datatype `Text5` 
-* Added datatype `Text21` 
-* Added datatype `Text24` 
-* Added datatype `Text20` 
-* Added datatype `Text9` 
-* Added datatype `Text3` 
-* Added datatype `Text2` 
-* Added datatype `Text1` 
-* Added datatype `Text15` 
-* Added datatype `Text8` 
 * Added datatype `TransmitterOperationalStatusEnum8` 
 * Added datatype `ResourceStatusStruct` 
 * Added datatype `ArrayOfResourceStatus` 
