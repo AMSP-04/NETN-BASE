@@ -8,8 +8,6 @@ The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module prov
 
 This module is a base module for all other NETN FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.
 
-
-
 ## Overview 
  
 ### Unique Identification 
@@ -37,10 +35,6 @@ The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Scenari
 
 Note that inherited and dependency attributes are not included in the description of object classes.
 
-```mermaid
-graph RL
-```
-
 ### HLAobjectRoot
 
 
@@ -54,9 +48,7 @@ graph RL
 
 Note that inherited and dependency parameters are not included in the description of interaction classes.
 
-```mermaid
-graph RL
-```
+
 
 ### HLAinteractionRoot
 
@@ -174,4 +166,3 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |Name|Discriminant (Datatype)|Alternatives|Semantics|
 |---|---|---|---|
 |SymbolAmplificationVariant|SymbolType (SymbolTypeEnum)|UnitSymbol, EquipmentSymbol, InstallationSymbol|Different symbol amplification data for different types of symbols.|
-    
