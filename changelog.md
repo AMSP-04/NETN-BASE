@@ -63,6 +63,7 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 ### v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0
 
 * Added `HLAobjectRoot` attribute `UniqueId` 
+
 * Added `HLAobjectRoot` attribute `Time` 
 * Added `HLAinteractionRoot` attribute `UniqueId` 
 * Added `HLAinteractionRoot` attribute `FederateApplication` 
@@ -73,11 +74,13 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Removed datatype `PointVariantStruct` 
 * Removed datatype `PointTypeEnum32` 
 * Removed datatype `PathTypeEnum32` 
+
 * Removed datatype `QuantityFloat32` 
  
 * Replaced datatype `NETN_SupplyStruct` with `SupplyStatusStruct` 
 * Replaced datatype `ArrayOfWorldLocationStruct` with `LocationStructArray` 
 * Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStatus` 
+
 * Removed datatype `TransactionId` 
 * Removed datatype `UuidArrayOfHLAbyte16` 
 * Removed datatype `ArrayOfText64` 
@@ -98,6 +101,7 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Added datatype `DamageStatusEnum32` 
 * Added datatype `LocationStruct` 
 * Added datatype `SymbolAmplificationVariant` 
+
 * Added datatype `SymbolStruct` 
  
 * Added datatype `TransmitterOperationalStatusEnum8` 
