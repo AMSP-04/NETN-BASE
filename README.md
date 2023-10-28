@@ -3,7 +3,6 @@
 
 |Version| Date| Dependencies|
 |---|---|---|
-
 |3.0|2023-10-28|RPR-Base|
 
 
@@ -40,7 +39,6 @@ Version numbering of this FOM Module and associated documentation is based on th
 
 |Version|
 |---|
-
 |v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0|
 |v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0|
 |v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0|
