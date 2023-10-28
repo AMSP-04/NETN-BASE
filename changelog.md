@@ -1,6 +1,6 @@
 ## Changelog NETN-BASE
 
-### v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0
+### v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0
 
 * v1.0.0 - First version in NETN FOM v2 
 * v1.0.1 - Added array data type: ArrayOfWorldLocation3 (moved from NETN_Aggregate FOM module) 
@@ -11,7 +11,7 @@ Previous history
 Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010, NETN_Service_Consumer_Provider_v1.0.3_2010 and NETN_Logistics_v1.1.2_2010.
 
 
-### v2.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0
+### v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0
 
 * Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified` 
 * Changed `modelIdentification` `other` to include license information 
@@ -60,10 +60,10 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Added datatype `SymbolVariantStruct`
 
 
-### v3.0 - Updated version developed by MSG-191. The release is included in NATO-FOM v4.0
+### v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0
 
 * Added `HLAobjectRoot` attribute `UniqueId` 
-* Added `HLAobjectRoot` attribute `FederateApplication` 
+
 * Added `HLAobjectRoot` attribute `Time` 
 * Added `HLAinteractionRoot` attribute `UniqueId` 
 * Added `HLAinteractionRoot` attribute `FederateApplication` 
@@ -74,9 +74,13 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Removed datatype `PointVariantStruct` 
 * Removed datatype `PointTypeEnum32` 
 * Removed datatype `PathTypeEnum32` 
-* Replaced datatype `NETN_SupplyStruct` with `SupplyStruct` 
+
+* Removed datatype `QuantityFloat32` 
+ 
+* Replaced datatype `NETN_SupplyStruct` with `SupplyStatusStruct` 
 * Replaced datatype `ArrayOfWorldLocationStruct` with `LocationStructArray` 
-* Replaced datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` 
+* Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStatus` 
+
 * Removed datatype `TransactionId` 
 * Removed datatype `UuidArrayOfHLAbyte16` 
 * Removed datatype `ArrayOfText64` 
@@ -97,15 +101,14 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Added datatype `DamageStatusEnum32` 
 * Added datatype `LocationStruct` 
 * Added datatype `SymbolAmplificationVariant` 
+
+* Added datatype `SymbolStruct` 
  
-* Added datatype `Text5` 
-* Added datatype `Text21` 
-* Added datatype `Text24` 
-* Added datatype `Text20` 
-* Added datatype `Text9` 
-* Added datatype `Text3` 
-* Added datatype `Text2` 
-* Added datatype `Text1` 
-* Added datatype `Text15` 
-* Added datatype `Text8`
+* Added datatype `TransmitterOperationalStatusEnum8` 
+* Added datatype `ResourceStatusStruct` 
+* Added datatype `ArrayOfResourceStatus` 
+ 
+* Changed representation of `QuantityInt32` to `HLAinteger32BE` 
+ 
+* Replaced datatype `LatLongDegreesFloat64` with `LatitudeFloat64` and `LongitudeFloat64`
 

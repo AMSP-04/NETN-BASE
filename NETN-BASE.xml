@@ -4,15 +4,17 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2023-04-12</modificationDate>
+
+        <modificationDate>2023-10-28</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
-        <description>This module is a base module for all other NETN-FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.</description>
+        <description>This module is a base module for all other NETN FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.</description>
         <useLimitation></useLimitation>
-        <useHistory notes="netn-base_3">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN-FOM v2.0</useHistory>
-        <useHistory notes="netn-base_2">v2.0 - Updated version developed by MSG-163. Release included in NETN-FOM v3.0</useHistory>
-        <useHistory notes="netn_base_1">v3.0 - Updated version developed by MSG-191. The release is included in NATO-FOM v4.0</useHistory>
+        <useHistory notes="netn-base_3">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0</useHistory>
+        <useHistory notes="netn-base_2">v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0</useHistory>
+        <useHistory notes="netn_base_1">v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0</useHistory>
+
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -71,19 +73,10 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or defined during scenario initialization.</semantics>
             </attribute>
             <attribute>
-                <name>FederateApplication</name>
-                <dataType>UUID</dataType>
-                <updateType>Conditional</updateType>
-                <updateCondition>On change</updateCondition>
-                <ownership>DivestAcquire</ownership>
-                <sharing>PublishSubscribe</sharing>
-                <transportation>HLAreliable</transportation>
-                <order>Receive</order>
-                <semantics>Optional. Reference to the federate with the main responsibility for modelling the object behaviour.</semantics>
-            </attribute>
-            <attribute>
-                <name>Time</name>
-                <dataType>ScenarioTime</dataType>
+
+                <name>ScenarioTime</name>
+                <dataType>EpochTime</dataType>
+
                 <updateType>Static</updateType>
                 <updateCondition>NA</updateCondition>
                 <ownership>DivestAcquire</ownership>
@@ -107,13 +100,10 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>Optional: A unique identifier for the interaction.</semantics>
             </parameter>
             <parameter>
-                <name>FederateApplication</name>
-                <dataType>UUID</dataType>
-                <semantics>Optional. Reference to the federate application sending this interaction.</semantics>
-            </parameter>
-            <parameter>
-                <name>Time</name>
-                <dataType>ScenarioTime</dataType>
+
+                <name>ScenarioTime</name>
+                <dataType>EpochTime</dataType>
+
                 <semantics>Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
             </parameter>
         </interactionClass>
@@ -121,14 +111,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
     <dataTypes>
         <simpleDataTypes>
             <simpleData>
-                <name>QuantityFloat32</name>
-                <representation>HLAfloat32BE</representation>
-                <units>NA</units>
-                <resolution>NA</resolution>
-                <accuracy>NA</accuracy>
-                <semantics>A generic floating-point quantity.</semantics>
-            </simpleData>
-            <simpleData>
+
                 <name>QuantityFloat64</name>
                 <representation>HLAfloat64BE</representation>
                 <units>NA</units>
@@ -150,15 +133,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>Degree</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>The compass direction is measured clockwise relative to the true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
-            </simpleData>
-            <simpleData>
-                <name>LatLongDegreesFloat64</name>
-                <representation>HLAfloat64BE</representation>
-                <units>Degree</units>
-                <resolution>NA</resolution>
-                <accuracy>NA</accuracy>
-                <semantics>Represents a measure of either latitude or longitude in decimal degrees of arc.</semantics>
+                <semantics>The direction is measured clockwise relative to the true north. Calculate values outside the range [0, 360) as modulo 360.</semantics>
             </simpleData>
             <simpleData>
                 <name>MassDensityFloat32</name>
@@ -193,12 +168,30 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>A generic representation of milliseconds, unit symbol ms.</semantics>
             </simpleData>
             <simpleData>
-                <name>ScenarioTime</name>
+
+                <name>EpochTime</name>
                 <representation>HLAinteger64BE</representation>
                 <units>Millisecond (ms)</units>
                 <resolution>1</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+
+                <semantics>Scenario time is milliseconds since Epoch, where Epoch e.g. is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>LatitudeFloat64</name>
+                <representation>HLAfloat64BE</representation>
+                <units>Degree</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>An angular measurement that specifies the north–south position of a point on the surface. Latitude is given as an angle that ranges from –90 degrees at the south pole to 90 degrees at the north pole, with 0 at the Equator.</semantics>
+            </simpleData>
+            <simpleData>
+                <name>LongitudeFloat64</name>
+                <representation>HLAfloat64BE</representation>
+                <units>Degree</units>
+                <resolution>NA</resolution>
+                <accuracy>NA</accuracy>
+                <semantics>An angular measurement that specifies the east–west position of a point on the surface. Longitude is given as an angle that ranges from –180 degrees to +180 degrees, with 0 at the prime meridian.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
@@ -1895,8 +1888,8 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
         </enumeratedDataTypes>
         <arrayDataTypes>
             <arrayData>
-                <name>SupplyStructArray</name>
-                <dataType>SupplyStruct</dataType>
+                <name>ArrayOfSupplyStatus</name>
+                <dataType>SupplyStatusStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A list of supply types and their quantity.</semantics>
@@ -1934,13 +1927,14 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <dataType>HLAbyte</dataType>
                 <cardinality>16</cardinality>
                 <encoding>HLAfixedArray</encoding>
-                <semantics>4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
+                <semantics>RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. 
  
 For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.</semantics>
             </arrayData>
             <arrayData>
                 <name>SymbolIdentifier</name>
                 <dataType>HLAunicodeChar</dataType>
+
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>A symbol identifier is represented as a string. The identifier uses a URI notation (uri:xxxxxxxxxx) where the URI moniker specifies the symbology standard, e.g. app6a, app6b, app6c, 2525b, 2525c, 2525d. If not provided, the federation agreement defines the default symbol standard.</semantics>
@@ -1950,84 +1944,14 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <dataType>LocationStruct</dataType>
                 <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>An array of LocationStruct elements representing a path. When projected on the earth's surface, the datatype can represent an area by connecting the first and last location in the array.</semantics>
+                <semantics>Dynamic array of LocationStruct elements, may also contain no elements.</semantics>
             </arrayData>
             <arrayData>
-                <name>Text5</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..5]</cardinality>
+                <name>ArrayOfResourceStatus</name>
+                <dataType>ResourceStatusStruct</dataType>
+                <cardinality>Dynamic</cardinality>
                 <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 5 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text21</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..21]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 21 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text24</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..24]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 24 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text20</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..20]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 20 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text9</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..9]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 9 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text3</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..3]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 3 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text2</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..2]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 2 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text1</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..1]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 1 character.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text15</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..15]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 15 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text8</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..8]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 8 characters.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>Text64</name>
-                <dataType>HLAunicodeChar</dataType>
-                <cardinality>[0..64]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Text of max length 64 characters.</semantics>
+                <semantics>The array of health states for a named resource.</semantics>
             </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
@@ -2072,12 +1996,12 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>A geodetic point, specified by latitude and longitude, with unspecified altitude. WGS84</semantics>
                 <field>
                     <name>Latitude</name>
-                    <dataType>LatLongDegreesFloat64</dataType>
+                    <dataType>LatitudeFloat64</dataType>
                     <semantics>The latitude in degrees.</semantics>
                 </field>
                 <field>
                     <name>Longitude</name>
-                    <dataType>LatLongDegreesFloat64</dataType>
+                    <dataType>LongitudeFloat64</dataType>
                     <semantics>The longitude in degrees.</semantics>
                 </field>
             </fixedRecordData>
@@ -2102,12 +2026,12 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>A geodetic point is specified by latitude, longitude and altitude.</semantics>
                 <field>
                     <name>Latitude</name>
-                    <dataType>LatLongDegreesFloat64</dataType>
+                    <dataType>LatitudeFloat64</dataType>
                     <semantics>The latitude in degrees.</semantics>
                 </field>
                 <field>
                     <name>Longitude</name>
-                    <dataType>LatLongDegreesFloat64</dataType>
+                    <dataType>LongitudeFloat64</dataType>
                     <semantics>The longitude in degrees.</semantics>
                 </field>
                 <field>
@@ -2117,17 +2041,18 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 </field>
             </fixedRecordData>
             <fixedRecordData>
-                <name>SupplyStruct</name>
+
+                <name>SupplyStatusStruct</name>
                 <encoding>HLAfixedRecord</encoding>
-                <semantics>The quantity of a supply type.</semantics>
+                <semantics>Represents a single supply type and the quantity being offered or requested.</semantics>
                 <field>
                     <name>SupplyType</name>
                     <dataType>EntityTypeStruct</dataType>
-                    <semantics>The type of supply being offered or requested.</semantics>
+                    <semantics>The type of supply.</semantics>
                 </field>
                 <field>
                     <name>Quantity</name>
-                    <dataType>Float32</dataType>
+                    <dataType>QuantityFloat64</dataType>
                     <semantics>The number of units of the supply type. The unit measure depends on the supply type and shall use the SI units of measurement used for such supplies.</semantics>
                 </field>
             </fixedRecordData>
@@ -2137,23 +2062,31 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <semantics>Text amplifiers for Unit symbols.</semantics>
                 <field>
                     <name>ReinforcedOrReduced</name>
-                    <dataType>Text3</dataType>
-                    <semantics>A text amplifier in a unit symbol that displays (+) for reinforced, (-) for reduced, (±) reinforced and reduced.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier in a unit symbol that displays (+) for reinforced, (-) for reduced, (±) reinforced and reduced. Max length 3 characters.</semantics>
+
                 </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>UnitSymbolAmplificationStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Text amplifiers for Unit symbols.</semantics>
                 <field>
+
                     <name>StaffComments</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>AdditionalInformation</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>EvaluationRating</name>
-                    <dataType>Text2</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. Max length 2 characters. 
+
  
 Reliability Ratings: 
 A-completely reliable 
@@ -2173,33 +2106,35 @@ Credibility Ratings:
                 </field>
                 <field>
                     <name>CombatEffectiveness</name>
-                    <dataType>Text5</dataType>
-                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability.</semantics>
+
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability. Max 5 characters.</semantics>
                 </field>
                 <field>
                     <name>HigherFormation</name>
-                    <dataType>Text21</dataType>
-                    <semantics>A text amplifier for units that indicates number or title of higher echelon command (corps are designated by Roman numerals).</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units that indicates number or title of higher echelon command (corps are designated by Roman numerals). Max 21 characters.</semantics>
                 </field>
                 <field>
                     <name>IFF_SIF_AIS</name>
-                    <dataType>Text15</dataType>
-                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes. Max 15 characters.</semantics>
                 </field>
                 <field>
                     <name>UniqueDesignation</name>
-                    <dataType>Text21</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology. Max 21 characters.</semantics>
                 </field>
                 <field>
                     <name>SpecialHeadquarters</name>
-                    <dataType>Text9</dataType>
-                    <semantics>A text modifier for a unit's special C2 Headquarters.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text modifier for a unit's special C2 Headquarters. Max length 9 characters.</semantics>
                 </field>
                 <field>
                     <name>EngagementBarText</name>
-                    <dataType>Text8</dataType>
-                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type. Max length 8 characters.</semantics>
+
                 </field>
             </fixedRecordData>
             <fixedRecordData>
@@ -2208,23 +2143,25 @@ Credibility Ratings:
                 <semantics>Text amplifiers for Equipment symbols.</semantics>
                 <field>
                     <name>Quantity</name>
-                    <dataType>Text9</dataType>
-                    <semantics>A text amplifier in an equipment symbol that identifies the number of items present.</semantics>
+
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier in an equipment symbol that identifies the number of items present. Max length 9 characters.</semantics>
                 </field>
                 <field>
                     <name>StaffComments</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>AdditionalInformation</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>EvaluationRating</name>
-                    <dataType>Text2</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations with a one-letter reliability rating and a one-number credibility rating. Max length 2 characters. 
+
  
 Reliability Ratings: 
 A-completely reliable 
@@ -2244,33 +2181,35 @@ Credibility Ratings:
                 </field>
                 <field>
                     <name>SignatureEquipment</name>
-                    <dataType>Text1</dataType>
-                    <semantics>A text amplifier for hostile equipment; “!” indicates detectable electronic signatures.</semantics>
+
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for hostile equipment; “!” indicates detectable electronic signatures. Max length 1 character.</semantics>
                 </field>
                 <field>
                     <name>Hostile</name>
-                    <dataType>Text3</dataType>
-                    <semantics>A text amplifier for equipment; letters "ENY" denote hostile symbols.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for equipment; letters "ENY" denote hostile symbols. Max length 3 characters.</semantics>
                 </field>
                 <field>
                     <name>IFF_SIF_AIS</name>
-                    <dataType>Text15</dataType>
-                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes. Max length 15 characters.</semantics>
                 </field>
                 <field>
                     <name>UniqueDesignation</name>
-                    <dataType>Text21</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology. Max length 21 characters.</semantics>
                 </field>
                 <field>
                     <name>EquipmentType</name>
-                    <dataType>Text24</dataType>
-                    <semantics>A text amplifier for equipment that indicates types of equipment.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for equipment that indicates types of equipment. Max length 24 characters.</semantics>
                 </field>
                 <field>
                     <name>EngagementBarText</name>
-                    <dataType>Text8</dataType>
-                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type. Max length 8 characters.</semantics>
+
                 </field>
             </fixedRecordData>
             <fixedRecordData>
@@ -2279,18 +2218,20 @@ Credibility Ratings:
                 <semantics>Text amplifiers for Installation symbols.</semantics>
                 <field>
                     <name>StaffComments</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>AdditionalInformation</name>
-                    <dataType>Text20</dataType>
-                    <semantics>A text amplifier for units, equipment and installations.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
                 </field>
                 <field>
                     <name>EvaluationRating</name>
-                    <dataType>Text2</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that consists of a one-letter reliability rating and a one-number credibility rating. 
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations with a one-letter reliability rating and a one-number credibility rating. Max length 2 characters. 
+
  
 Reliability Ratings: 
 A-completely reliable 
@@ -2310,23 +2251,80 @@ Credibility Ratings:
                 </field>
                 <field>
                     <name>CombatEffectiveness</name>
-                    <dataType>Text5</dataType>
-                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability.</semantics>
+
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units and installations that indicates unit effectiveness or installation capability. Max length 5 characters.</semantics>
                 </field>
                 <field>
                     <name>IFF_SIF_AIS</name>
-                    <dataType>Text15</dataType>
-                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier displaying IFF/SIF/AIS identification modes and codes. Max length 15 characters.</semantics>
                 </field>
                 <field>
                     <name>UniqueDesignation</name>
-                    <dataType>Text21</dataType>
-                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier for units, equipment and installations that uniquely identifies a particular symbol or track number. Identifies acquisitions number when used with SIGINT symbology. Max length 21 characters.</semantics>
                 </field>
                 <field>
                     <name>EngagementBarText</name>
-                    <dataType>Text8</dataType>
-                    <semantics>A text amplifier placed immediately atop the symbol in the engagement bar. May denote, 1) local/remote status; 2) engagement status; and 3) weapon type.</semantics>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>A text amplifier is placed immediately atop the symbol in the engagement bar. May denote 1) local/remote status, 2) engagement status, and 3) weapon type. Max length 8 characters.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>SymbolStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Symbol Id and additional symbol amplification data.</semantics>
+                <field>
+                    <name>Id</name>
+                    <dataType>SymbolIdentifier</dataType>
+                    <semantics>A symbol identifier. If not provided, derive the default value from the `BaseEntity` attribute `EntityType` and `PhysicalEntity` or `AggregateEntity` attribute `ForceIdentifier`.</semantics>
+                </field>
+                <field>
+                    <name>Amplification</name>
+                    <dataType>SymbolAmplificationVariant</dataType>
+                    <semantics>Additional symbol amplification data.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>ResourceStatusStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>The name of a resource and the number of instances of that resource by health status.</semantics>
+                <field>
+                    <name>NumberHealthyOrIntact</name>
+                    <dataType>QuantityInt32</dataType>
+                    <semantics>The number of healthy or intact resources</semantics>
+                </field>
+                <field>
+                    <name>NumberSlightlyDamaged</name>
+                    <dataType>QuantityInt32</dataType>
+                    <semantics>The number of slightly damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberModeratelyDamaged</name>
+                    <dataType>QuantityInt32</dataType>
+                    <semantics>The number of moderately damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberSignificantlyDamaged</name>
+                    <dataType>QuantityInt32</dataType>
+                    <semantics>The number of significantly damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberDestroyed</name>
+                    <dataType>QuantityInt32</dataType>
+                    <semantics>The number of destroyed or consumed resources</semantics>
+                </field>
+                <field>
+                    <name>ResourceName</name>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>The name of the resource</semantics>
+                </field>
+                <field>
+                    <name>ResourceType</name>
+                    <dataType>EntityTypeStruct</dataType>
+                    <semantics>The type of the resource (as described in the Bit Encoded Values for Use with Protocols for Distributed Interactive Simulation Applications)</semantics>
+
                 </field>
             </fixedRecordData>
         </fixedRecordDataTypes>
@@ -2362,7 +2360,9 @@ Credibility Ratings:
         <note>
             <label>netn_base_1</label>
             <semantics>* Added `HLAobjectRoot` attribute `UniqueId` 
+
 * Added `HLAobjectRoot` attribute `FederateApplication` 
+
 * Added `HLAobjectRoot` attribute `Time` 
 * Added `HLAinteractionRoot` attribute `UniqueId` 
 * Added `HLAinteractionRoot` attribute `FederateApplication` 
@@ -2373,9 +2373,13 @@ Credibility Ratings:
 * Removed datatype `PointVariantStruct` 
 * Removed datatype `PointTypeEnum32` 
 * Removed datatype `PathTypeEnum32` 
-* Replaced datatype `NETN_SupplyStruct` with `SupplyStruct` 
+
+* Removed datatype `QuantityFloat32` 
+ 
+* Replaced datatype `NETN_SupplyStruct` with `SupplyStatusStruct` 
 * Replaced datatype `ArrayOfWorldLocationStruct` with `LocationStructArray` 
-* Replaced datatype `NETN_ArrayOfSupplyStruct` with `SupplyStructArray` 
+* Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStatus` 
+
 * Removed datatype `TransactionId` 
 * Removed datatype `UuidArrayOfHLAbyte16` 
 * Removed datatype `ArrayOfText64` 
@@ -2396,18 +2400,17 @@ Credibility Ratings:
 * Added datatype `DamageStatusEnum32` 
 * Added datatype `LocationStruct` 
 * Added datatype `SymbolAmplificationVariant` 
+
+* Added datatype `SymbolStruct` 
  
-* Added datatype `Text5` 
-* Added datatype `Text21` 
-* Added datatype `Text24` 
-* Added datatype `Text20` 
-* Added datatype `Text9` 
-* Added datatype `Text3` 
-* Added datatype `Text2` 
-* Added datatype `Text1` 
-* Added datatype `Text15` 
-* Added datatype `Text8` 
-* Added datatype `TransmitterOperationalStatusEnum8`</semantics>
+* Added datatype `TransmitterOperationalStatusEnum8` 
+* Added datatype `ResourceStatusStruct` 
+* Added datatype `ArrayOfResourceStatus` 
+ 
+* Changed representation of `QuantityInt32` to `HLAinteger32BE` 
+ 
+* Replaced datatype `LatLongDegreesFloat64` with `LatitudeFloat64` and `LongitudeFloat64`</semantics>
+
         </note>
         <note>
             <label>netn-base_2</label>
@@ -2471,31 +2474,27 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
             <label>netn-base_1</label>
             <semantics>## Overview 
  
-## Unique Identification 
+
+### Unique Identification 
  
 In HLA, the RTI uses a handle of the data type `ObjectInstanceHandle` to identify instances in `RTIambassador` and `FederateAmbassador` services. Every object instance in a federation execution receives a unique handle when it is registered. The object instance has a unique name, either specified by the registering federate or generated by the RTI. The instance handle does not persist between different federation executions or if an object is removed and re-registered. The instance name is unique in a federation execution, but if generated by the RTI, it is not guaranteed to remain the same between federation executions. The federate can also provide an object instance name by first reserving the name and then using it when registering the object instance. Re-registering using the same name is not allowed. Therefore, object instances with auto-generated handles and names get new values if their owning federate leaves and later re-joins a federation execution. 
  
-The RPR-FOM use the `BaseEntity` attribute `EntityIdentifier` for unique entity identification. In addition, some RPR-FOM interactions use the object instance name to reference an object instance. The `EntityIdentifier` is a triple consisting of `SiteID`, `ApplicationID` and `EntityNumber`, where the site and application identify the federate registering the object and is responsible for updates of the RPR-FOM entity state attributes. The entity number is generated by the federate registering the object and is unique among all objects registered by the same federate. In addition, the `PhysicalEntity` attribute `Marking` and the `AggregateEntity` attribute `AggregateMarking` are sometimes used to identify instances in a federation execution by name. However, these attributes are not intended to identify entities uniquely and are limited-length strings. 
+The RPR-FOM uses the `BaseEntity` attribute `EntityIdentifier` for unique entity identification. In addition, some RPR-FOM interactions use the object instance name to reference an object instance. The `EntityIdentifier` is a triple consisting of `SiteID`, `ApplicationID` and `EntityNumber`, where the site and application identify the federate registering the object and is responsible for updates of the RPR-FOM entity state attributes. The entity number is generated by the federate registering the object and is unique among all objects registered by the same federate. In addition, the `PhysicalEntity` attribute `Marking` and the `AggregateEntity` attribute `AggregateMarking` are sometimes used to identify instances in a federation execution by name. However, these attributes are not intended to identify entities uniquely and are limited-length strings. 
  
-The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g. 550e8400-e29b-41d4-a716-446655440000. The MSDL standard uses the UUID format. 
+The NETN-BASE FOM module defines the required `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g., 550e8400-e29b-41d4-a716-446655440000. 
  
-In the NATO FOM modules, references to objects use the UUID datatype and rely on federates to resolve references to objects with the referenced `UniqueId`. 
+In the NETN FOM modules, references to objects use the UUID datatype and rely on federates to resolve references to objects with the referenced `UniqueId`. 
  
-Similarly, the NETN-BASE defines the `HLAinteractionRoot` parameter `UniqueId`. The primary purpose of this parameter is to allow other subsequent interactions, e.g. acknowledgements, to reference a previously sent interaction. 
+Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `UniqueId`. The primary purpose of this parameter is to allow other subsequent interactions, e.g., acknowledgments, to reference a previously sent interaction. 
  
-## Federate Application 
- 
-The NETN-BASE FOM module defines the `HLAobjectRoot` attribute `FederateApplication`, which allows the association of an object with a federate application based on pre-agreed UUID. For example, federation agreements can include a list of all participating federate applications with their assigned UUID. The `FederateApplication` attribute references the federate application with the primary responsibility for the object. Usually, the federate registering the object instance has the primary responsibility. However, in some cases, some other federate may register the object instance and then divest ownership for some or all attributes. In these cases, the `FederateApplication` attribute can trigger the referenced federate application to take attribute ownership and assume its modelling responsibility. 
- 
-Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `FederateApplication`. The primary purpose of this parameter is to tag all interactions with sender information. This approach allows better logging of interactions for analysis and debugging. 
- 
-## Scenario Time 
+### Scenario Time 
  
 Logical time (or Simulation Time) coordinates and synchronizes data exchange in a distributed simulation. HLA time management services can control the advancement of logical time. To pace logical time, use wall-clock time to manage a real-time or scaled real-time simulation. The RPR-FOM handles synchronization by timestamping each update and relying on synchronized system clocks to advance time. Logical time representation and the methods for synchronizing the advancing of time in a distributed simulation can vary between different federations. 
  
-Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation. E.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backwards. However, scenario time may move forwards, backwards, or jump in time. 
+Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation. E.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backward. However, scenario time may move forward or backward. 
  
-The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Time` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `Time`, which represents the send-time of the interaction specified as scenario time.</semantics>
+The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `ScenarioTime` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `ScenarioTime`, which represents the send-time of the interaction specified as scenario time.</semantics>
+
         </note>
     </notes>
 </objectModel>
