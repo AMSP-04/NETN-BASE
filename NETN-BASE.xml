@@ -2244,6 +2244,21 @@ Credibility Ratings:
                 </field>
             </fixedRecordData>
             <fixedRecordData>
+                <name>SymbolStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Symbol Id and additional symbol amplification data.</semantics>
+                <field>
+                    <name>Id</name>
+                    <dataType>SymbolIdentifier</dataType>
+                    <semantics>A symbol identifier. If not provided, derive the default value from the `BaseEntity` attribute `EntityType` and `PhysicalEntity` or `AggregateEntity` attribute `ForceIdentifier`.</semantics>
+                </field>
+                <field>
+                    <name>Amplification</name>
+                    <dataType>SymbolAmplificationVariant</dataType>
+                    <semantics>Additional symbol amplification data.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
                 <name>ResourceStatusStruct</name>
                 <encoding>HLAfixedRecord</encoding>
                 <semantics>The name of a resource and the number of instances of that resource by health status.</semantics>
@@ -2351,6 +2366,7 @@ Credibility Ratings:
 * Added datatype `DamageStatusEnum32` 
 * Added datatype `LocationStruct` 
 * Added datatype `SymbolAmplificationVariant` 
+* Added datatype `SymbolStruct` 
  
 * Added datatype `TransmitterOperationalStatusEnum8` 
 * Added datatype `ResourceStatusStruct` 
