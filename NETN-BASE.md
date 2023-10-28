@@ -2,11 +2,13 @@
 # NETN-BASE
 |Version| Date| Dependencies|
 |---|---|---|
-|3.0|2023-06-28|RPR-Base|
+|3.0|2023-10-28|RPR-Base|
 
 The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.
 
 This module is a base module for all other NETN FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.
+
+
 
 ## Overview 
  
@@ -35,6 +37,10 @@ The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Scenari
 
 Note that inherited and dependency attributes are not included in the description of object classes.
 
+```mermaid
+graph RL
+```
+
 ### HLAobjectRoot
 
 
@@ -48,7 +54,9 @@ Note that inherited and dependency attributes are not included in the descriptio
 
 Note that inherited and dependency parameters are not included in the description of interaction classes.
 
-
+```mermaid
+graph RL
+```
 
 ### HLAinteractionRoot
 
@@ -101,6 +109,7 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |SupplyStatusStruct|Represents a single supply type and the quantity being offered or requested.|
 |SymbolAmplificationVariant|Different symbol amplification data for different types of symbols.|
 |SymbolIdentifier|A symbol identifier is represented as a string. The identifier uses a URI notation (uri:xxxxxxxxxx) where the URI moniker specifies the symbology standard, e.g. app6a, app6b, app6c, 2525b, 2525c, 2525d. If not provided, the federation agreement defines the default symbol standard.|
+|SymbolStruct|Symbol Id and additional symbol amplification data.|
 |SymbolTypeEnum|Type of symbol.|
 |TimeMillisecondInt64|A generic representation of milliseconds, unit symbol ms.|
 |TransmitterOperationalStatusEnum8|The current operational state of a radio transmitter.|
@@ -160,9 +169,11 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |LocationStruct|X, Y, Z|The location of a point in space. Unless specified otherwise for the attribute, parameter, or datatype field using this datatype, the location is in the world coordinate system, as specified in IEEE Std 1278.1-2012 section 1.6.3.|
 |ResourceStatusStruct|NumberHealthyOrIntact, NumberSlightlyDamaged, NumberModeratelyDamaged, NumberSignificantlyDamaged, NumberDestroyed, ResourceName, ResourceType|The name of a resource and the number of instances of that resource by health status.|
 |SupplyStatusStruct|SupplyType, Quantity|Represents a single supply type and the quantity being offered or requested.|
+|SymbolStruct|Id, Amplification|Symbol Id and additional symbol amplification data.|
 |UnitSymbolAmplificationStruct|ReinforcedOrReduced, StaffComments, AdditionalInformation, EvaluationRating, CombatEffectiveness, HigherFormation, IFF_SIF_AIS, UniqueDesignation, SpecialHeadquarters, EngagementBarText|Text amplifiers for Unit symbols.|
         
 ### Variant Record Datatypes
 |Name|Discriminant (Datatype)|Alternatives|Semantics|
 |---|---|---|---|
 |SymbolAmplificationVariant|SymbolType (SymbolTypeEnum)|UnitSymbol, EquipmentSymbol, InstallationSymbol|Different symbol amplification data for different types of symbols.|
+    

@@ -75,9 +75,9 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Removed datatype `PathTypeEnum32` 
 * Removed datatype `QuantityFloat32` 
  
-* Replaced datatype `NETN_SupplyStruct` with `SupplyStruct` 
+* Replaced datatype `NETN_SupplyStruct` with `SupplyStatusStruct` 
 * Replaced datatype `ArrayOfWorldLocationStruct` with `LocationStructArray` 
-* Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStruct` 
+* Replaced datatype `NETN_ArrayOfSupplyStruct` with `ArrayOfSupplyStatus` 
 * Removed datatype `TransactionId` 
 * Removed datatype `UuidArrayOfHLAbyte16` 
 * Removed datatype `ArrayOfText64` 
@@ -98,17 +98,8 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Added datatype `DamageStatusEnum32` 
 * Added datatype `LocationStruct` 
 * Added datatype `SymbolAmplificationVariant` 
+* Added datatype `SymbolStruct` 
  
-* Added datatype `Text5` 
-* Added datatype `Text21` 
-* Added datatype `Text24` 
-* Added datatype `Text20` 
-* Added datatype `Text9` 
-* Added datatype `Text3` 
-* Added datatype `Text2` 
-* Added datatype `Text1` 
-* Added datatype `Text15` 
-* Added datatype `Text8` 
 * Added datatype `TransmitterOperationalStatusEnum8` 
 * Added datatype `ResourceStatusStruct` 
 * Added datatype `ArrayOfResourceStatus` 
