@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2023-10-28</modificationDate>
+        <modificationDate>2023-11-05</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
@@ -79,7 +79,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <sharing>PublishSubscribe</sharing>
                 <transportation>HLAreliable</transportation>
                 <order>Receive</order>
-                <semantics>Optional: The time in the scenario when the object is created. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+                <semantics>Optional: The time in the scenario when the object is created. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
             </attribute>
         </objectClass>
     </objects>
@@ -98,7 +98,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
             <parameter>
                 <name>ScenarioTime</name>
                 <dataType>EpochTime</dataType>
-                <semantics>Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+                <semantics>Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
             </parameter>
         </interactionClass>
     </interactions>
@@ -134,7 +134,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>The density of a substance is measured as kg/m3.</semantics>
+                <semantics>The density of a substance.</semantics>
             </simpleData>
             <simpleData>
                 <name>AltitudeMeterFloat64</name>
@@ -142,7 +142,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>Meter</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Generic representation of altitude defined by the context of use, i.e. height Above Mean Sea Level, height Above Ground Level.</semantics>
+                <semantics>Represents altitude relative to Mean Sea Level (MSL).</semantics>
             </simpleData>
             <simpleData>
                 <name>MassConcentrationFloat32</name>
@@ -150,7 +150,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>kg/m3</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>The concentration of a substance is measured as kg/m3.</semantics>
+                <semantics>The concentration of a substance.</semantics>
             </simpleData>
             <simpleData>
                 <name>TimeMillisecondInt64</name>
@@ -158,7 +158,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>Millisecond (ms)</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>A generic representation of milliseconds, unit symbol ms.</semantics>
+                <semantics>A generic representation of milliseconds.</semantics>
             </simpleData>
             <simpleData>
                 <name>EpochTime</name>
@@ -166,7 +166,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>Millisecond (ms)</units>
                 <resolution>1</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Scenario time is milliseconds since Epoch, where Epoch e.g. is January 1, 1970 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+                <semantics>Scenario time is milliseconds since Epoch, where Epoch, e.g. is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
             </simpleData>
             <simpleData>
                 <name>LatitudeFloat64</name>
@@ -174,7 +174,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>Degree</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>An angular measurement that specifies the north–south position of a point on the surface. Latitude is given as an angle that ranges from –90 degrees at the south pole to 90 degrees at the north pole, with 0 at the Equator.</semantics>
+                <semantics>An angular measurement that specifies the north–south position of a point on the surface. Latitude is an angle that ranges from –90 degrees at the south pole to 90 degrees at the north pole, with 0 at the Equator.</semantics>
             </simpleData>
             <simpleData>
                 <name>LongitudeFloat64</name>
@@ -182,7 +182,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <units>Degree</units>
                 <resolution>NA</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>An angular measurement that specifies the east–west position of a point on the surface. Longitude is given as an angle that ranges from –180 degrees to +180 degrees, with 0 at the prime meridian.</semantics>
+                <semantics>An angular measurement that specifies the east–west position of a point on the surface. Longitude is an angle that ranges from –180 degrees to +180 degrees, with 0 at the prime meridian.</semantics>
             </simpleData>
         </simpleDataTypes>
         <enumeratedDataTypes>
@@ -263,7 +263,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
             <enumeratedData>
                 <name>AggregateMissionEnum16</name>
                 <representation>HLAinteger16BE</representation>
-                <semantics>A representation of the general class or nature of activity related to a simulated entity's mission.</semantics>
+                <semantics>Represents the general class or nature of activity related to a simulated entity's mission.</semantics>
                 <enumerator>
                     <name>Abdication</name>
                     <value>1</value>
@@ -1691,19 +1691,6 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
-                <name>CancellationReasonEnum32</name>
-                <representation>HLAinteger32BE</representation>
-                <semantics>Describes the reason for cancellation.</semantics>
-                <enumerator>
-                    <name>Other</name>
-                    <value>0</value>
-                </enumerator>
-                <enumerator>
-                    <name>TimeOut</name>
-                    <value>1</value>
-                </enumerator>
-            </enumeratedData>
-            <enumeratedData>
                 <name>TransmitterOperationalStatusEnum8</name>
                 <representation>HLAoctet</representation>
                 <semantics>The current operational state of a radio transmitter.</semantics>
@@ -2367,6 +2354,7 @@ Credibility Ratings:
 * Removed datatype `GeoLocationTypeEnum32` 
 * Removed datatype `ArrayOfString` 
 * Removed datatype `Text64` 
+* Removed datatype `CancellationReasonEnum32`
 * Replaced datatype `PercentFloat64` with `PercentFloat32` 
 * Replaced datatype `EpochTimeSecInt64`  with `ScenarioTime` 
  
@@ -2457,7 +2445,7 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
  
 In HLA, the RTI uses a handle of the data type `ObjectInstanceHandle` to identify instances in `RTIambassador` and `FederateAmbassador` services. Every object instance in a federation execution receives a unique handle when it is registered. The object instance has a unique name, either specified by the registering federate or generated by the RTI. The instance handle does not persist between different federation executions or if an object is removed and re-registered. The instance name is unique in a federation execution, but if generated by the RTI, it is not guaranteed to remain the same between federation executions. The federate can also provide an object instance name by first reserving the name and then using it when registering the object instance. Re-registering using the same name is not allowed. Therefore, object instances with auto-generated handles and names get new values if their owning federate leaves and later re-joins a federation execution. 
  
-The RPR-FOM uses the `BaseEntity` attribute `EntityIdentifier` for unique entity identification. In addition, some RPR-FOM interactions use the object instance name to reference an object instance. The `EntityIdentifier` is a triple consisting of `SiteID`, `ApplicationID` and `EntityNumber`, where the site and application identify the federate registering the object and is responsible for updates of the RPR-FOM entity state attributes. The entity number is generated by the federate registering the object and is unique among all objects registered by the same federate. In addition, the `PhysicalEntity` attribute `Marking` and the `AggregateEntity` attribute `AggregateMarking` are sometimes used to identify instances in a federation execution by name. However, these attributes are not intended to identify entities uniquely and are limited-length strings. 
+The RPR-FOM uses the `BaseEntity` attribute `EntityIdentifier` for unique entity identification. In addition, some RPR-FOM interactions use the object instance name to reference an object instance. The `EntityIdentifier` is a triple consisting of `SiteID`, `ApplicationID` and `EntityNumber`, where the site and application identify the federate registering the object and is responsible for updates of the RPR-FOM entity state attributes. The entity number is generated by the federate registering the object and is unique among all objects registered by the same federate. In addition, the `PhysicalEntity` attribute `Marking` and the `AggregateEntity` attribute `AggregateMarking` sometimes identify instances in a federation execution by name. However, these attributes are not intended to identify entities uniquely and are limited-length strings. 
  
 The NETN-BASE FOM module defines the required `HLAobjectRoot` attribute `UniqueId` as a Universally Unique Identifier (UUID) based on ISO/IEC 11578:1996 (and ISO/IEC 9834-8:2005). This attribute extends all objects using NETN-BASE, and its value can persist between federation executions if required. The UUID consists of an array with 16 bytes and has a standardized printable format that consists of 32 ASCII characters (0-9, a-f) and four hyphens on predetermined places, e.g., 550e8400-e29b-41d4-a716-446655440000. 
  
@@ -2469,7 +2457,7 @@ Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `Un
  
 Logical time (or Simulation Time) coordinates and synchronizes data exchange in a distributed simulation. HLA time management services can control the advancement of logical time. To pace logical time, use wall-clock time to manage a real-time or scaled real-time simulation. The RPR-FOM handles synchronization by timestamping each update and relying on synchronized system clocks to advance time. Logical time representation and the methods for synchronizing the advancing of time in a distributed simulation can vary between different federations. 
  
-Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation. E.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backward. However, scenario time may move forward or backward. 
+Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation, e.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backwards. However, scenario time may move forward or backwards. 
  
 The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `ScenarioTime` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `ScenarioTime`, which represents the send-time of the interaction specified as scenario time.</semantics>
         </note>
