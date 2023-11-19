@@ -91,7 +91,7 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Removed datatype `GeoLocationTypeEnum32` 
 * Removed datatype `ArrayOfString` 
 * Removed datatype `Text64` 
-* Removed datatype `CancellationReasonEnum32`
+* Removed datatype `CancellationReasonEnum32` 
 * Replaced datatype `PercentFloat64` with `PercentFloat32` 
 * Replaced datatype `EpochTimeSecInt64`  with `ScenarioTime` 
  

@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2023-11-05</modificationDate>
+        <modificationDate>2023-11-19</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>

@@ -2,7 +2,7 @@
 # NETN-BASE
 |Version| Date| Dependencies|
 |---|---|---|
-|3.0|2023-11-05|RPR-Base|
+|3.0|2023-11-19|RPR-Base|
 
 The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.
 
@@ -115,7 +115,6 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |TransmitterOperationalStatusEnum8|The current operational state of a radio transmitter.|
 |UUID|RFC 4122, section 4.1.2 using 16 bytes. Also referred to as Variant 1 or RFC 4122/DCE 1.1 UUIDs. For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 22 33 44 55 88 77 66 99 aa bb cc dd ee ff.|
 |UnitSymbolAmplificationStruct|Text amplifiers for Unit symbols.|
-|UnitSymbolAmplificationStruct|Text amplifiers for Unit symbols.|
         
 ### Simple Datatypes
 |Name|Units|Semantics|
@@ -170,7 +169,6 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |ResourceStatusStruct|NumberHealthyOrIntact, NumberSlightlyDamaged, NumberModeratelyDamaged, NumberSignificantlyDamaged, NumberDestroyed, ResourceName, ResourceType|The name of a resource and the number of instances of that resource by health status.|
 |SupplyStatusStruct|SupplyType, Quantity|Represents a single supply type and the quantity being offered or requested.|
 |SymbolStruct|Id, Amplification|Symbol Id and additional symbol amplification data.|
-|UnitSymbolAmplificationStruct|ReinforcedOrReduced|Text amplifiers for Unit symbols.|
 |UnitSymbolAmplificationStruct|StaffComments, AdditionalInformation, EvaluationRating, CombatEffectiveness, HigherFormation, IFF_SIF_AIS, UniqueDesignation, SpecialHeadquarters, EngagementBarText|Text amplifiers for Unit symbols.|
         
 ### Variant Record Datatypes
