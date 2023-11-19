@@ -2037,16 +2037,6 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <encoding>HLAfixedRecord</encoding>
                 <semantics>Text amplifiers for Unit symbols.</semantics>
                 <field>
-                    <name>ReinforcedOrReduced</name>
-                    <dataType>HLAunicodeString</dataType>
-                    <semantics>A text amplifier in a unit symbol that displays (+) for reinforced, (-) for reduced, (±) reinforced and reduced. Max length 3 characters.</semantics>
-                </field>
-            </fixedRecordData>
-            <fixedRecordData>
-                <name>UnitSymbolAmplificationStruct</name>
-                <encoding>HLAfixedRecord</encoding>
-                <semantics>Text amplifiers for Unit symbols.</semantics>
-                <field>
                     <name>StaffComments</name>
                     <dataType>HLAunicodeString</dataType>
                     <semantics>A text amplifier for units, equipment and installations. Max length 20 characters.</semantics>
@@ -2354,7 +2344,7 @@ Credibility Ratings:
 * Removed datatype `GeoLocationTypeEnum32` 
 * Removed datatype `ArrayOfString` 
 * Removed datatype `Text64` 
-* Removed datatype `CancellationReasonEnum32`
+* Removed datatype `CancellationReasonEnum32` 
 * Replaced datatype `PercentFloat64` with `PercentFloat32` 
 * Replaced datatype `EpochTimeSecInt64`  with `ScenarioTime` 
  
