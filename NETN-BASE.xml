@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <objectModel xsi:schemaLocation="http://standards.ieee.org/IEEE1516-2010 http://standards.ieee.org/downloads/1516/1516.2-2010/IEEE1516-DIF-2010.xsd" xmlns="http://standards.ieee.org/IEEE1516-2010" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <modelIdentification notes="netn-base_1">
+    <modelIdentification notes="netn-base_overview">
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2023-11-19</modificationDate>
+        <modificationDate>2023-12-05</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
         <description>This module is a base module for all other NETN FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.</description>
         <useLimitation></useLimitation>
-        <useHistory notes="netn-base_3">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0</useHistory>
+        <useHistory notes="netn-base_1">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0</useHistory>
         <useHistory notes="netn-base_2">v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0</useHistory>
-        <useHistory notes="netn_base_1">v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0</useHistory>
+        <useHistory notes="netn-base_3">v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0</useHistory>
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -71,7 +71,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or defined during scenario initialization.</semantics>
             </attribute>
             <attribute>
-                <name>ScenarioTime</name>
+                <name>CreationTime</name>
                 <dataType>EpochTime</dataType>
                 <updateType>Static</updateType>
                 <updateCondition>NA</updateCondition>
@@ -79,7 +79,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <sharing>PublishSubscribe</sharing>
                 <transportation>HLAreliable</transportation>
                 <order>Receive</order>
-                <semantics>Optional: The time in the scenario when the object is created. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+                <semantics>Optional: The time in the scenario when the object is created. Creation time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
             </attribute>
         </objectClass>
     </objects>
@@ -2314,7 +2314,7 @@ Credibility Ratings:
     </dataTypes>
     <notes>
         <note>
-            <label>netn_base_1</label>
+            <label>netn-base_3</label>
             <semantics>* Added `HLAobjectRoot` attribute `UniqueId` 
  
 * Added `HLAobjectRoot` attribute `FederateApplication` 
@@ -2417,7 +2417,7 @@ Credibility Ratings:
 * Added datatype `SymbolVariantStruct`</semantics>
         </note>
         <note>
-            <label>netn-base_3</label>
+            <label>netn-base_1</label>
             <semantics>* v1.0.0 - First version in NETN FOM v2 
 * v1.0.1 - Added array data type: ArrayOfWorldLocation3 (moved from NETN_Aggregate FOM module) 
 * v1.0.2 - Renamed data type, new name: ArrayOfWorldLocationStruct3. Updated References, Dependency 
@@ -2427,7 +2427,7 @@ Previous history
 Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010, NETN_Service_Consumer_Provider_v1.0.3_2010 and NETN_Logistics_v1.1.2_2010.</semantics>
         </note>
         <note>
-            <label>netn-base_1</label>
+            <label>netn-base_overview</label>
             <semantics>## Overview 
  
  
@@ -2449,7 +2449,7 @@ Logical time (or Simulation Time) coordinates and synchronizes data exchange in 
  
 Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation, e.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backwards. However, scenario time may move forward or backwards. 
  
-The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `ScenarioTime` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `ScenarioTime`, which represents the send-time of the interaction specified as scenario time.</semantics>
+The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `CreationTime` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `ScenarioTime`, which represents the send-time of the interaction specified as scenario time.</semantics>
         </note>
     </notes>
 </objectModel>
