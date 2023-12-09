@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2023-12-05</modificationDate>
+        <modificationDate>2023-12-09</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.</purpose>
         <applicationDomain>Training</applicationDomain>
@@ -68,7 +68,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <sharing>PublishSubscribe</sharing>
                 <transportation>HLAreliable</transportation>
                 <order>Receive</order>
-                <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or defined during scenario initialization.</semantics>
+                <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or pre-defined.</semantics>
             </attribute>
             <attribute>
                 <name>CreationTime</name>
@@ -98,7 +98,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
             <parameter>
                 <name>ScenarioTime</name>
                 <dataType>EpochTime</dataType>
-                <semantics>Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+                <semantics>Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements. Default is interpreted as the receivers scenario time when the interaction is received.</semantics>
             </parameter>
         </interactionClass>
     </interactions>

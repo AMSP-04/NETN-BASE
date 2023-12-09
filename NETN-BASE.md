@@ -2,7 +2,7 @@
 # NETN-BASE
 |Version| Date| Dependencies|
 |---|---|---|
-|3.0|2023-12-05|RPR-Base|
+|3.0|2023-12-09|RPR-Base|
 
 The NATO Education and Training Network (NETN) Base Datatypes (BASE) Module provides standard definitions of datatypes and extends the RPR-BASE FOM Module.
 
@@ -36,10 +36,12 @@ The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Creatio
 
 ## Object Classes
 
-Note that inherited and dependency attributes are not included in the description of object classes.
-
 ```mermaid
-graph RL
+classDiagram 
+direction LR
+
+HLAobjectRoot : CreationTime
+HLAobjectRoot : UniqueId
 ```
 
 ### HLAobjectRoot
@@ -48,15 +50,16 @@ graph RL
 
 |Attribute|Datatype|Semantics|
 |---|---|---|
-|UniqueId|UUID|Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or defined during scenario initialization.|
 |CreationTime|EpochTime|Optional: The time in the scenario when the object is created. Creation time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.|
+|UniqueId|UUID|Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or pre-defined.|
 
 ## Interaction Classes
 
-Note that inherited and dependency parameters are not included in the description of interaction classes.
-
 ```mermaid
-graph RL
+classDiagram 
+direction LR
+HLAinteractionRoot : ScenarioTime
+HLAinteractionRoot : UniqueId
 ```
 
 ### HLAinteractionRoot
@@ -65,8 +68,8 @@ graph RL
 
 |Parameter|Datatype|Semantics|
 |---|---|---|
+|ScenarioTime|EpochTime|Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements. Default is interpreted as the receivers scenario time when the interaction is received.|
 |UniqueId|UUID|Optional: A unique identifier for the interaction.|
-|ScenarioTime|EpochTime|Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.|
 
 ## Datatypes
 
