@@ -50,7 +50,7 @@ HLAobjectRoot : UniqueId
 
 |Attribute|Datatype|Semantics|
 |---|---|---|
-|CreationTime|EpochTime|Optional: The time in the scenario when the object is created. Creation time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.|
+|CreationTime|EpochTime|Optional: The time in the scenario when the object is created.|
 |UniqueId|UUID|Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or pre-defined.|
 
 ## Interaction Classes
@@ -68,7 +68,7 @@ HLAinteractionRoot : UniqueId
 
 |Parameter|Datatype|Semantics|
 |---|---|---|
-|ScenarioTime|EpochTime|Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements. Default is interpreted as the receivers scenario time when the interaction is received.|
+|ScenarioTime|EpochTime|Optional: Scenario time when the interaction was sent. Default is interpreted as the receivers scenario time when the interaction is received.|
 |UniqueId|UUID|Optional: A unique identifier for the interaction.|
 
 ## Datatypes
@@ -90,7 +90,7 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |DamageStatusEnum32|Damaged appearance|
 |DirectionDegreesFloat32|The direction is measured clockwise relative to the true north. Calculate values outside the range [0, 360) as modulo 360.|
 |EchelonEnum32|The echelon level of a unit.|
-|EpochTime|Scenario time is milliseconds since Epoch, where Epoch, e.g. is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.|
+|EpochTime|Scenario time is seconds since Epoch, where Epoch, e.g. is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.|
 |EquipmentSymbolAmplificationStruct|Text amplifiers for Equipment symbols.|
 |FederateName|The name of a federate participating in an HLA federation. The value of this attribute corresponds to the `HLAfederateName` attribute of the MIM object class `HLAfederate`.|
 |GeodeticCircle|A geodetic point and radius specifying a circle on the earth's surface (WGS84) where the radius is a great circle distance on the surface.|
@@ -124,7 +124,7 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |---|---|---|
 |AltitudeMeterFloat64|Meter|Represents altitude relative to Mean Sea Level (MSL).|
 |DirectionDegreesFloat32|Degree|The direction is measured clockwise relative to the true north. Calculate values outside the range [0, 360) as modulo 360.|
-|EpochTime|Millisecond (ms)|Scenario time is milliseconds since Epoch, where Epoch, e.g. is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.|
+|EpochTime|seconds|Scenario time is seconds since Epoch, where Epoch, e.g. is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.|
 |LatitudeFloat64|Degree|An angular measurement that specifies the north–south position of a point on the surface. Latitude is an angle that ranges from –90 degrees at the south pole to 90 degrees at the north pole, with 0 at the Equator.|
 |LongitudeFloat64|Degree|An angular measurement that specifies the east–west position of a point on the surface. Longitude is an angle that ranges from –180 degrees to +180 degrees, with 0 at the prime meridian.|
 |MassConcentrationFloat32|kg/m3|The concentration of a substance.|

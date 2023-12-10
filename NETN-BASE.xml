@@ -79,7 +79,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <sharing>PublishSubscribe</sharing>
                 <transportation>HLAreliable</transportation>
                 <order>Receive</order>
-                <semantics>Optional: The time in the scenario when the object is created. Creation time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+                <semantics>Optional: The time in the scenario when the object is created.</semantics>
             </attribute>
         </objectClass>
     </objects>
@@ -98,7 +98,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
             <parameter>
                 <name>ScenarioTime</name>
                 <dataType>EpochTime</dataType>
-                <semantics>Optional: Scenario time when the interaction was sent. Scenario time is milliseconds since Epoch, where Epoch is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements. Default is interpreted as the receivers scenario time when the interaction is received.</semantics>
+                <semantics>Optional: Scenario time when the interaction was sent. Default is interpreted as the receivers scenario time when the interaction is received.</semantics>
             </parameter>
         </interactionClass>
     </interactions>
@@ -162,11 +162,11 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
             </simpleData>
             <simpleData>
                 <name>EpochTime</name>
-                <representation>HLAinteger64BE</representation>
-                <units>Millisecond (ms)</units>
+                <representation>HLAinteger32BE</representation>
+                <units>seconds</units>
                 <resolution>1</resolution>
                 <accuracy>NA</accuracy>
-                <semantics>Scenario time is milliseconds since Epoch, where Epoch, e.g. is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
+                <semantics>Scenario time is seconds since Epoch, where Epoch, e.g. is January 1, 1970, 00:00:00 UTC or otherwise defined in federation agreements.</semantics>
             </simpleData>
             <simpleData>
                 <name>LatitudeFloat64</name>
