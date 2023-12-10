@@ -1930,6 +1930,13 @@ For example, 00112233-4455-8877-6699-aabbccddeeff is encoded as the bytes 00 11 
                 <encoding>HLAvariableArray</encoding>
                 <semantics>The array of health states for a named resource.</semantics>
             </arrayData>
+            <arrayData>
+                <name>GeodeticPath</name>
+                <dataType>GeodeticPoint</dataType>
+                <cardinality>Dynamic</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>A sequence of geodetic points defining a path.</semantics>
+            </arrayData>
         </arrayDataTypes>
         <fixedRecordDataTypes>
             <fixedRecordData>
