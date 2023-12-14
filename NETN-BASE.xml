@@ -10,9 +10,9 @@
         <applicationDomain>Training</applicationDomain>
         <description>This module is a base module for all other NETN FOM modules. It specifies standard data types and structures and extends the RPR-BASE module. The specification is based on IEEE 1516 High Level Architecture (HLA) Object Model Template (OMT) and supports interoperability in a federated simulation (federation) based on HLA. An HLA-based Federation Object Model (FOM) is used to specify types of data and their encoding on the network.</description>
         <useLimitation></useLimitation>
-        <useHistory notes="netn-base_1">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0</useHistory>
-        <useHistory notes="netn-base_2">v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0</useHistory>
-        <useHistory notes="netn-base_3">v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0</useHistory>
+        <useHistory notes="netn-base_changelog_1">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0</useHistory>
+        <useHistory notes="netn-base_changelog_2">v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0</useHistory>
+        <useHistory notes="netn-base_changelog_3">v3.0 - Updated version developed by MSG-191. The release is included in NETN FOM v4.0</useHistory>
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -2321,7 +2321,7 @@ Credibility Ratings:
     </dataTypes>
     <notes>
         <note>
-            <label>netn-base_3</label>
+            <label>netn-base_changelog_3</label>
             <semantics>* Added `HLAobjectRoot` attribute `UniqueId` 
  
 * Added `HLAobjectRoot` attribute `FederateApplication` 
@@ -2376,7 +2376,7 @@ Credibility Ratings:
 * Replaced datatype `LatLongDegreesFloat64` with `LatitudeFloat64` and `LongitudeFloat64`</semantics>
         </note>
         <note>
-            <label>netn-base_2</label>
+            <label>netn-base_changelog_2</label>
             <semantics>* Changed `modelIdentification` `securityClassification` from `unclassified` to `Not Classified` 
 * Changed `modelIdentification` `other` to include license information 
 * Changed `modelIdentification` `useHistory` to only include formally released versions 
@@ -2424,7 +2424,7 @@ Credibility Ratings:
 * Added datatype `SymbolVariantStruct`</semantics>
         </note>
         <note>
-            <label>netn-base_1</label>
+            <label>netn-base_changelog_1</label>
             <semantics>* v1.0.0 - First version in NETN FOM v2 
 * v1.0.1 - Added array data type: ArrayOfWorldLocation3 (moved from NETN_Aggregate FOM module) 
 * v1.0.2 - Renamed data type, new name: ArrayOfWorldLocationStruct3. Updated References, Dependency 

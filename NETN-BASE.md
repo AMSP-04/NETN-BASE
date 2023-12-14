@@ -95,6 +95,7 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |FederateName|The name of a federate participating in an HLA federation. The value of this attribute corresponds to the `HLAfederateName` attribute of the MIM object class `HLAfederate`.|
 |GeodeticCircle|A geodetic point and radius specifying a circle on the earth's surface (WGS84) where the radius is a great circle distance on the surface.|
 |GeodeticLocation|A geodetic point, specified by latitude and longitude, with unspecified altitude. WGS84|
+|GeodeticPath|A sequence of geodetic points defining a path.|
 |GeodeticPoint|A geodetic point is specified by latitude, longitude and altitude.|
 |GeodeticPolygon|A sequence of geodetic locations defines a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth's surface, and each segment is a great circle between locations.|
 |GeodeticQuadrangle|A latitude-longitude quadrangle is a region bounded by two meridians and two parallels.|
@@ -154,6 +155,7 @@ Note that only datatypes defined in this FOM Module are listed below. Please ref
 |ArrayOfUuid|UUID|An array of Unique Identifiers expressed as UUIDs.|
 |Callsign|HLAunicodeChar|An identifier for a simulated entity. Callsigns should be unique in the context in which they are used but are not required to be globally unique.|
 |FederateName|HLAunicodeChar|The name of a federate participating in an HLA federation. The value of this attribute corresponds to the `HLAfederateName` attribute of the MIM object class `HLAfederate`.|
+|GeodeticPath|GeodeticPoint|A sequence of geodetic points defining a path.|
 |GeodeticPolygon|GeodeticLocation|A sequence of geodetic locations defines a geographical area bounded by a closed path where the first and last locations in the sequence are connected. Each point is a geodetic coordinate in WGS84 on the earth's surface, and each segment is a great circle between locations.|
 |LocationStructArray|LocationStruct|Dynamic array of LocationStruct elements, may also contain no elements.|
 |SymbolIdentifier|HLAunicodeChar|A symbol identifier is represented as a string. The identifier uses a URI notation (uri:xxxxxxxxxx) where the URI moniker specifies the symbology standard, e.g. app6a, app6b, app6c, 2525b, 2525c, 2525d. If not provided, the federation agreement defines the default symbol standard.|
