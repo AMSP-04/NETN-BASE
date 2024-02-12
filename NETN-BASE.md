@@ -36,13 +36,6 @@ The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Creatio
 
 ## Object Classes
 
-```mermaid
-classDiagram
-
-HLAobjectRoot : CreationTime
-HLAobjectRoot : UniqueId
-```
-
 ### HLAobjectRoot
 
 
@@ -53,13 +46,6 @@ HLAobjectRoot : UniqueId
 |UniqueId|UUID|Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or pre-defined.|
 
 ## Interaction Classes
-
-```mermaid
-classDiagram 
-
-HLAinteractionRoot : ScenarioTime
-HLAinteractionRoot : UniqueId
-```
 
 ### HLAinteractionRoot
 
