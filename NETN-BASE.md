@@ -37,7 +37,7 @@ The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Creatio
 ## Object Classes
 
 ```mermaid
-classDiagram 
+classDiagram
 direction LR
 
 HLAobjectRoot : CreationTime
