@@ -38,7 +38,6 @@ The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Creatio
 
 ```mermaid
 classDiagram
-direction LR
 
 HLAobjectRoot : CreationTime
 HLAobjectRoot : UniqueId
@@ -57,7 +56,7 @@ HLAobjectRoot : UniqueId
 
 ```mermaid
 classDiagram 
-direction LR
+
 HLAinteractionRoot : ScenarioTime
 HLAinteractionRoot : UniqueId
 ```
