@@ -66,10 +66,10 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
  
 * Added `HLAobjectRoot` attribute `FederateApplication` 
  
-* Added `HLAobjectRoot` attribute `Time` 
+* Added `HLAobjectRoot` attribute `CreateTime` 
 * Added `HLAinteractionRoot` attribute `UniqueId` 
 * Added `HLAinteractionRoot` attribute `FederateApplication` 
-* Added `HLAinteractionRoot` attribute `Time` 
+* Added `HLAinteractionRoot` attribute `SendTime` 
  
 * Removed datatype `AreaVariantStruct` 
 * Removed datatype `PathVariantStruct` 

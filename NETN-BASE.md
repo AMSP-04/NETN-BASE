@@ -31,7 +31,7 @@ Logical time (or Simulation Time) coordinates and synchronizes data exchange in 
  
 Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation, e.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backwards. However, scenario time may move forward or backwards. 
  
-The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `CreationTime` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `ScenarioTime`, which represents the send-time of the interaction specified as scenario time.
+The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `CreateTime` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `ScenarioTime`, which represents the send-time of the interaction specified as scenario time.
 
 
 ## Object Classes
@@ -40,7 +40,7 @@ The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `Creatio
 classDiagram 
 direction LR
 
-HLAobjectRoot : CreationTime
+HLAobjectRoot : CreateTime
 HLAobjectRoot : UniqueId
 ```
 
@@ -50,7 +50,7 @@ HLAobjectRoot : UniqueId
 
 |Attribute|Datatype|Semantics|
 |---|---|---|
-|CreationTime|EpochTime|Optional: The time in the scenario when the object is created.|
+|CreateTime|EpochTime|Optional: The time in the scenario when the object is created.|
 |UniqueId|UUID|Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or pre-defined.|
 
 ## Interaction Classes
@@ -58,7 +58,7 @@ HLAobjectRoot : UniqueId
 ```mermaid
 classDiagram 
 direction LR
-HLAinteractionRoot : ScenarioTime
+HLAinteractionRoot : SendTime
 HLAinteractionRoot : UniqueId
 ```
 
@@ -68,7 +68,7 @@ HLAinteractionRoot : UniqueId
 
 |Parameter|Datatype|Semantics|
 |---|---|---|
-|ScenarioTime|EpochTime|Optional: Scenario time when the interaction was sent. Default is interpreted as the receivers scenario time when the interaction is received.|
+|SendTime|EpochTime|Optional: Scenario time when the interaction was sent. Default is interpreted as the receivers scenario time when the interaction is received.|
 |UniqueId|UUID|Optional: A unique identifier for the interaction.|
 
 ## Datatypes
