@@ -2456,7 +2456,7 @@ Logical time (or Simulation Time) coordinates and synchronizes data exchange in 
  
 Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation, e.g., during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backwards. However, scenario time may move forward or backwards. 
  
-The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `CreateTime` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `ScenarioTime`, which represents the send-time of the interaction specified as scenario time.</semantics>
+The NETN-BASE FOM module defines the optional `HLAobjectRoot` attribute `CreateTime` for timestamping objects with the creation time specified as scenario time. Similarly, the NETN-BASE defines the optional `HLAinteractionRoot` parameter `SendTime`, which represents the send-time of the interaction specified as scenario time.</semantics>
         </note>
     </notes>
 </objectModel>
