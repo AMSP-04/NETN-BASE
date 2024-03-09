@@ -3,7 +3,7 @@
 
 |Version| Date| Dependencies|
 |---|---|---|
-|3.0|2023-12-09|RPR-Base|
+|3.0|2024-03-09|RPR-Base|
 
 > [Full Documentation](NETN-BASE.md)
 

@@ -2,7 +2,7 @@
 # NETN-BASE
 |Version| Date| Dependencies|
 |---|---|---|
-|3.0|2023-12-09|RPR-Base|
+|3.0|2024-03-09|RPR-Base|
 
 The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.
 
@@ -41,7 +41,7 @@ The NETN-BASE module defines the optional HLAobjectRoot attribute `CreateTime` f
 classDiagram 
 direction LR
 
-HLAobjectRoot : CreateTime
+HLAobjectRoot : CreationTime
 HLAobjectRoot : UniqueId
 ```
 
@@ -59,7 +59,7 @@ HLAobjectRoot : UniqueId
 ```mermaid
 classDiagram 
 direction LR
-HLAinteractionRoot : SendTime
+HLAinteractionRoot : ScenarioTime
 HLAinteractionRoot : UniqueId
 ```
 
