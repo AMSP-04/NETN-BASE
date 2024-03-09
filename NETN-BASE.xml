@@ -4,7 +4,7 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2023-12-09</modificationDate>
+        <modificationDate>2024-03-09</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.</purpose>
         <applicationDomain>Training</applicationDomain>
