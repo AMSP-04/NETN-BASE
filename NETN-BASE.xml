@@ -4,11 +4,11 @@
         <name>NETN-BASE</name>
         <type>FOM</type>
         <version>3.0</version>
-        <modificationDate>2024-03-09</modificationDate>
+        <modificationDate>2024-03-10</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose>The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.</purpose>
         <applicationDomain>Training</applicationDomain>
-        <description>NETN-BASE defines attributes and parameters for the HLA object and interaction root classes (see Figure 2). These attributes and parameters are available for all object and interaction classes in all NETN-FOM modules.</description>
+        <description></description>
         <useLimitation></useLimitation>
         <useHistory notes="netn-base_changelog_1">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0</useHistory>
         <useHistory notes="netn-base_changelog_2">v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0</useHistory>
@@ -71,7 +71,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or pre-defined.</semantics>
             </attribute>
             <attribute>
-                <name>CreationTime</name>
+                <name>CreateTime</name>
                 <dataType>EpochTime</dataType>
                 <updateType>Static</updateType>
                 <updateCondition>NA</updateCondition>
@@ -96,7 +96,7 @@ Above license gives you the right to use and redistribute this FOM Module (XML f
                 <semantics>Optional: A unique identifier for the interaction.</semantics>
             </parameter>
             <parameter>
-                <name>ScenarioTime</name>
+                <name>SendTime</name>
                 <dataType>EpochTime</dataType>
                 <semantics>Optional: Scenario time when the interaction was sent. Default is interpreted as the receivers scenario time when the interaction is received.</semantics>
             </parameter>
@@ -2326,10 +2326,10 @@ Credibility Ratings:
  
 * Added `HLAobjectRoot` attribute `FederateApplication` 
  
-* Added `HLAobjectRoot` attribute `Time` 
+* Added `HLAobjectRoot` attribute `CreateTime` 
 * Added `HLAinteractionRoot` attribute `UniqueId` 
 * Added `HLAinteractionRoot` attribute `FederateApplication` 
-* Added `HLAinteractionRoot` attribute `Time` 
+* Added `HLAinteractionRoot` attribute `SendTime` 
  
 * Removed datatype `AreaVariantStruct` 
 * Removed datatype `PathVariantStruct` 
@@ -2435,8 +2435,26 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
         </note>
         <note>
             <label>netn-base_overview</label>
-            <semantics>## Identifiers
+            <semantics>## Overview
+               
+NETN-BASE defines attributes and parameters for the HLA object and interaction root classes. These attributes and parameters are available for all object and interaction classes in all NETN-FOM modules.
+ 
+```mermaid
+classDiagram 
+direction TB
 
+HLAobjectRoot : CreateTime
+HLAobjectRoot : UniqueId
+
+HLAinteractionRoot : SendTime
+HLAinteractionRoot : UniqueId
+```
+
+
+                                
+
+## Identifiers
+                
 The NETN-FOM uses Universally Unique Identifiers (UUID) as defined in ISO/IEC 9834-8:2014.
 
 An NETN-federate shall publish the `UniqueId` attribute for all objects it creates in the federation. The value of this attribute can either be predefined, e.g., based on scenario data or generated using standard methods for generating UUID. It is the responsibility of the federate to update the attributes to ensure uniqueness in the federation. 
@@ -2448,16 +2466,17 @@ The NETN-FOM also uses UUID to reference objects and relies on federates to reso
 Other unique identifiers may be required for compatibility with RPR-FOM, e.g., the `EntityIdentifier` attribute for the RPR-FOM `BaseEntity` object class.
 
 The NETN-BASE also defines an optional `UniqueId` parameter for the `HLAinteractionRoot` interaction class. This parameter's primary purpose is to allow subsequent interactions, e.g., acknowledgements, to reference a previously sent interaction. 
- 
+    
 ## Time 
- 
+    
 Logical time (or Simulation Time) coordinates and synchronizes data exchange in a distributed simulation. HLA time management services can control the advancement of logical time. To pace logical time, use wall-clock time to manage a real-time or scaled real-time simulation. The RPR-FOM handles synchronization by timestamping each update and relying on synchronized system clocks to advance time. Logical time representation and the methods for synchronizing the advancing of time in a distributed simulation can vary between different federations. The NETN-FOM does not specify or require any specific method for synchronizing logical time. Use federation agreements to clarify the synchronization method.
 
 Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation. For example, during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backwards. However, scenario time may move forward or backwards.
 
 In NETN, the scenario time is defined as seconds since Epoch, where Epoch is defined in federation agreements, e.g. January 1, 1970, 00:00:00 UTC.
 
-The NETN-BASE module defines the optional HLAobjectRoot attribute `CreateTime` for timestamping objects with the scenario time corresponding to the time the object was created in the federation. Similarly, the optional HLAinteractionRoot parameter `SendTime` represents the time in the scenario when the interaction was sent.</semantics>
+The NETN-BASE module defines the optional HLAobjectRoot attribute `CreateTime` for timestamping objects with the scenario time corresponding to the time the object was created in the federation. Similarly, the optional HLAinteractionRoot parameter `SendTime` represents the time in the scenario when the interaction was sent.
+                </semantics>
         </note>
     </notes>
 </objectModel>

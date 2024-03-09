@@ -2,16 +2,34 @@
 # NETN-BASE
 |Version| Date| Dependencies|
 |---|---|---|
-|3.0|2024-03-09|RPR-Base|
+|3.0|2024-03-10|RPR-Base|
 
 The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.
 
-NETN-BASE defines attributes and parameters for the HLA object and interaction root classes (see Figure 2). These attributes and parameters are available for all object and interaction classes in all NETN-FOM modules.
 
 
+
+
+## Overview
+               
+NETN-BASE defines attributes and parameters for the HLA object and interaction root classes. These attributes and parameters are available for all object and interaction classes in all NETN-FOM modules.
+ 
+```mermaid
+classDiagram 
+direction TB
+
+HLAobjectRoot : CreateTime
+HLAobjectRoot : UniqueId
+
+HLAinteractionRoot : SendTime
+HLAinteractionRoot : UniqueId
+```
+
+
+                                
 
 ## Identifiers
-
+                
 The NETN-FOM uses Universally Unique Identifiers (UUID) as defined in ISO/IEC 9834-8:2014.
 
 An NETN-federate shall publish the `UniqueId` attribute for all objects it creates in the federation. The value of this attribute can either be predefined, e.g., based on scenario data or generated using standard methods for generating UUID. It is the responsibility of the federate to update the attributes to ensure uniqueness in the federation. 
@@ -23,9 +41,9 @@ The NETN-FOM also uses UUID to reference objects and relies on federates to reso
 Other unique identifiers may be required for compatibility with RPR-FOM, e.g., the `EntityIdentifier` attribute for the RPR-FOM `BaseEntity` object class.
 
 The NETN-BASE also defines an optional `UniqueId` parameter for the `HLAinteractionRoot` interaction class. This parameter's primary purpose is to allow subsequent interactions, e.g., acknowledgements, to reference a previously sent interaction. 
- 
+    
 ## Time 
- 
+    
 Logical time (or Simulation Time) coordinates and synchronizes data exchange in a distributed simulation. HLA time management services can control the advancement of logical time. To pace logical time, use wall-clock time to manage a real-time or scaled real-time simulation. The RPR-FOM handles synchronization by timestamping each update and relying on synchronized system clocks to advance time. Logical time representation and the methods for synchronizing the advancing of time in a distributed simulation can vary between different federations. The NETN-FOM does not specify or require any specific method for synchronizing logical time. Use federation agreements to clarify the synchronization method.
 
 Scenario time is displayed to simulation operators working with the actual scenario. Scenario time can be linked to the pace of logical time advancement but is an independent representation. For example, during simulation, the logical time is strictly increasing (much like wall-clock time) and can never move backwards. However, scenario time may move forward or backwards.
@@ -33,6 +51,7 @@ Scenario time is displayed to simulation operators working with the actual scena
 In NETN, the scenario time is defined as seconds since Epoch, where Epoch is defined in federation agreements, e.g. January 1, 1970, 00:00:00 UTC.
 
 The NETN-BASE module defines the optional HLAobjectRoot attribute `CreateTime` for timestamping objects with the scenario time corresponding to the time the object was created in the federation. Similarly, the optional HLAinteractionRoot parameter `SendTime` represents the time in the scenario when the interaction was sent.
+                
 
 
 ## Object Classes
@@ -41,7 +60,7 @@ The NETN-BASE module defines the optional HLAobjectRoot attribute `CreateTime` f
 classDiagram 
 direction LR
 
-HLAobjectRoot : CreationTime
+HLAobjectRoot : CreateTime
 HLAobjectRoot : UniqueId
 ```
 
@@ -51,7 +70,7 @@ HLAobjectRoot : UniqueId
 
 |Attribute|Datatype|Semantics|
 |---|---|---|
-|CreationTime|EpochTime|Optional: The time in the scenario when the object is created.|
+|CreateTime|EpochTime|Optional: The time in the scenario when the object is created.|
 |UniqueId|UUID|Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is generated or pre-defined.|
 
 ## Interaction Classes
@@ -59,7 +78,7 @@ HLAobjectRoot : UniqueId
 ```mermaid
 classDiagram 
 direction LR
-HLAinteractionRoot : ScenarioTime
+HLAinteractionRoot : SendTime
 HLAinteractionRoot : UniqueId
 ```
 
@@ -69,7 +88,7 @@ HLAinteractionRoot : UniqueId
 
 |Parameter|Datatype|Semantics|
 |---|---|---|
-|ScenarioTime|EpochTime|Optional: Scenario time when the interaction was sent. Default is interpreted as the receivers scenario time when the interaction is received.|
+|SendTime|EpochTime|Optional: Scenario time when the interaction was sent. Default is interpreted as the receivers scenario time when the interaction is received.|
 |UniqueId|UUID|Optional: A unique identifier for the interaction.|
 
 ## Datatypes

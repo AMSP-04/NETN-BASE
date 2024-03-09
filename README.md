@@ -3,13 +3,13 @@
 
 |Version| Date| Dependencies|
 |---|---|---|
-|3.0|2024-03-09|RPR-Base|
+|3.0|2024-03-10|RPR-Base|
 
 > [Full Documentation](NETN-BASE.md)
 
 The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.
 
-NETN-BASE defines attributes and parameters for the HLA object and interaction root classes (see Figure 2). These attributes and parameters are available for all object and interaction classes in all NETN-FOM modules.
+
 
 
 
