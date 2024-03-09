@@ -2435,6 +2435,7 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
         </note>
         <note>
             <label>netn-base_overview</label>
+
             <semantics>## Overview
                
 NETN-BASE defines attributes and parameters for the HLA object and interaction root classes. These attributes and parameters are available for all object and interaction classes in all NETN-FOM modules.
@@ -2477,6 +2478,7 @@ In NETN, the scenario time is defined as seconds since Epoch, where Epoch is def
 
 The NETN-BASE module defines the optional HLAobjectRoot attribute `CreateTime` for timestamping objects with the scenario time corresponding to the time the object was created in the federation. Similarly, the optional HLAinteractionRoot parameter `SendTime` represents the time in the scenario when the interaction was sent.
                 </semantics>
+
         </note>
     </notes>
 </objectModel>
