@@ -2,12 +2,11 @@
 # NETN-BASE
 |Version| Date| Dependencies|
 |---|---|---|
+
 |3.0|2024-03-10|RPR-Base|
 
+
 The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.
-
-
-
 
 
 ## Overview
@@ -18,6 +17,7 @@ NETN-BASE defines attributes and parameters for the HLA object and interaction r
 classDiagram 
 direction TB
 
+
 HLAobjectRoot : CreateTime
 HLAobjectRoot : UniqueId
 
@@ -25,8 +25,6 @@ HLAinteractionRoot : SendTime
 HLAinteractionRoot : UniqueId
 ```
 
-
-                                
 
 ## Identifiers
                 
@@ -75,12 +73,14 @@ HLAobjectRoot : UniqueId
 
 ## Interaction Classes
 
+
 ```mermaid
 classDiagram 
 direction LR
 HLAinteractionRoot : SendTime
 HLAinteractionRoot : UniqueId
 ```
+
 
 ### HLAinteractionRoot
 
