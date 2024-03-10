@@ -6,9 +6,9 @@
         <version>3.0</version>
         <modificationDate>2024-03-10</modificationDate>
         <securityClassification>Not Classified</securityClassification>
-        <purpose>The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.</purpose>
+        <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
-        <description></description>
+        <description>The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.</description>
         <useLimitation></useLimitation>
         <useHistory notes="netn-base_changelog_1">v1.0 - Initial version developed by MSG-106 and MSG-134. Release included in NETN FOM v2.0</useHistory>
         <useHistory notes="netn-base_changelog_2">v2.0 - Updated version developed by MSG-163. Release included in NETN FOM v3.0</useHistory>

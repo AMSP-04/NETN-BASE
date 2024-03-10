@@ -7,9 +7,9 @@
 
 > [Full Documentation](NETN-BASE.md)
 
+
+
 The NATO Education and Training Network Base (NETN-BASE) Module provides standard definitions of datatypes used by NETN modules. It depends on the RPR-BASE Module.
-
-
 
 
 

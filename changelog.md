@@ -93,13 +93,12 @@ Common datatypes were defined in NETN FOM v1.0 modules NETN_AggDeagg_v1.07_2010,
 * Removed datatype `Text64` 
 * Removed datatype `CancellationReasonEnum32` 
 * Replaced datatype `PercentFloat64` with `PercentFloat32` 
-* Replaced datatype `EpochTimeSecInt64`  with `ScenarioTime` 
- 
+* Replaced datatype `EpochTimeSecInt64`  with `EpochTime` 
 * Added datatype `EquipmentSymbolAmplificationStruct` 
 * Added datatype `UnitSymbolAmplificationStruct` 
 * Added datatype `InstallationSymbolAmplificationStruct` 
 * Added datatype `TimeMillisecondIn64` 
-* Added datatype `ScenarioTime` 
+* Added datatype `EpochTime` 
 * Added datatype `HostilityStatusCodeEnum32` moved from NETN-ORG 
 * Added datatype `DamageStatusEnum32` 
 * Added datatype `LocationStruct` 
