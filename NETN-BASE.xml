@@ -2354,7 +2354,6 @@ Credibility Ratings:
 * Removed datatype `CancellationReasonEnum32` 
 * Replaced datatype `PercentFloat64` with `PercentFloat32` 
 * Replaced datatype `EpochTimeSecInt64`  with `EpochTime` 
- 
 * Added datatype `EquipmentSymbolAmplificationStruct` 
 * Added datatype `UnitSymbolAmplificationStruct` 
 * Added datatype `InstallationSymbolAmplificationStruct` 
